@@ -1,5 +1,26 @@
 # 两轮车电池包 · 结构与材料应用
 
+## 第一次在新Windows电脑上使用
+
+先安装 Git for Windows 和 Node.js 22或以上版本。使用有权访问此私有仓库的GitHub账号登录；克隆时如弹出登录窗口，按提示完成浏览器授权。
+
+在PowerShell里进入你想存放项目的目录，依次执行：
+
+```powershell
+git clone https://github.com/ydf-1/battery-3d-demo.git
+cd battery-3d-demo
+npm install
+npm run build
+```
+
+开发依赖版本由 `package-lock.json` 锁定，安装时不要省略开发依赖。两台电脑都将各自克隆出的整个 `battery-3d-demo` 文件夹作为工作目录。每次先阅读 [需求](docs/需求.md)，再 `git pull --ff-only`；修改后按 [协作规则](AGENTS.md) 构建、更新离线文件、提交并推送。
+
+只演示时，直接双击 `release/两轮车电池包-离线.html`，不用安装Node.js。开发安装和Git同步需要联网；HTML运行完全离线。若克隆连接超时，检查该电脑访问GitHub的网络及本机代理配置；不要把其他电脑的代理地址直接照抄。
+
+`v1.1` 标签保留原始源码压缩包的完整内容，首次提交没有改目录结构或文件内容。
+
+## 离线页面
+
 双击 `dist/index.html` 即可运行。Three.js、页面样式、脚本和图标全部内联；几何体由代码生成，不使用外部模型、图片、字体或网络接口。页面包含禁止联网的内容安全策略，浏览器运行时不需要安装或联网。
 
 ## 部件与交互
