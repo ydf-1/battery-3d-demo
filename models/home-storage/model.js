@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { applySurfaceFinishes } from '../../shared/materials.js';
 
 // P3-inspired structural illustration; scene units are not engineering dimensions.
 // All surfaces, holes, wires and fasteners are generated geometry, without decals.
@@ -214,5 +215,6 @@ export function createBattery() {
     o.material = clones.get(key);
     o.userData.highlightable = o.userData.kind === 'plastic' && /^p[1-4]$/.test(o.userData.partId);
   });
+  applySurfaceFinishes(root);
   return { root, parts };
 }

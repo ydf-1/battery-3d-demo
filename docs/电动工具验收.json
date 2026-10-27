@@ -1,0 +1,4243 @@
+{
+  "result": "passed",
+  "checks": [
+    {
+      "name": "Four exact approved plastic entries",
+      "passed": true
+    },
+    {
+      "name": "Other parts have names only",
+      "passed": true
+    },
+    {
+      "name": "No pack configuration",
+      "passed": true
+    },
+    {
+      "name": "All component identities represented",
+      "passed": true
+    },
+    {
+      "name": "Ten equal 18650 cylinders at 18:65 ratio",
+      "passed": true
+    },
+    {
+      "name": "Exactly two rows of five horizontal cells",
+      "passed": true
+    },
+    {
+      "name": "Default cell module is clear of lower shell",
+      "passed": true
+    },
+    {
+      "name": "No voltage capacity or old pack values visible",
+      "passed": true
+    },
+    {
+      "name": "Only approved plastic entries numbered",
+      "passed": true
+    },
+    {
+      "name": "Disclaimer below canvas: desktop",
+      "passed": true
+    },
+    {
+      "name": "All parts return to base on assemble",
+      "passed": true
+    },
+    {
+      "name": "Exact detail: p1",
+      "passed": true
+    },
+    {
+      "name": "Plastic highlights only: p1",
+      "passed": true
+    },
+    {
+      "name": "Nonplastics retain color: p1",
+      "passed": true
+    },
+    {
+      "name": "Both shells separate for p1",
+      "passed": true
+    },
+    {
+      "name": "Integral rails follow shell translation",
+      "passed": true
+    },
+    {
+      "name": "Second click restores: p1",
+      "passed": true
+    },
+    {
+      "name": "Repeated click restores after viewing cells: p1",
+      "passed": true
+    },
+    {
+      "name": "Exact detail: p2",
+      "passed": true
+    },
+    {
+      "name": "Plastic highlights only: p2",
+      "passed": true
+    },
+    {
+      "name": "Nonplastics retain color: p2",
+      "passed": true
+    },
+    {
+      "name": "Both holders separate; cells stay fixed",
+      "passed": true
+    },
+    {
+      "name": "Second click restores: p2",
+      "passed": true
+    },
+    {
+      "name": "Repeated click restores after viewing cells: p2",
+      "passed": true
+    },
+    {
+      "name": "Exact detail: p3",
+      "passed": true
+    },
+    {
+      "name": "Plastic highlights only: p3",
+      "passed": true
+    },
+    {
+      "name": "Nonplastics retain color: p3",
+      "passed": true
+    },
+    {
+      "name": "p3 moves latch without moving shells",
+      "passed": true
+    },
+    {
+      "name": "p3 highlights fixed integral rails",
+      "passed": true
+    },
+    {
+      "name": "Second click restores: p3",
+      "passed": true
+    },
+    {
+      "name": "Repeated click restores after viewing cells: p3",
+      "passed": true
+    },
+    {
+      "name": "Exact detail: p4",
+      "passed": true
+    },
+    {
+      "name": "Plastic highlights only: p4",
+      "passed": true
+    },
+    {
+      "name": "Nonplastics retain color: p4",
+      "passed": true
+    },
+    {
+      "name": "Terminal cover separates",
+      "passed": true
+    },
+    {
+      "name": "Second click restores: p4",
+      "passed": true
+    },
+    {
+      "name": "Repeated click restores after viewing cells: p4",
+      "passed": true
+    },
+    {
+      "name": "Part toggle survives intervening name-only selection",
+      "passed": true
+    },
+    {
+      "name": "Full explosion targets all parts",
+      "passed": true
+    },
+    {
+      "name": "Four equal positive exploded layer clearances",
+      "passed": true
+    },
+    {
+      "name": "Selecting p3 from full view visibly pulls latch",
+      "passed": true
+    },
+    {
+      "name": "Selecting p4 from full view visibly isolates cover",
+      "passed": true
+    },
+    {
+      "name": "Name only detail: cells",
+      "passed": true
+    },
+    {
+      "name": "No motion or highlight: cells",
+      "passed": true
+    },
+    {
+      "name": "Metal cells PCB LEDs unchanged: cells",
+      "passed": true
+    },
+    {
+      "name": "Name only detail: busbar",
+      "passed": true
+    },
+    {
+      "name": "No motion or highlight: busbar",
+      "passed": true
+    },
+    {
+      "name": "Metal cells PCB LEDs unchanged: busbar",
+      "passed": true
+    },
+    {
+      "name": "Name only detail: contacts",
+      "passed": true
+    },
+    {
+      "name": "No motion or highlight: contacts",
+      "passed": true
+    },
+    {
+      "name": "Metal cells PCB LEDs unchanged: contacts",
+      "passed": true
+    },
+    {
+      "name": "Name only detail: pcb",
+      "passed": true
+    },
+    {
+      "name": "No motion or highlight: pcb",
+      "passed": true
+    },
+    {
+      "name": "Metal cells PCB LEDs unchanged: pcb",
+      "passed": true
+    },
+    {
+      "name": "Name only detail: spring",
+      "passed": true
+    },
+    {
+      "name": "No motion or highlight: spring",
+      "passed": true
+    },
+    {
+      "name": "Metal cells PCB LEDs unchanged: spring",
+      "passed": true
+    },
+    {
+      "name": "Name only detail: leds",
+      "passed": true
+    },
+    {
+      "name": "No motion or highlight: leds",
+      "passed": true
+    },
+    {
+      "name": "Metal cells PCB LEDs unchanged: leds",
+      "passed": true
+    },
+    {
+      "name": "Name only detail: fasteners",
+      "passed": true
+    },
+    {
+      "name": "No motion or highlight: fasteners",
+      "passed": true
+    },
+    {
+      "name": "Metal cells PCB LEDs unchanged: fasteners",
+      "passed": true
+    },
+    {
+      "name": "Slider updates all progress",
+      "passed": true
+    },
+    {
+      "name": "Labels hide",
+      "passed": true
+    },
+    {
+      "name": "Labels return",
+      "passed": true
+    },
+    {
+      "name": "Autorotate rotates camera",
+      "passed": true
+    },
+    {
+      "name": "Zoom changes camera",
+      "passed": true
+    },
+    {
+      "name": "Keyboard rotation works",
+      "passed": true
+    },
+    {
+      "name": "Guide opens",
+      "passed": true
+    },
+    {
+      "name": "Canvas picking identifies p3",
+      "passed": true
+    },
+    {
+      "name": "Canvas picking identifies p4",
+      "passed": true
+    },
+    {
+      "name": "Canvas picking identifies pcb",
+      "passed": true
+    },
+    {
+      "name": "Mobile has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Disclaimer below canvas: mobile",
+      "passed": true
+    },
+    {
+      "name": "Mobile selection works",
+      "passed": true
+    },
+    {
+      "name": "Offline has zero HTTP HTTPS WebSocket requests",
+      "passed": true
+    },
+    {
+      "name": "No browser errors",
+      "passed": true
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "networkRequests": [],
+  "evidence": {
+    "initial": {
+      "ready": true,
+      "selected": "p1",
+      "explosion": 1,
+      "labels": true,
+      "autoRotate": false,
+      "parts": [
+        {
+          "id": "bottomShell",
+          "selectionId": "p1",
+          "kind": "plastic",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            -3.86649999938719,
+            0
+          ],
+          "base": [
+            0,
+            0,
+            0
+          ],
+          "bounds": {
+            "min": [
+              -2.8775000001862647,
+              -5.423999999461696,
+              -2.109999895095825
+            ],
+            "max": [
+              2.8775000001862647,
+              -3.559000000579283,
+              2.109999895095825
+            ]
+          }
+        },
+        {
+          "id": "topShell",
+          "selectionId": "p1",
+          "kind": "plastic",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            3.189000001845881,
+            0
+          ],
+          "base": [
+            0,
+            0,
+            0
+          ],
+          "bounds": {
+            "min": [
+              -2.8600000020861627,
+              3.468999999461695,
+              -2.109999895095825
+            ],
+            "max": [
+              2.9384999996870755,
+              5.423999999461695,
+              2.119999997317791
+            ]
+          }
+        },
+        {
+          "id": "latch",
+          "selectionId": "p3",
+          "kind": "plastic",
+          "follow": "topShell",
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            4.16900000184588,
+            2.1
+          ],
+          "base": [
+            0,
+            0.98,
+            2.1
+          ],
+          "bounds": {
+            "min": [
+              -0.824999988079071,
+              3.83399999350123,
+              1.5199999988079071
+            ],
+            "max": [
+              0.824999988079071,
+              4.504000010190531,
+              2.2765000008940697
+            ]
+          }
+        },
+        {
+          "id": "spring",
+          "selectionId": "spring",
+          "kind": "metal",
+          "follow": "topShell",
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0.97,
+            4.199000001845881,
+            1.97
+          ],
+          "base": [
+            0.97,
+            1.01,
+            1.97
+          ],
+          "bounds": {
+            "min": [
+              0.8631105881929397,
+              4.091365099845453,
+              1.7421363455057144
+            ],
+            "max": [
+              1.0779999655485153,
+              4.306774199901148,
+              2.1978468161821363
+            ]
+          }
+        },
+        {
+          "id": "terminalCover",
+          "selectionId": "p4",
+          "kind": "plastic",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            2.169000000355765,
+            -0.48
+          ],
+          "base": [
+            0,
+            1.63,
+            -0.48
+          ],
+          "bounds": {
+            "min": [
+              -1.1849999997019767,
+              1.824000000653788,
+              -1.030000011920929
+            ],
+            "max": [
+              1.1849999997019767,
+              2.468999999461695,
+              0.07000001192092897
+            ]
+          }
+        },
+        {
+          "id": "pcb",
+          "selectionId": "pcb",
+          "kind": "pcb",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            0.5410000004637983,
+            0
+          ],
+          "base": [
+            0,
+            1.1,
+            0
+          ],
+          "bounds": {
+            "min": [
+              -2.430000066757202,
+              0.5060000003147866,
+              -1.5399999618530273
+            ],
+            "max": [
+              2.430000066757202,
+              0.8240000006537881,
+              1.5399999618530273
+            ]
+          }
+        },
+        {
+          "id": "cells",
+          "selectionId": "cells",
+          "kind": "cells",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            -1.5265000001322482,
+            0
+          ],
+          "base": [
+            0,
+            0,
+            0
+          ],
+          "bounds": {
+            "min": [
+              -2.4100000262260437,
+              -2.4664999977480626,
+              -1.6680000387132168
+            ],
+            "max": [
+              2.4100000262260437,
+              -0.5865000025164336,
+              1.6680000387132168
+            ]
+          }
+        },
+        {
+          "id": "upperHolder",
+          "selectionId": "p2",
+          "kind": "plastic",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            -1.5265000001322482,
+            0
+          ],
+          "base": [
+            0,
+            0,
+            0
+          ],
+          "bounds": {
+            "min": [
+              -2.580000001490116,
+              -1.5290000072848056,
+              -1.6299999994039536
+            ],
+            "max": [
+              2.580000001490116,
+              -0.49399999968521335,
+              1.6299999994039536
+            ]
+          }
+        },
+        {
+          "id": "lowerHolder",
+          "selectionId": "p2",
+          "kind": "plastic",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            -1.5265000001322482,
+            0
+          ],
+          "base": [
+            0,
+            0,
+            0
+          ],
+          "bounds": {
+            "min": [
+              -2.580000001490116,
+              -2.559000000579283,
+              -1.6299999994039536
+            ],
+            "max": [
+              2.580000001490116,
+              -1.5239999929796908,
+              1.6299999994039536
+            ]
+          }
+        },
+        {
+          "id": "busbar",
+          "selectionId": "busbar",
+          "kind": "metal",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            -1.5265000001322482,
+            0
+          ],
+          "base": [
+            0,
+            0,
+            0
+          ],
+          "bounds": {
+            "min": [
+              -2.0949999999999998,
+              -2.136500014437363,
+              -1.7095000001080334
+            ],
+            "max": [
+              2.0949999999999998,
+              -0.9164999858271334,
+              1.7095000001080334
+            ]
+          }
+        }
+      ],
+      "camera": [
+        7.8,
+        5.799999999999997,
+        17.5
+      ],
+      "highlightedIds": [
+        "p1",
+        "p3"
+      ],
+      "highlightedNames": [
+        "lowerFloor",
+        "lowerCupWalls",
+        "lowerMatingLip",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "upperSideWall",
+        "upperSideWall",
+        "",
+        "",
+        "",
+        "",
+        "upperDeckWithTerminalOpening",
+        "",
+        "",
+        "rail-0-foot",
+        "rail-0-web",
+        "rail-0-flange",
+        "rail-0-stop-0",
+        "rail-0-stop-1",
+        "rail-0-stop-2",
+        "rail-1-foot",
+        "rail-1-web",
+        "rail-1-flange",
+        "rail-1-stop-0",
+        "rail-1-stop-1",
+        "rail-1-stop-2",
+        "indicatorBezel",
+        "indicatorButton"
+      ],
+      "rails": [
+        {
+          "name": "rail-0-foot",
+          "parent": "topShell",
+          "position": [
+            -1.75,
+            4.849000001845881,
+            -0.04
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-0-web",
+          "parent": "topShell",
+          "position": [
+            -1.75,
+            5.109000001845881,
+            -0.09
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-0-flange",
+          "parent": "topShell",
+          "position": [
+            -1.75,
+            5.304000001845881,
+            -0.09
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-0-stop-0",
+          "parent": "topShell",
+          "position": [
+            -1.75,
+            5.359000001845881,
+            -1.4
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-0-stop-1",
+          "parent": "topShell",
+          "position": [
+            -1.75,
+            5.359000001845881,
+            -0.04999999999999982
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-0-stop-2",
+          "parent": "topShell",
+          "position": [
+            -1.75,
+            5.359000001845881,
+            1.3000000000000003
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-1-foot",
+          "parent": "topShell",
+          "position": [
+            1.75,
+            4.849000001845881,
+            -0.04
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-1-web",
+          "parent": "topShell",
+          "position": [
+            1.75,
+            5.109000001845881,
+            -0.09
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-1-flange",
+          "parent": "topShell",
+          "position": [
+            1.75,
+            5.304000001845881,
+            -0.09
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-1-stop-0",
+          "parent": "topShell",
+          "position": [
+            1.75,
+            5.359000001845881,
+            -1.4
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-1-stop-1",
+          "parent": "topShell",
+          "position": [
+            1.75,
+            5.359000001845881,
+            -0.04999999999999982
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-1-stop-2",
+          "parent": "topShell",
+          "position": [
+            1.75,
+            5.359000001845881,
+            1.3000000000000003
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        }
+      ],
+      "cellGeometry": {
+        "count": 10,
+        "radius": 0.45,
+        "height": 3.25,
+        "positions": [
+          [
+            -1.9600000381469727,
+            -0.49000000953674316,
+            0
+          ],
+          [
+            -0.9800000190734863,
+            -0.49000000953674316,
+            0
+          ],
+          [
+            0,
+            -0.49000000953674316,
+            0
+          ],
+          [
+            0.9800000190734863,
+            -0.49000000953674316,
+            0
+          ],
+          [
+            1.9600000381469727,
+            -0.49000000953674316,
+            0
+          ],
+          [
+            -1.9600000381469727,
+            0.49000000953674316,
+            0
+          ],
+          [
+            -0.9800000190734863,
+            0.49000000953674316,
+            0
+          ],
+          [
+            0,
+            0.49000000953674316,
+            0
+          ],
+          [
+            0.9800000190734863,
+            0.49000000953674316,
+            0
+          ],
+          [
+            1.9600000381469727,
+            0.49000000953674316,
+            0
+          ]
+        ],
+        "partId": "cells",
+        "kind": "cells",
+        "highlightable": false,
+        "cellCount": 10,
+        "diameterMm": 18,
+        "lengthMm": 65,
+        "mmPerSceneUnit": 20
+      },
+      "layerBounds": [
+        {
+          "ids": [
+            "topShell"
+          ],
+          "min": [
+            -2.8600000020861627,
+            3.468999999461695,
+            -2.109999895095825
+          ],
+          "max": [
+            2.9384999996870755,
+            5.423999999461695,
+            2.119999997317791
+          ]
+        },
+        {
+          "ids": [
+            "terminalCover"
+          ],
+          "min": [
+            -1.1849999997019767,
+            1.824000000653788,
+            -1.030000011920929
+          ],
+          "max": [
+            1.1849999997019767,
+            2.468999999461695,
+            0.07000001192092897
+          ]
+        },
+        {
+          "ids": [
+            "pcb"
+          ],
+          "min": [
+            -2.430000066757202,
+            0.5060000003147866,
+            -1.5399999618530273
+          ],
+          "max": [
+            2.430000066757202,
+            0.8240000006537881,
+            1.5399999618530273
+          ]
+        },
+        {
+          "ids": [
+            "upperHolder",
+            "lowerHolder",
+            "cells",
+            "busbar"
+          ],
+          "min": [
+            -2.580000001490116,
+            -2.559000000579283,
+            -1.7095000001080334
+          ],
+          "max": [
+            2.580000001490116,
+            -0.49399999968521335,
+            1.7095000001080334
+          ]
+        },
+        {
+          "ids": [
+            "bottomShell"
+          ],
+          "min": [
+            -2.8775000001862647,
+            -5.423999999461696,
+            -2.109999895095825
+          ],
+          "max": [
+            2.8775000001862647,
+            -3.559000000579283,
+            2.109999895095825
+          ]
+        }
+      ],
+      "layerGaps": [
+        1,
+        0.9999999999999999,
+        1,
+        1
+      ],
+      "assembly": {
+        "cellCount": 10,
+        "cellRows": 2,
+        "cellsPerRow": 5,
+        "cellDiameterMm": 18,
+        "cellLengthMm": 65,
+        "explodedLayerGap": 1
+      },
+      "pickPoints": {
+        "p1": [
+          {
+            "name": "lowerFloor",
+            "x": 533,
+            "y": 719.7176341961564
+          },
+          {
+            "name": "lowerCupWalls",
+            "x": 533,
+            "y": 688.9231339733419
+          },
+          {
+            "name": "lowerMatingLip",
+            "x": 533,
+            "y": 660.6833246914209
+          },
+          {
+            "name": "",
+            "x": 447.3203899701922,
+            "y": 705.8682810591014
+          },
+          {
+            "name": "",
+            "x": 472.40820925339233,
+            "y": 685.5617844941728
+          },
+          {
+            "name": "",
+            "x": 462.6063870514842,
+            "y": 694.6289112876847
+          },
+          {
+            "name": "",
+            "x": 452.3900561221523,
+            "y": 704.0794773143464
+          },
+          {
+            "name": "",
+            "x": 441.73235478366024,
+            "y": 713.9383308390185
+          },
+          {
+            "name": "",
+            "x": 430.6040491310489,
+            "y": 724.2325145398349
+          },
+          {
+            "name": "",
+            "x": 418.97326525266715,
+            "y": 734.9915132199675
+          },
+          {
+            "name": "",
+            "x": 626.3809485075486,
+            "y": 747.0529620126457
+          },
+          {
+            "name": "",
+            "x": 643.6638744405105,
+            "y": 722.7374334580634
+          },
+          {
+            "name": "",
+            "x": 636.8651329651145,
+            "y": 733.428273171144
+          },
+          {
+            "name": "",
+            "x": 629.7533467480797,
+            "y": 744.6113673945623
+          }
+        ],
+        "p2": [
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 485.23218168153653,
+            "y": 531.067285792635
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 520.5322666554072,
+            "y": 535.9951908530762
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 557.0817510252601,
+            "y": 541.0975125363254
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 594.9481610278593,
+            "y": 546.3836775302818
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 634.2039782914975,
+            "y": 551.8638042973544
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 426.740282015514,
+            "y": 567.059749692963
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 465.4629290250231,
+            "y": 573.3327525026262
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 505.7371543482006,
+            "y": 579.8571083543131
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 547.6581198271466,
+            "y": 586.6482333042333
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 591.328931711032,
+            "y": 593.722830388999
+          },
+          {
+            "name": "",
+            "x": 438.67020925751586,
+            "y": 545.1302023912956
+          },
+          {
+            "name": "",
+            "x": 468.4678568020809,
+            "y": 527.6517188945627
+          },
+          {
+            "name": "",
+            "x": 404.9043724902381,
+            "y": 564.9363169447208
+          },
+          {
+            "name": "",
+            "x": 636.7501640287428,
+            "y": 574.8357887314884
+          }
+        ],
+        "p3": [
+          {
+            "name": "rail-0-foot",
+            "x": 460.4522981714432,
+            "y": 293.2386689616387
+          },
+          {
+            "name": "rail-0-web",
+            "x": 461.2683380772122,
+            "y": 280.83647084074147
+          },
+          {
+            "name": "rail-0-flange",
+            "x": 461.05771960185285,
+            "y": 271.5487189685866
+          },
+          {
+            "name": "rail-0-stop-0",
+            "x": 488.2505541997078,
+            "y": 267.72505258355216
+          },
+          {
+            "name": "rail-0-stop-1",
+            "x": 460.1147814318899,
+            "y": 268.9579329657811
+          },
+          {
+            "name": "rail-0-stop-2",
+            "x": 428.29179919193314,
+            "y": 270.3523830429632
+          },
+          {
+            "name": "rail-1-foot",
+            "x": 612.661270653214,
+            "y": 296.697081227772
+          },
+          {
+            "name": "rail-1-web",
+            "x": 613.8077245856466,
+            "y": 283.3579207920968
+          },
+          {
+            "name": "rail-1-flange",
+            "x": 614.0630909743403,
+            "y": 273.3696670749085
+          },
+          {
+            "name": "rail-1-stop-0",
+            "x": 634.116659482348,
+            "y": 269.163474312042
+          },
+          {
+            "name": "rail-1-stop-1",
+            "x": 613.4849053475594,
+            "y": 270.5858909877975
+          },
+          {
+            "name": "rail-1-stop-2",
+            "x": 589.9278494316335,
+            "y": 272.20998697826
+          },
+          {
+            "name": "pressLatchButton",
+            "x": 488.35766737979696,
+            "y": 336.6610301981547
+          },
+          {
+            "name": "latchGripRib",
+            "x": 484.8416873605785,
+            "y": 346.4325855275245
+          }
+        ],
+        "p4": [
+          {
+            "name": "terminalCoverFloor",
+            "x": 541.7067485795124,
+            "y": 430.2104846502335
+          },
+          {
+            "name": "terminalCoverBack",
+            "x": 550.1246122801708,
+            "y": 413.9059498220656
+          },
+          {
+            "name": "",
+            "x": 498.74458542480255,
+            "y": 414.7959736300511
+          },
+          {
+            "name": "",
+            "x": 586.5858728676318,
+            "y": 421.9796213335054
+          },
+          {
+            "name": "",
+            "x": 513.3677803005284,
+            "y": 416.07363185013514
+          },
+          {
+            "name": "",
+            "x": 512.5298933042648,
+            "y": 403.6562125421898
+          },
+          {
+            "name": "",
+            "x": 532.6660173929505,
+            "y": 417.6526056393706
+          },
+          {
+            "name": "",
+            "x": 531.936041363351,
+            "y": 405.1275314644914
+          },
+          {
+            "name": "",
+            "x": 552.3295800870985,
+            "y": 419.2614702184694
+          },
+          {
+            "name": "",
+            "x": 551.7117835180854,
+            "y": 406.62687195938145
+          },
+          {
+            "name": "",
+            "x": 572.3689412146992,
+            "y": 420.90108247019845
+          },
+          {
+            "name": "",
+            "x": 571.8677797732299,
+            "y": 408.1550422380859
+          },
+          {
+            "name": "",
+            "x": 495.6302489551798,
+            "y": 416.6269146028835
+          },
+          {
+            "name": "",
+            "x": 588.4796417084499,
+            "y": 424.3150316058122
+          }
+        ],
+        "cells": [],
+        "busbar": [
+          {
+            "name": "nickelCellBridge",
+            "x": 507.3670335276645,
+            "y": 567.2466289859693
+          },
+          {
+            "name": "nickelCellBridge",
+            "x": 578.9690437960762,
+            "y": 578.3968243702116
+          },
+          {
+            "name": "nickelCellBridge",
+            "x": 542.6775652388874,
+            "y": 535.6443909396988
+          },
+          {
+            "name": "nickelCellBridge",
+            "x": 617.7965770073134,
+            "y": 546.0071591380017
+          },
+          {
+            "name": "nickelRowBridge",
+            "x": 489.94703812217637,
+            "y": 546.5675023790025
+          },
+          {
+            "name": "",
+            "x": 488.08506819666115,
+            "y": 563.9920884363303
+          },
+          {
+            "name": "",
+            "x": 492.9423511618246,
+            "y": 564.7478851511905
+          },
+          {
+            "name": "",
+            "x": 522.580585946918,
+            "y": 569.3596157515047
+          },
+          {
+            "name": "",
+            "x": 527.6043168909663,
+            "y": 570.1413118913189
+          },
+          {
+            "name": "",
+            "x": 558.2670153458289,
+            "y": 574.912449773782
+          },
+          {
+            "name": "",
+            "x": 563.4658988876689,
+            "y": 575.7213997834983
+          },
+          {
+            "name": "",
+            "x": 595.207111613045,
+            "y": 580.6603552603717
+          },
+          {
+            "name": "",
+            "x": 600.5904700835518,
+            "y": 581.4980097013637
+          },
+          {
+            "name": "",
+            "x": 633.4681179913975,
+            "y": 586.6137953081106
+          }
+        ],
+        "contacts": [
+          {
+            "name": "terminalCopperFoot",
+            "x": 502.5726700576242,
+            "y": 421.88265655482587
+          },
+          {
+            "name": "terminalCopperSpringContact",
+            "x": 499.1153837962539,
+            "y": 413.26472076686446
+          },
+          {
+            "name": "terminalCopperLip",
+            "x": 495.8990763642622,
+            "y": 409.6815772074424
+          },
+          {
+            "name": "terminalCopperSpringContact",
+            "x": 507.22815322117174,
+            "y": 413.9219835524567
+          },
+          {
+            "name": "terminalCopperLip",
+            "x": 502.7876637525786,
+            "y": 410.22844607439526
+          },
+          {
+            "name": "terminalCopperFoot",
+            "x": 521.6997974823203,
+            "y": 423.5101519481344
+          },
+          {
+            "name": "terminalCopperSpringContact",
+            "x": 519.4143511701827,
+            "y": 414.9092585494689
+          },
+          {
+            "name": "terminalCopperLip",
+            "x": 516.1864656361815,
+            "y": 411.2921456678764
+          },
+          {
+            "name": "terminalCopperSpringContact",
+            "x": 525.2306188246695,
+            "y": 415.3804683275499
+          },
+          {
+            "name": "terminalCopperLip",
+            "x": 521.1260285777815,
+            "y": 411.6842860352465
+          },
+          {
+            "name": "terminalCopperFoot",
+            "x": 541.1876806601515,
+            "y": 425.16834344720417
+          },
+          {
+            "name": "terminalCopperSpringContact",
+            "x": 538.8756491572735,
+            "y": 416.4859318476092
+          },
+          {
+            "name": "terminalCopperLip",
+            "x": 535.8234565403185,
+            "y": 412.85108052066244
+          },
+          {
+            "name": "terminalCopperSpringContact",
+            "x": 544.8022632115132,
+            "y": 416.9660814313575
+          }
+        ],
+        "pcb": [
+          {
+            "name": "protectionCircuitBoard",
+            "x": 533,
+            "y": 492.89201186460457
+          },
+          {
+            "name": "",
+            "x": 472.59527541852657,
+            "y": 468.6895099652358
+          },
+          {
+            "name": "",
+            "x": 472.5936747984555,
+            "y": 468.6106687616731
+          },
+          {
+            "name": "",
+            "x": 416.7673901945726,
+            "y": 494.7656236847247
+          },
+          {
+            "name": "",
+            "x": 416.76394683356966,
+            "y": 494.67825264806305
+          },
+          {
+            "name": "",
+            "x": 645.897379309148,
+            "y": 487.67554749884636
+          },
+          {
+            "name": "",
+            "x": 645.9006278918724,
+            "y": 487.5904795834613
+          },
+          {
+            "name": "",
+            "x": 607.0837105333575,
+            "y": 518.739059541097
+          },
+          {
+            "name": "",
+            "x": 607.086118189711,
+            "y": 518.6439902950655
+          },
+          {
+            "name": "",
+            "x": 476.25538883275715,
+            "y": 469.6411379163186
+          },
+          {
+            "name": "",
+            "x": 476.3286123521948,
+            "y": 469.13271198235054
+          },
+          {
+            "name": "",
+            "x": 481.4055619773056,
+            "y": 469.6890009210897
+          },
+          {
+            "name": "",
+            "x": 486.50808205242276,
+            "y": 470.24809165215436
+          },
+          {
+            "name": "",
+            "x": 465.92368913412736,
+            "y": 474.04112081430725
+          }
+        ],
+        "spring": [
+          {
+            "name": "latchCompressionSpring",
+            "x": 537.4840362544992,
+            "y": 336.44941648731265
+          }
+        ],
+        "leds": [
+          {
+            "name": "indicator-0",
+            "x": 677.5585118427106,
+            "y": 331.64196694961
+          },
+          {
+            "name": "indicator-1",
+            "x": 673.2934186890941,
+            "y": 332.97715717061766
+          },
+          {
+            "name": "indicator-2",
+            "x": 668.8904890407548,
+            "y": 334.3554971970864
+          },
+          {
+            "name": "indicator-3",
+            "x": 664.3429313912487,
+            "y": 335.7791131145817
+          }
+        ],
+        "fasteners": [
+          {
+            "name": "",
+            "x": 472.01171348726507,
+            "y": 618.0246441905052
+          },
+          {
+            "name": "",
+            "x": 472.0079809055955,
+            "y": 617.8516884226847
+          },
+          {
+            "name": "",
+            "x": 398.90282048432124,
+            "y": 675.1750371574041
+          },
+          {
+            "name": "",
+            "x": 398.89334696936595,
+            "y": 674.9794272380205
+          },
+          {
+            "name": "",
+            "x": 659.998641879185,
+            "y": 652.5450901375086
+          },
+          {
+            "name": "",
+            "x": 660.0071389333648,
+            "y": 652.3583215788649
+          },
+          {
+            "name": "",
+            "x": 611.0849062698643,
+            "y": 721.8428691408883
+          },
+          {
+            "name": "",
+            "x": 611.0910249548259,
+            "y": 721.6295606580072
+          },
+          {
+            "name": "",
+            "x": 464.6117145315087,
+            "y": 292.21709834494027
+          },
+          {
+            "name": "",
+            "x": 464.5921081028812,
+            "y": 291.31349782445716
+          },
+          {
+            "name": "",
+            "x": 464.5921081028812,
+            "y": 291.31349782445716
+          },
+          {
+            "name": "",
+            "x": 380.3190321006333,
+            "y": 300.0199039596025
+          },
+          {
+            "name": "",
+            "x": 380.2675886729491,
+            "y": 298.9605814754673
+          },
+          {
+            "name": "",
+            "x": 380.2675886729491,
+            "y": 298.9605814754673
+          }
+        ]
+      },
+      "meshCounts": {
+        "p1": 48,
+        "p2": 44,
+        "p3": 17,
+        "p4": 14,
+        "cells": 7,
+        "busbar": 50,
+        "contacts": 25,
+        "pcb": 219,
+        "spring": 1,
+        "leds": 4,
+        "fasteners": 20
+      },
+      "materials": [
+        {
+          "kind": "plastic",
+          "color": "141719",
+          "emissive": "147bd4",
+          "intensity": 0.055,
+          "roughness": 0.67,
+          "metalness": 0
+        },
+        {
+          "kind": "metal",
+          "color": "c57d43",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.26,
+          "metalness": 0.88
+        },
+        {
+          "kind": "metal",
+          "color": "454b52",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.42,
+          "metalness": 0.78
+        },
+        {
+          "kind": "metal",
+          "color": "b6bec6",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.93
+        },
+        {
+          "kind": "plastic",
+          "color": "141719",
+          "emissive": "147bd4",
+          "intensity": 0.055,
+          "roughness": 0.67,
+          "metalness": 0
+        },
+        {
+          "kind": "led",
+          "color": "35da6a",
+          "emissive": "23d75b",
+          "intensity": 0.65,
+          "roughness": 0.3,
+          "metalness": 0.05
+        },
+        {
+          "kind": "plastic",
+          "color": "008be8",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.37,
+          "metalness": 0
+        },
+        {
+          "kind": "metal",
+          "color": "b6bec6",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.93
+        },
+        {
+          "kind": "plastic",
+          "color": "008be8",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.37,
+          "metalness": 0
+        },
+        {
+          "kind": "metal",
+          "color": "c57d43",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.26,
+          "metalness": 0.88
+        },
+        {
+          "kind": "pcb",
+          "color": "073c27",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.72,
+          "metalness": 0.06
+        },
+        {
+          "kind": "metal",
+          "color": "c57d43",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.26,
+          "metalness": 0.88
+        },
+        {
+          "kind": "pcb",
+          "color": "151b1c",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.62,
+          "metalness": 0.06
+        },
+        {
+          "kind": "metal",
+          "color": "c3c8cd",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.91
+        },
+        {
+          "kind": "pcb",
+          "color": "b5ad83",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.62,
+          "metalness": 0.06
+        },
+        {
+          "kind": "pcb",
+          "color": "527956",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.72,
+          "metalness": 0.06
+        },
+        {
+          "kind": "metal",
+          "color": "b6bec6",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.93
+        },
+        {
+          "kind": "cells",
+          "color": "bec4cb",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.25,
+          "metalness": 0.88
+        },
+        {
+          "kind": "metal",
+          "color": "c3c8cd",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.91
+        },
+        {
+          "kind": "metal",
+          "color": "454b52",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.42,
+          "metalness": 0.78
+        },
+        {
+          "kind": "metal",
+          "color": "b6bec6",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.93
+        },
+        {
+          "kind": "plastic",
+          "color": "008be8",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.37,
+          "metalness": 0
+        },
+        {
+          "kind": "metal",
+          "color": "c3c8cd",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.91
+        },
+        {
+          "kind": "metal",
+          "color": "b6bec6",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.93
+        }
+      ]
+    },
+    "All component identities represented": {
+      "p1": 48,
+      "p2": 44,
+      "p3": 17,
+      "p4": 14,
+      "cells": 7,
+      "busbar": 50,
+      "contacts": 25,
+      "pcb": 219,
+      "spring": 1,
+      "leds": 4,
+      "fasteners": 20
+    },
+    "Ten equal 18650 cylinders at 18:65 ratio": {
+      "count": 10,
+      "radius": 0.45,
+      "height": 3.25,
+      "positions": [
+        [
+          -1.9600000381469727,
+          -0.49000000953674316,
+          0
+        ],
+        [
+          -0.9800000190734863,
+          -0.49000000953674316,
+          0
+        ],
+        [
+          0,
+          -0.49000000953674316,
+          0
+        ],
+        [
+          0.9800000190734863,
+          -0.49000000953674316,
+          0
+        ],
+        [
+          1.9600000381469727,
+          -0.49000000953674316,
+          0
+        ],
+        [
+          -1.9600000381469727,
+          0.49000000953674316,
+          0
+        ],
+        [
+          -0.9800000190734863,
+          0.49000000953674316,
+          0
+        ],
+        [
+          0,
+          0.49000000953674316,
+          0
+        ],
+        [
+          0.9800000190734863,
+          0.49000000953674316,
+          0
+        ],
+        [
+          1.9600000381469727,
+          0.49000000953674316,
+          0
+        ]
+      ],
+      "partId": "cells",
+      "kind": "cells",
+      "highlightable": false,
+      "cellCount": 10,
+      "diameterMm": 18,
+      "lengthMm": 65,
+      "mmPerSceneUnit": 20
+    },
+    "Exactly two rows of five horizontal cells": [
+      [
+        "-0.490",
+        [
+          [
+            -1.9600000381469727,
+            0
+          ],
+          [
+            -0.9800000190734863,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0.9800000190734863,
+            0
+          ],
+          [
+            1.9600000381469727,
+            0
+          ]
+        ]
+      ],
+      [
+        "0.490",
+        [
+          [
+            -1.9600000381469727,
+            0
+          ],
+          [
+            -0.9800000190734863,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0.9800000190734863,
+            0
+          ],
+          [
+            1.9600000381469727,
+            0
+          ]
+        ]
+      ]
+    ],
+    "Default cell module is clear of lower shell": [
+      1,
+      0.9999999999999999,
+      1,
+      1
+    ],
+    "Disclaimer below canvas: desktop": {
+      "d": {
+        "x": 0,
+        "y": 940,
+        "width": 1066,
+        "height": 21
+      },
+      "c": {
+        "x": 0,
+        "y": 228,
+        "width": 1066,
+        "height": 576
+      },
+      "s": {
+        "x": 0,
+        "y": 72,
+        "width": 1066,
+        "height": 896
+      }
+    },
+    "All parts return to base on assemble": [
+      {
+        "id": "bottomShell",
+        "selectionId": "p1",
+        "kind": "plastic",
+        "follow": null,
+        "progress": 0,
+        "isolation": 0,
+        "target": 0,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "bounds": {
+          "min": [
+            -2.8775000001862647,
+            -1.5575000000745058,
+            -2.109999895095825
+          ],
+          "max": [
+            2.8775000001862647,
+            0.3074999988079071,
+            2.109999895095825
+          ]
+        }
+      },
+      {
+        "id": "topShell",
+        "selectionId": "p1",
+        "kind": "plastic",
+        "follow": null,
+        "progress": 0,
+        "isolation": 0,
+        "target": 0,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "bounds": {
+          "min": [
+            -2.8600000020861627,
+            0.2799999976158142,
+            -2.109999895095825
+          ],
+          "max": [
+            2.9384999996870755,
+            2.234999997615814,
+            2.119999997317791
+          ]
+        }
+      },
+      {
+        "id": "latch",
+        "selectionId": "p3",
+        "kind": "plastic",
+        "follow": "topShell",
+        "progress": 0,
+        "isolation": 0,
+        "target": 0,
+        "position": [
+          0,
+          0.98,
+          2.1
+        ],
+        "base": [
+          0,
+          0.98,
+          2.1
+        ],
+        "bounds": {
+          "min": [
+            -0.824999988079071,
+            0.6449999916553497,
+            1.5199999988079071
+          ],
+          "max": [
+            0.824999988079071,
+            1.3150000083446503,
+            2.2765000008940697
+          ]
+        }
+      },
+      {
+        "id": "spring",
+        "selectionId": "spring",
+        "kind": "metal",
+        "follow": "topShell",
+        "progress": 0,
+        "isolation": 0,
+        "target": 0,
+        "position": [
+          0.97,
+          1.01,
+          1.97
+        ],
+        "base": [
+          0.97,
+          1.01,
+          1.97
+        ],
+        "bounds": {
+          "min": [
+            0.8631105881929397,
+            0.9023650979995728,
+            1.7421363455057144
+          ],
+          "max": [
+            1.0779999655485153,
+            1.1177741980552673,
+            2.1978468161821363
+          ]
+        }
+      },
+      {
+        "id": "terminalCover",
+        "selectionId": "p4",
+        "kind": "plastic",
+        "follow": null,
+        "progress": 0,
+        "isolation": 0,
+        "target": 0,
+        "position": [
+          0,
+          1.63,
+          -0.48
+        ],
+        "base": [
+          0,
+          1.63,
+          -0.48
+        ],
+        "bounds": {
+          "min": [
+            -1.1849999997019767,
+            1.285000000298023,
+            -1.030000011920929
+          ],
+          "max": [
+            1.1849999997019767,
+            1.9299999991059302,
+            0.07000001192092897
+          ]
+        }
+      },
+      {
+        "id": "pcb",
+        "selectionId": "pcb",
+        "kind": "pcb",
+        "follow": null,
+        "progress": 0,
+        "isolation": 0,
+        "target": 0,
+        "position": [
+          0,
+          1.1,
+          0
+        ],
+        "base": [
+          0,
+          1.1,
+          0
+        ],
+        "bounds": {
+          "min": [
+            -2.430000066757202,
+            1.0649999998509885,
+            -1.5399999618530273
+          ],
+          "max": [
+            2.430000066757202,
+            1.3830000001899898,
+            1.5399999618530273
+          ]
+        }
+      },
+      {
+        "id": "cells",
+        "selectionId": "cells",
+        "kind": "cells",
+        "follow": null,
+        "progress": 0,
+        "isolation": 0,
+        "target": 0,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "bounds": {
+          "min": [
+            -2.4100000262260437,
+            -0.9399999976158145,
+            -1.6680000387132168
+          ],
+          "max": [
+            2.4100000262260437,
+            0.9399999976158145,
+            1.6680000387132168
+          ]
+        }
+      },
+      {
+        "id": "upperHolder",
+        "selectionId": "p2",
+        "kind": "plastic",
+        "follow": null,
+        "progress": 0,
+        "isolation": 0,
+        "target": 0,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "bounds": {
+          "min": [
+            -2.580000001490116,
+            -0.002500007152557382,
+            -1.6299999994039536
+          ],
+          "max": [
+            2.580000001490116,
+            1.0325000004470348,
+            1.6299999994039536
+          ]
+        }
+      },
+      {
+        "id": "lowerHolder",
+        "selectionId": "p2",
+        "kind": "plastic",
+        "follow": null,
+        "progress": 0,
+        "isolation": 0,
+        "target": 0,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "bounds": {
+          "min": [
+            -2.580000001490116,
+            -1.0325000004470348,
+            -1.6299999994039536
+          ],
+          "max": [
+            2.580000001490116,
+            0.002500007152557382,
+            1.6299999994039536
+          ]
+        }
+      },
+      {
+        "id": "busbar",
+        "selectionId": "busbar",
+        "kind": "metal",
+        "follow": null,
+        "progress": 0,
+        "isolation": 0,
+        "target": 0,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "bounds": {
+          "min": [
+            -2.0949999999999998,
+            -0.6100000143051147,
+            -1.7095000001080334
+          ],
+          "max": [
+            2.0949999999999998,
+            0.6100000143051147,
+            1.7095000001080334
+          ]
+        }
+      }
+    ],
+    "Plastic highlights only: p1": [
+      "p1",
+      "p3"
+    ],
+    "Integral rails follow shell translation": [
+      {
+        "name": "rail-0-foot",
+        "parent": "topShell",
+        "position": [
+          -1.75,
+          4.849000001845881,
+          -0.04
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-0-web",
+        "parent": "topShell",
+        "position": [
+          -1.75,
+          5.109000001845881,
+          -0.09
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-0-flange",
+        "parent": "topShell",
+        "position": [
+          -1.75,
+          5.304000001845881,
+          -0.09
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-0-stop-0",
+        "parent": "topShell",
+        "position": [
+          -1.75,
+          5.359000001845881,
+          -1.4
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-0-stop-1",
+        "parent": "topShell",
+        "position": [
+          -1.75,
+          5.359000001845881,
+          -0.04999999999999982
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-0-stop-2",
+        "parent": "topShell",
+        "position": [
+          -1.75,
+          5.359000001845881,
+          1.3000000000000003
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-1-foot",
+        "parent": "topShell",
+        "position": [
+          1.75,
+          4.849000001845881,
+          -0.04
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-1-web",
+        "parent": "topShell",
+        "position": [
+          1.75,
+          5.109000001845881,
+          -0.09
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-1-flange",
+        "parent": "topShell",
+        "position": [
+          1.75,
+          5.304000001845881,
+          -0.09
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-1-stop-0",
+        "parent": "topShell",
+        "position": [
+          1.75,
+          5.359000001845881,
+          -1.4
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-1-stop-1",
+        "parent": "topShell",
+        "position": [
+          1.75,
+          5.359000001845881,
+          -0.04999999999999982
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-1-stop-2",
+        "parent": "topShell",
+        "position": [
+          1.75,
+          5.359000001845881,
+          1.3000000000000003
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      }
+    ],
+    "Plastic highlights only: p2": [
+      "p2"
+    ],
+    "Plastic highlights only: p3": [
+      "p3"
+    ],
+    "p3 highlights fixed integral rails": [
+      {
+        "name": "rail-0-foot",
+        "parent": "topShell",
+        "position": [
+          -1.75,
+          1.66,
+          -0.04
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-0-web",
+        "parent": "topShell",
+        "position": [
+          -1.75,
+          1.92,
+          -0.09
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-0-flange",
+        "parent": "topShell",
+        "position": [
+          -1.75,
+          2.115,
+          -0.09
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-0-stop-0",
+        "parent": "topShell",
+        "position": [
+          -1.75,
+          2.17,
+          -1.4
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-0-stop-1",
+        "parent": "topShell",
+        "position": [
+          -1.75,
+          2.17,
+          -0.04999999999999982
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-0-stop-2",
+        "parent": "topShell",
+        "position": [
+          -1.75,
+          2.17,
+          1.3000000000000003
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-1-foot",
+        "parent": "topShell",
+        "position": [
+          1.75,
+          1.66,
+          -0.04
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-1-web",
+        "parent": "topShell",
+        "position": [
+          1.75,
+          1.92,
+          -0.09
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-1-flange",
+        "parent": "topShell",
+        "position": [
+          1.75,
+          2.115,
+          -0.09
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-1-stop-0",
+        "parent": "topShell",
+        "position": [
+          1.75,
+          2.17,
+          -1.4
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-1-stop-1",
+        "parent": "topShell",
+        "position": [
+          1.75,
+          2.17,
+          -0.04999999999999982
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "rail-1-stop-2",
+        "parent": "topShell",
+        "position": [
+          1.75,
+          2.17,
+          1.3000000000000003
+        ],
+        "highlightIds": [
+          "p1",
+          "p3"
+        ],
+        "highlighted": true
+      }
+    ],
+    "Plastic highlights only: p4": [
+      "p4"
+    ],
+    "full": {
+      "ready": true,
+      "selected": "p1",
+      "explosion": 1,
+      "labels": true,
+      "autoRotate": false,
+      "parts": [
+        {
+          "id": "bottomShell",
+          "selectionId": "p1",
+          "kind": "plastic",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            -3.86649999938719,
+            0
+          ],
+          "base": [
+            0,
+            0,
+            0
+          ],
+          "bounds": {
+            "min": [
+              -2.8775000001862647,
+              -5.423999999461696,
+              -2.109999895095825
+            ],
+            "max": [
+              2.8775000001862647,
+              -3.559000000579283,
+              2.109999895095825
+            ]
+          }
+        },
+        {
+          "id": "topShell",
+          "selectionId": "p1",
+          "kind": "plastic",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            3.189000001845881,
+            0
+          ],
+          "base": [
+            0,
+            0,
+            0
+          ],
+          "bounds": {
+            "min": [
+              -2.8600000020861627,
+              3.468999999461695,
+              -2.109999895095825
+            ],
+            "max": [
+              2.9384999996870755,
+              5.423999999461695,
+              2.119999997317791
+            ]
+          }
+        },
+        {
+          "id": "latch",
+          "selectionId": "p3",
+          "kind": "plastic",
+          "follow": "topShell",
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            4.16900000184588,
+            2.1
+          ],
+          "base": [
+            0,
+            0.98,
+            2.1
+          ],
+          "bounds": {
+            "min": [
+              -0.824999988079071,
+              3.83399999350123,
+              1.5199999988079071
+            ],
+            "max": [
+              0.824999988079071,
+              4.504000010190531,
+              2.2765000008940697
+            ]
+          }
+        },
+        {
+          "id": "spring",
+          "selectionId": "spring",
+          "kind": "metal",
+          "follow": "topShell",
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0.97,
+            4.199000001845881,
+            1.97
+          ],
+          "base": [
+            0.97,
+            1.01,
+            1.97
+          ],
+          "bounds": {
+            "min": [
+              0.8631105881929397,
+              4.091365099845453,
+              1.7421363455057144
+            ],
+            "max": [
+              1.0779999655485153,
+              4.306774199901148,
+              2.1978468161821363
+            ]
+          }
+        },
+        {
+          "id": "terminalCover",
+          "selectionId": "p4",
+          "kind": "plastic",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            2.169000000355765,
+            -0.48
+          ],
+          "base": [
+            0,
+            1.63,
+            -0.48
+          ],
+          "bounds": {
+            "min": [
+              -1.1849999997019767,
+              1.824000000653788,
+              -1.030000011920929
+            ],
+            "max": [
+              1.1849999997019767,
+              2.468999999461695,
+              0.07000001192092897
+            ]
+          }
+        },
+        {
+          "id": "pcb",
+          "selectionId": "pcb",
+          "kind": "pcb",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            0.5410000004637983,
+            0
+          ],
+          "base": [
+            0,
+            1.1,
+            0
+          ],
+          "bounds": {
+            "min": [
+              -2.430000066757202,
+              0.5060000003147866,
+              -1.5399999618530273
+            ],
+            "max": [
+              2.430000066757202,
+              0.8240000006537881,
+              1.5399999618530273
+            ]
+          }
+        },
+        {
+          "id": "cells",
+          "selectionId": "cells",
+          "kind": "cells",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            -1.5265000001322482,
+            0
+          ],
+          "base": [
+            0,
+            0,
+            0
+          ],
+          "bounds": {
+            "min": [
+              -2.4100000262260437,
+              -2.4664999977480626,
+              -1.6680000387132168
+            ],
+            "max": [
+              2.4100000262260437,
+              -0.5865000025164336,
+              1.6680000387132168
+            ]
+          }
+        },
+        {
+          "id": "upperHolder",
+          "selectionId": "p2",
+          "kind": "plastic",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            -1.5265000001322482,
+            0
+          ],
+          "base": [
+            0,
+            0,
+            0
+          ],
+          "bounds": {
+            "min": [
+              -2.580000001490116,
+              -1.5290000072848056,
+              -1.6299999994039536
+            ],
+            "max": [
+              2.580000001490116,
+              -0.49399999968521335,
+              1.6299999994039536
+            ]
+          }
+        },
+        {
+          "id": "lowerHolder",
+          "selectionId": "p2",
+          "kind": "plastic",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            -1.5265000001322482,
+            0
+          ],
+          "base": [
+            0,
+            0,
+            0
+          ],
+          "bounds": {
+            "min": [
+              -2.580000001490116,
+              -2.559000000579283,
+              -1.6299999994039536
+            ],
+            "max": [
+              2.580000001490116,
+              -1.5239999929796908,
+              1.6299999994039536
+            ]
+          }
+        },
+        {
+          "id": "busbar",
+          "selectionId": "busbar",
+          "kind": "metal",
+          "follow": null,
+          "progress": 1,
+          "isolation": 0,
+          "target": 1,
+          "position": [
+            0,
+            -1.5265000001322482,
+            0
+          ],
+          "base": [
+            0,
+            0,
+            0
+          ],
+          "bounds": {
+            "min": [
+              -2.0949999999999998,
+              -2.136500014437363,
+              -1.7095000001080334
+            ],
+            "max": [
+              2.0949999999999998,
+              -0.9164999858271334,
+              1.7095000001080334
+            ]
+          }
+        }
+      ],
+      "camera": [
+        7.8,
+        5.799999999999997,
+        17.5
+      ],
+      "highlightedIds": [
+        "p1",
+        "p3"
+      ],
+      "highlightedNames": [
+        "lowerFloor",
+        "lowerCupWalls",
+        "lowerMatingLip",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "upperSideWall",
+        "upperSideWall",
+        "",
+        "",
+        "",
+        "",
+        "upperDeckWithTerminalOpening",
+        "",
+        "",
+        "rail-0-foot",
+        "rail-0-web",
+        "rail-0-flange",
+        "rail-0-stop-0",
+        "rail-0-stop-1",
+        "rail-0-stop-2",
+        "rail-1-foot",
+        "rail-1-web",
+        "rail-1-flange",
+        "rail-1-stop-0",
+        "rail-1-stop-1",
+        "rail-1-stop-2",
+        "indicatorBezel",
+        "indicatorButton"
+      ],
+      "rails": [
+        {
+          "name": "rail-0-foot",
+          "parent": "topShell",
+          "position": [
+            -1.75,
+            4.849000001845881,
+            -0.04
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-0-web",
+          "parent": "topShell",
+          "position": [
+            -1.75,
+            5.109000001845881,
+            -0.09
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-0-flange",
+          "parent": "topShell",
+          "position": [
+            -1.75,
+            5.304000001845881,
+            -0.09
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-0-stop-0",
+          "parent": "topShell",
+          "position": [
+            -1.75,
+            5.359000001845881,
+            -1.4
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-0-stop-1",
+          "parent": "topShell",
+          "position": [
+            -1.75,
+            5.359000001845881,
+            -0.04999999999999982
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-0-stop-2",
+          "parent": "topShell",
+          "position": [
+            -1.75,
+            5.359000001845881,
+            1.3000000000000003
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-1-foot",
+          "parent": "topShell",
+          "position": [
+            1.75,
+            4.849000001845881,
+            -0.04
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-1-web",
+          "parent": "topShell",
+          "position": [
+            1.75,
+            5.109000001845881,
+            -0.09
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-1-flange",
+          "parent": "topShell",
+          "position": [
+            1.75,
+            5.304000001845881,
+            -0.09
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-1-stop-0",
+          "parent": "topShell",
+          "position": [
+            1.75,
+            5.359000001845881,
+            -1.4
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-1-stop-1",
+          "parent": "topShell",
+          "position": [
+            1.75,
+            5.359000001845881,
+            -0.04999999999999982
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "rail-1-stop-2",
+          "parent": "topShell",
+          "position": [
+            1.75,
+            5.359000001845881,
+            1.3000000000000003
+          ],
+          "highlightIds": [
+            "p1",
+            "p3"
+          ],
+          "highlighted": true
+        }
+      ],
+      "cellGeometry": {
+        "count": 10,
+        "radius": 0.45,
+        "height": 3.25,
+        "positions": [
+          [
+            -1.9600000381469727,
+            -0.49000000953674316,
+            0
+          ],
+          [
+            -0.9800000190734863,
+            -0.49000000953674316,
+            0
+          ],
+          [
+            0,
+            -0.49000000953674316,
+            0
+          ],
+          [
+            0.9800000190734863,
+            -0.49000000953674316,
+            0
+          ],
+          [
+            1.9600000381469727,
+            -0.49000000953674316,
+            0
+          ],
+          [
+            -1.9600000381469727,
+            0.49000000953674316,
+            0
+          ],
+          [
+            -0.9800000190734863,
+            0.49000000953674316,
+            0
+          ],
+          [
+            0,
+            0.49000000953674316,
+            0
+          ],
+          [
+            0.9800000190734863,
+            0.49000000953674316,
+            0
+          ],
+          [
+            1.9600000381469727,
+            0.49000000953674316,
+            0
+          ]
+        ],
+        "partId": "cells",
+        "kind": "cells",
+        "highlightable": false,
+        "cellCount": 10,
+        "diameterMm": 18,
+        "lengthMm": 65,
+        "mmPerSceneUnit": 20
+      },
+      "layerBounds": [
+        {
+          "ids": [
+            "topShell"
+          ],
+          "min": [
+            -2.8600000020861627,
+            3.468999999461695,
+            -2.109999895095825
+          ],
+          "max": [
+            2.9384999996870755,
+            5.423999999461695,
+            2.119999997317791
+          ]
+        },
+        {
+          "ids": [
+            "terminalCover"
+          ],
+          "min": [
+            -1.1849999997019767,
+            1.824000000653788,
+            -1.030000011920929
+          ],
+          "max": [
+            1.1849999997019767,
+            2.468999999461695,
+            0.07000001192092897
+          ]
+        },
+        {
+          "ids": [
+            "pcb"
+          ],
+          "min": [
+            -2.430000066757202,
+            0.5060000003147866,
+            -1.5399999618530273
+          ],
+          "max": [
+            2.430000066757202,
+            0.8240000006537881,
+            1.5399999618530273
+          ]
+        },
+        {
+          "ids": [
+            "upperHolder",
+            "lowerHolder",
+            "cells",
+            "busbar"
+          ],
+          "min": [
+            -2.580000001490116,
+            -2.559000000579283,
+            -1.7095000001080334
+          ],
+          "max": [
+            2.580000001490116,
+            -0.49399999968521335,
+            1.7095000001080334
+          ]
+        },
+        {
+          "ids": [
+            "bottomShell"
+          ],
+          "min": [
+            -2.8775000001862647,
+            -5.423999999461696,
+            -2.109999895095825
+          ],
+          "max": [
+            2.8775000001862647,
+            -3.559000000579283,
+            2.109999895095825
+          ]
+        }
+      ],
+      "layerGaps": [
+        1,
+        0.9999999999999999,
+        1,
+        1
+      ],
+      "assembly": {
+        "cellCount": 10,
+        "cellRows": 2,
+        "cellsPerRow": 5,
+        "cellDiameterMm": 18,
+        "cellLengthMm": 65,
+        "explodedLayerGap": 1
+      },
+      "pickPoints": {
+        "p1": [
+          {
+            "name": "lowerFloor",
+            "x": 533,
+            "y": 719.7176341961564
+          },
+          {
+            "name": "lowerCupWalls",
+            "x": 533,
+            "y": 688.9231339733419
+          },
+          {
+            "name": "lowerMatingLip",
+            "x": 533,
+            "y": 660.6833246914209
+          },
+          {
+            "name": "",
+            "x": 447.3203899701922,
+            "y": 705.8682810591014
+          },
+          {
+            "name": "",
+            "x": 472.40820925339233,
+            "y": 685.5617844941728
+          },
+          {
+            "name": "",
+            "x": 462.6063870514842,
+            "y": 694.6289112876847
+          },
+          {
+            "name": "",
+            "x": 452.3900561221523,
+            "y": 704.0794773143464
+          },
+          {
+            "name": "",
+            "x": 441.73235478366024,
+            "y": 713.9383308390185
+          },
+          {
+            "name": "",
+            "x": 430.6040491310489,
+            "y": 724.2325145398349
+          },
+          {
+            "name": "",
+            "x": 418.97326525266715,
+            "y": 734.9915132199675
+          },
+          {
+            "name": "",
+            "x": 626.3809485075486,
+            "y": 747.0529620126457
+          },
+          {
+            "name": "",
+            "x": 643.6638744405105,
+            "y": 722.7374334580634
+          },
+          {
+            "name": "",
+            "x": 636.8651329651145,
+            "y": 733.428273171144
+          },
+          {
+            "name": "",
+            "x": 629.7533467480797,
+            "y": 744.6113673945623
+          }
+        ],
+        "p2": [
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 485.23218168153653,
+            "y": 531.067285792635
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 520.5322666554072,
+            "y": 535.9951908530762
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 557.0817510252601,
+            "y": 541.0975125363254
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 594.9481610278593,
+            "y": 546.3836775302818
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 634.2039782914975,
+            "y": 551.8638042973544
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 426.740282015514,
+            "y": 567.059749692963
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 465.4629290250231,
+            "y": 573.3327525026262
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 505.7371543482006,
+            "y": 579.8571083543131
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 547.6581198271466,
+            "y": 586.6482333042333
+          },
+          {
+            "name": "upperHolder-cellCollar",
+            "x": 591.328931711032,
+            "y": 593.722830388999
+          },
+          {
+            "name": "",
+            "x": 438.67020925751586,
+            "y": 545.1302023912956
+          },
+          {
+            "name": "",
+            "x": 468.4678568020809,
+            "y": 527.6517188945627
+          },
+          {
+            "name": "",
+            "x": 404.9043724902381,
+            "y": 564.9363169447208
+          },
+          {
+            "name": "",
+            "x": 636.7501640287428,
+            "y": 574.8357887314884
+          }
+        ],
+        "p3": [
+          {
+            "name": "rail-0-foot",
+            "x": 460.4522981714432,
+            "y": 293.2386689616387
+          },
+          {
+            "name": "rail-0-web",
+            "x": 461.2683380772122,
+            "y": 280.83647084074147
+          },
+          {
+            "name": "rail-0-flange",
+            "x": 461.05771960185285,
+            "y": 271.5487189685866
+          },
+          {
+            "name": "rail-0-stop-0",
+            "x": 488.2505541997078,
+            "y": 267.72505258355216
+          },
+          {
+            "name": "rail-0-stop-1",
+            "x": 460.1147814318899,
+            "y": 268.9579329657811
+          },
+          {
+            "name": "rail-0-stop-2",
+            "x": 428.29179919193314,
+            "y": 270.3523830429632
+          },
+          {
+            "name": "rail-1-foot",
+            "x": 612.661270653214,
+            "y": 296.697081227772
+          },
+          {
+            "name": "rail-1-web",
+            "x": 613.8077245856466,
+            "y": 283.3579207920968
+          },
+          {
+            "name": "rail-1-flange",
+            "x": 614.0630909743403,
+            "y": 273.3696670749085
+          },
+          {
+            "name": "rail-1-stop-0",
+            "x": 634.116659482348,
+            "y": 269.163474312042
+          },
+          {
+            "name": "rail-1-stop-1",
+            "x": 613.4849053475594,
+            "y": 270.5858909877975
+          },
+          {
+            "name": "rail-1-stop-2",
+            "x": 589.9278494316335,
+            "y": 272.20998697826
+          },
+          {
+            "name": "pressLatchButton",
+            "x": 488.35766737979696,
+            "y": 336.6610301981547
+          },
+          {
+            "name": "latchGripRib",
+            "x": 484.8416873605785,
+            "y": 346.4325855275245
+          }
+        ],
+        "p4": [
+          {
+            "name": "terminalCoverFloor",
+            "x": 541.7067485795124,
+            "y": 430.2104846502335
+          },
+          {
+            "name": "terminalCoverBack",
+            "x": 550.1246122801708,
+            "y": 413.9059498220656
+          },
+          {
+            "name": "",
+            "x": 498.74458542480255,
+            "y": 414.7959736300511
+          },
+          {
+            "name": "",
+            "x": 586.5858728676318,
+            "y": 421.9796213335054
+          },
+          {
+            "name": "",
+            "x": 513.3677803005284,
+            "y": 416.07363185013514
+          },
+          {
+            "name": "",
+            "x": 512.5298933042648,
+            "y": 403.6562125421898
+          },
+          {
+            "name": "",
+            "x": 532.6660173929505,
+            "y": 417.6526056393706
+          },
+          {
+            "name": "",
+            "x": 531.936041363351,
+            "y": 405.1275314644914
+          },
+          {
+            "name": "",
+            "x": 552.3295800870985,
+            "y": 419.2614702184694
+          },
+          {
+            "name": "",
+            "x": 551.7117835180854,
+            "y": 406.62687195938145
+          },
+          {
+            "name": "",
+            "x": 572.3689412146992,
+            "y": 420.90108247019845
+          },
+          {
+            "name": "",
+            "x": 571.8677797732299,
+            "y": 408.1550422380859
+          },
+          {
+            "name": "",
+            "x": 495.6302489551798,
+            "y": 416.6269146028835
+          },
+          {
+            "name": "",
+            "x": 588.4796417084499,
+            "y": 424.3150316058122
+          }
+        ],
+        "cells": [],
+        "busbar": [
+          {
+            "name": "nickelCellBridge",
+            "x": 507.3670335276645,
+            "y": 567.2466289859693
+          },
+          {
+            "name": "nickelCellBridge",
+            "x": 578.9690437960762,
+            "y": 578.3968243702116
+          },
+          {
+            "name": "nickelCellBridge",
+            "x": 542.6775652388874,
+            "y": 535.6443909396988
+          },
+          {
+            "name": "nickelCellBridge",
+            "x": 617.7965770073134,
+            "y": 546.0071591380017
+          },
+          {
+            "name": "nickelRowBridge",
+            "x": 489.94703812217637,
+            "y": 546.5675023790025
+          },
+          {
+            "name": "",
+            "x": 488.08506819666115,
+            "y": 563.9920884363303
+          },
+          {
+            "name": "",
+            "x": 492.9423511618246,
+            "y": 564.7478851511905
+          },
+          {
+            "name": "",
+            "x": 522.580585946918,
+            "y": 569.3596157515047
+          },
+          {
+            "name": "",
+            "x": 527.6043168909663,
+            "y": 570.1413118913189
+          },
+          {
+            "name": "",
+            "x": 558.2670153458289,
+            "y": 574.912449773782
+          },
+          {
+            "name": "",
+            "x": 563.4658988876689,
+            "y": 575.7213997834983
+          },
+          {
+            "name": "",
+            "x": 595.207111613045,
+            "y": 580.6603552603717
+          },
+          {
+            "name": "",
+            "x": 600.5904700835518,
+            "y": 581.4980097013637
+          },
+          {
+            "name": "",
+            "x": 633.4681179913975,
+            "y": 586.6137953081106
+          }
+        ],
+        "contacts": [
+          {
+            "name": "terminalCopperFoot",
+            "x": 502.5726700576242,
+            "y": 421.88265655482587
+          },
+          {
+            "name": "terminalCopperSpringContact",
+            "x": 499.1153837962539,
+            "y": 413.26472076686446
+          },
+          {
+            "name": "terminalCopperLip",
+            "x": 495.8990763642622,
+            "y": 409.6815772074424
+          },
+          {
+            "name": "terminalCopperSpringContact",
+            "x": 507.22815322117174,
+            "y": 413.9219835524567
+          },
+          {
+            "name": "terminalCopperLip",
+            "x": 502.7876637525786,
+            "y": 410.22844607439526
+          },
+          {
+            "name": "terminalCopperFoot",
+            "x": 521.6997974823203,
+            "y": 423.5101519481344
+          },
+          {
+            "name": "terminalCopperSpringContact",
+            "x": 519.4143511701827,
+            "y": 414.9092585494689
+          },
+          {
+            "name": "terminalCopperLip",
+            "x": 516.1864656361815,
+            "y": 411.2921456678764
+          },
+          {
+            "name": "terminalCopperSpringContact",
+            "x": 525.2306188246695,
+            "y": 415.3804683275499
+          },
+          {
+            "name": "terminalCopperLip",
+            "x": 521.1260285777815,
+            "y": 411.6842860352465
+          },
+          {
+            "name": "terminalCopperFoot",
+            "x": 541.1876806601515,
+            "y": 425.16834344720417
+          },
+          {
+            "name": "terminalCopperSpringContact",
+            "x": 538.8756491572735,
+            "y": 416.4859318476092
+          },
+          {
+            "name": "terminalCopperLip",
+            "x": 535.8234565403185,
+            "y": 412.85108052066244
+          },
+          {
+            "name": "terminalCopperSpringContact",
+            "x": 544.8022632115132,
+            "y": 416.9660814313575
+          }
+        ],
+        "pcb": [
+          {
+            "name": "protectionCircuitBoard",
+            "x": 533,
+            "y": 492.89201186460457
+          },
+          {
+            "name": "",
+            "x": 472.59527541852657,
+            "y": 468.6895099652358
+          },
+          {
+            "name": "",
+            "x": 472.5936747984555,
+            "y": 468.6106687616731
+          },
+          {
+            "name": "",
+            "x": 416.7673901945726,
+            "y": 494.7656236847247
+          },
+          {
+            "name": "",
+            "x": 416.76394683356966,
+            "y": 494.67825264806305
+          },
+          {
+            "name": "",
+            "x": 645.897379309148,
+            "y": 487.67554749884636
+          },
+          {
+            "name": "",
+            "x": 645.9006278918724,
+            "y": 487.5904795834613
+          },
+          {
+            "name": "",
+            "x": 607.0837105333575,
+            "y": 518.739059541097
+          },
+          {
+            "name": "",
+            "x": 607.086118189711,
+            "y": 518.6439902950655
+          },
+          {
+            "name": "",
+            "x": 476.25538883275715,
+            "y": 469.6411379163186
+          },
+          {
+            "name": "",
+            "x": 476.3286123521948,
+            "y": 469.13271198235054
+          },
+          {
+            "name": "",
+            "x": 481.4055619773056,
+            "y": 469.6890009210897
+          },
+          {
+            "name": "",
+            "x": 486.50808205242276,
+            "y": 470.24809165215436
+          },
+          {
+            "name": "",
+            "x": 465.92368913412736,
+            "y": 474.04112081430725
+          }
+        ],
+        "spring": [
+          {
+            "name": "latchCompressionSpring",
+            "x": 537.4840362544992,
+            "y": 336.44941648731265
+          }
+        ],
+        "leds": [
+          {
+            "name": "indicator-0",
+            "x": 677.5585118427106,
+            "y": 331.64196694961
+          },
+          {
+            "name": "indicator-1",
+            "x": 673.2934186890941,
+            "y": 332.97715717061766
+          },
+          {
+            "name": "indicator-2",
+            "x": 668.8904890407548,
+            "y": 334.3554971970864
+          },
+          {
+            "name": "indicator-3",
+            "x": 664.3429313912487,
+            "y": 335.7791131145817
+          }
+        ],
+        "fasteners": [
+          {
+            "name": "",
+            "x": 472.01171348726507,
+            "y": 618.0246441905052
+          },
+          {
+            "name": "",
+            "x": 472.0079809055955,
+            "y": 617.8516884226847
+          },
+          {
+            "name": "",
+            "x": 398.90282048432124,
+            "y": 675.1750371574041
+          },
+          {
+            "name": "",
+            "x": 398.89334696936595,
+            "y": 674.9794272380205
+          },
+          {
+            "name": "",
+            "x": 659.998641879185,
+            "y": 652.5450901375086
+          },
+          {
+            "name": "",
+            "x": 660.0071389333648,
+            "y": 652.3583215788649
+          },
+          {
+            "name": "",
+            "x": 611.0849062698643,
+            "y": 721.8428691408883
+          },
+          {
+            "name": "",
+            "x": 611.0910249548259,
+            "y": 721.6295606580072
+          },
+          {
+            "name": "",
+            "x": 464.6117145315087,
+            "y": 292.21709834494027
+          },
+          {
+            "name": "",
+            "x": 464.5921081028812,
+            "y": 291.31349782445716
+          },
+          {
+            "name": "",
+            "x": 464.5921081028812,
+            "y": 291.31349782445716
+          },
+          {
+            "name": "",
+            "x": 380.3190321006333,
+            "y": 300.0199039596025
+          },
+          {
+            "name": "",
+            "x": 380.2675886729491,
+            "y": 298.9605814754673
+          },
+          {
+            "name": "",
+            "x": 380.2675886729491,
+            "y": 298.9605814754673
+          }
+        ]
+      },
+      "meshCounts": {
+        "p1": 48,
+        "p2": 44,
+        "p3": 17,
+        "p4": 14,
+        "cells": 7,
+        "busbar": 50,
+        "contacts": 25,
+        "pcb": 219,
+        "spring": 1,
+        "leds": 4,
+        "fasteners": 20
+      },
+      "materials": [
+        {
+          "kind": "plastic",
+          "color": "141719",
+          "emissive": "147bd4",
+          "intensity": 0.055,
+          "roughness": 0.67,
+          "metalness": 0
+        },
+        {
+          "kind": "metal",
+          "color": "c57d43",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.26,
+          "metalness": 0.88
+        },
+        {
+          "kind": "metal",
+          "color": "454b52",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.42,
+          "metalness": 0.78
+        },
+        {
+          "kind": "metal",
+          "color": "b6bec6",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.93
+        },
+        {
+          "kind": "plastic",
+          "color": "141719",
+          "emissive": "147bd4",
+          "intensity": 0.055,
+          "roughness": 0.67,
+          "metalness": 0
+        },
+        {
+          "kind": "led",
+          "color": "35da6a",
+          "emissive": "23d75b",
+          "intensity": 0.65,
+          "roughness": 0.3,
+          "metalness": 0.05
+        },
+        {
+          "kind": "plastic",
+          "color": "008be8",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.37,
+          "metalness": 0
+        },
+        {
+          "kind": "metal",
+          "color": "b6bec6",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.93
+        },
+        {
+          "kind": "plastic",
+          "color": "008be8",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.37,
+          "metalness": 0
+        },
+        {
+          "kind": "metal",
+          "color": "c57d43",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.26,
+          "metalness": 0.88
+        },
+        {
+          "kind": "pcb",
+          "color": "073c27",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.72,
+          "metalness": 0.06
+        },
+        {
+          "kind": "metal",
+          "color": "c57d43",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.26,
+          "metalness": 0.88
+        },
+        {
+          "kind": "pcb",
+          "color": "151b1c",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.62,
+          "metalness": 0.06
+        },
+        {
+          "kind": "metal",
+          "color": "c3c8cd",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.91
+        },
+        {
+          "kind": "pcb",
+          "color": "b5ad83",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.62,
+          "metalness": 0.06
+        },
+        {
+          "kind": "pcb",
+          "color": "527956",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.72,
+          "metalness": 0.06
+        },
+        {
+          "kind": "metal",
+          "color": "b6bec6",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.93
+        },
+        {
+          "kind": "cells",
+          "color": "bec4cb",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.25,
+          "metalness": 0.88
+        },
+        {
+          "kind": "metal",
+          "color": "c3c8cd",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.91
+        },
+        {
+          "kind": "metal",
+          "color": "454b52",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.42,
+          "metalness": 0.78
+        },
+        {
+          "kind": "metal",
+          "color": "b6bec6",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.93
+        },
+        {
+          "kind": "plastic",
+          "color": "008be8",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.37,
+          "metalness": 0
+        },
+        {
+          "kind": "metal",
+          "color": "c3c8cd",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.91
+        },
+        {
+          "kind": "metal",
+          "color": "b6bec6",
+          "emissive": "000000",
+          "intensity": 1,
+          "roughness": 0.28,
+          "metalness": 0.93
+        }
+      ]
+    },
+    "Four equal positive exploded layer clearances": [
+      1,
+      0.9999999999999999,
+      1,
+      1
+    ],
+    "Mobile has no horizontal overflow": {
+      "body": 390,
+      "width": 390
+    },
+    "Disclaimer below canvas: mobile": {
+      "d": {
+        "x": 0,
+        "y": 868,
+        "width": 390,
+        "height": 21
+      },
+      "c": {
+        "x": 0,
+        "y": 278,
+        "width": 390,
+        "height": 434
+      },
+      "s": {
+        "x": 0,
+        "y": 66,
+        "width": 390,
+        "height": 830
+      }
+    },
+    "Offline has zero HTTP HTTPS WebSocket requests": [],
+    "No browser errors": {
+      "pageErrors": [],
+      "consoleErrors": []
+    }
+  }
+}

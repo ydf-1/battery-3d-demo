@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { applySurfaceFinishes } from '../shared/materials.js';
 
 // Geometry only. No labels, logos, model names, decals or printed text.
 export function createBattery() {
@@ -110,5 +111,6 @@ export function createBattery() {
 
   const clones=new Map();
   root.traverse(o=>{if(!o.isMesh)return;const key=o.userData.partId+':'+o.material.uuid;if(!clones.has(key))clones.set(key,o.material.clone());o.material=clones.get(key);o.userData.highlightable=o.userData.kind==='plastic' && /^p[1-4]$/.test(o.userData.partId);});
+  applySurfaceFinishes(root);
   return {root,parts};
 }

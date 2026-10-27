@@ -1,0 +1,21 @@
+{
+  "result": "passed",
+  "tag": "v1.1",
+  "commit": "36db03d0dc768a6b221031118a6fbe89cbc48e64",
+  "message": "v1.1 两轮车部件对齐手册",
+  "identicalFiles": 11,
+  "files": [
+    "README.md",
+    "THREE-LICENSE.txt",
+    "build.mjs",
+    "dist/app.js",
+    "dist/data.js",
+    "dist/index.html",
+    "dist/index.template.html",
+    "dist/model.js",
+    "dist/style.css",
+    "offline-check.mjs",
+    "package.json"
+  ],
+  "sourceZipSha256": "28b51ce1e1e0ff963e7a0f55a0eda9e74955d0c8eca7c28c4f02a5a76b9c98a2"
+}

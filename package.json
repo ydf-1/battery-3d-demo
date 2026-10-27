@@ -1,8 +1,9 @@
 {
   "name": "two-wheeler-battery-explorer",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
+  "engines": { "node": ">=22" },
   "scripts": { "build": "node build.mjs" },
   "dependencies": { "three": "0.180.0" },
   "devDependencies": { "esbuild": "0.25.11" }

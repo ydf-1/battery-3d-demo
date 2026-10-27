@@ -15,7 +15,7 @@ const browser = await chromium.launch({
   executablePath: process.env.CHROME_EXECUTABLE_PATH || undefined,
   headless: true, args: ['--enable-unsafe-swiftshader', '--use-angle=swiftshader'],
 });
-const context = await browser.newContext({ viewport: { width: 1600, height: 1080 }, deviceScaleFactor: 1, offline: true });
+const context = await browser.newContext({ viewport: { width: 1600, height: 1080 }, deviceScaleFactor: 1, offline: true, reducedMotion: 'reduce' });
 const page = await context.newPage();
 const errors = [], requests = [], checks = [];
 page.on('pageerror', e => errors.push(e.message));

@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { build } from 'esbuild';
+import { assertOfflineHTML } from './offline-check.mjs';
+const site = import.meta.dirname;
+const result = await build({entryPoints:[path.join(site,'dist/app.js')],bundle:true,write:false,format:'iife',target:'es2020',minify:true,legalComments:'inline'});
+const script = result.outputFiles[0].text.replace(/<\/script/gi,'<\\/script');
+const css = fs.readFileSync(path.join(site,'dist/style.css'),'utf8');
+const template = fs.readFileSync(path.join(site,'dist/index.template.html'),'utf8');
+const license = fs.readFileSync(path.join(site,'THREE-LICENSE.txt'),'utf8');
+const html = template.replace('<head>',()=>`<head>\n<!-- Three.js license\n${license}\n-->`).replace('/*__STYLES__*/',()=>css).replace('/*__APP__*/',()=>script);
+assertOfflineHTML(html);
+fs.writeFileSync(path.join(site,'dist/index.html'),html);
+console.log('Built dist/index.html: self-contained, with no network dependencies.');

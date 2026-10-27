@@ -1,3 +1,4 @@
+import { applyStudio } from '../../shared/studio.js';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
@@ -69,7 +70,8 @@ function selectPart(id, move = true) {
   const wasSelected = state.selected === id;
   state.selected = id;
   if (move && state.ready && plasticIds.includes(id)) {
-    const newValue = wasSelected && partTarget(id) > .95 ? 0 : 1;
+    const previous = state.overrides.get(id);
+    const newValue = previous !== undefined ? (previous > .95 ? 0 : 1) : (wasSelected && partTarget(id) > .95 ? 0 : 1);
     if (state.explosion < .38) setExplosion(.38);
     state.overrides.set(id, newValue);
     toast(`${PART_DATA.find(p=>p.id===id).name} · ${newValue ? '已展开' : '已归位'}`);
@@ -271,6 +273,7 @@ function initScene() {
   scene.add(grid);
   const ring = new THREE.Mesh(new THREE.RingGeometry(4.3,4.315,128), new THREE.MeshBasicMaterial({ color:0x8db5dc,transparent:true,opacity:.10,side:THREE.DoubleSide }));
   ring.rotation.x = -Math.PI/2;ring.position.y=-4.87;scene.add(ring);
+  applyStudio(scene,renderer,root,-4.88);
   controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true; controls.dampingFactor = .075;
   controls.minDistance = 7; controls.maxDistance = 80;
@@ -283,7 +286,7 @@ function initScene() {
   composer.renderTarget2.samples = 4;
   composer.addPass(new RenderPass(scene,camera));
   outline = new OutlinePass(new THREE.Vector2(1,1), scene, camera);
-  outline.edgeStrength = 2.1; outline.edgeGlow = .55; outline.edgeThickness = 1.2;
+  outline.edgeStrength = 1.9; outline.edgeGlow = .32; outline.edgeThickness = 1.1;
   outline.visibleEdgeColor.set(0x58bdff); outline.hiddenEdgeColor.set(0x000000);
   outline.pulsePeriod = reducedMotion ? 0 : 4;
   composer.addPass(outline);composer.addPass(new OutputPass());
