@@ -1,4 +1,5 @@
 import { applyStudio } from '../../shared/studio.js';
+import { assemblyFrame } from '../../shared/framing.js';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
@@ -11,9 +12,10 @@ import { PART_DATA, PACK_CONFIG } from './data.js';
 
 const $ = id => document.getElementById(id);
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const state = { selected: 'p1', explosion: .42, overrides: new Map(), labels: true, ready: false };
+const state = { selected: 'p1', explosion: .38, overview: true, overrides: new Map(), labels: true, ready: false };
 let scene, camera, renderer, composer, outline, controls, root, parts = [], materials = new Map();
 let displayedExplosion = state.explosion;
+let renderDirty = true, renderedFrames = 0;
 let toastTimer, resetTween = null, frame = 0, disposed = false, lastTime = 0;
 const viewport = $('viewport');
 const svg = id => `<svg aria-hidden="true"><use href="#i-${id}"/></svg>`;
@@ -33,9 +35,15 @@ function toast(message) {
   toastTimer = setTimeout(() => $('toast').classList.remove('show'), 2200);
 }
 function partTarget(id) { return state.overrides.get(id) ?? state.explosion; }
-function motionTarget(part, progress = displayedExplosion) {
+function motionTarget(part, progress = displayedExplosion, staged = false) {
+  if(state.overview) {
+    if(staged && part.id==='enclosure' && parts.some(p=>p.phase==='inside' && p.progress>.001))return 1;
+    return ['door','display'].includes(part.id)?1:0;
+  }
+  if(state.keepShellClosed && part.id==='enclosure')return 0;
   if (part.phase === 'fixed') return 0;
   if (part.phase === 'outside') return THREE.MathUtils.smoothstep(progress, 0, .32);
+  if(staged && parts.some(p=>p.phase==='outside' && p.progress<.995))return 0;
   const override = state.overrides.get(part.selectionId);
   if (override !== undefined) return override * THREE.MathUtils.smoothstep(progress, .32, .37);
   return THREE.MathUtils.smoothstep(progress, .38, 1);
@@ -61,6 +69,7 @@ function updateDetail() {
   for (const [id, label] of labels) label.classList.toggle('selected', id === data.id);
 }
 function updateOutline(){
+  renderDirty = true;
   if(!outline)return;
   const selected=PART_DATA.find(p=>p.id===state.selected);
   outline.selectedObjects=selected.kind==='plastic'?(selectionMeshes.get(state.selected)||[]).filter(m=>m.userData.highlightable):[];
@@ -72,8 +81,9 @@ function selectPart(id, move = true) {
   if (move && state.ready && plasticIds.includes(id)) {
     const previous = state.overrides.get(id);
     const newValue = previous !== undefined ? (previous > .95 ? 0 : 1) : (wasSelected && partTarget(id) > .95 ? 0 : 1);
-    if (state.explosion < .38) setExplosion(.38);
+    if (state.overview || state.explosion < .38) setExplosion(.38);
     state.overrides.set(id, newValue);
+    frameAssembly();
     toast(`${PART_DATA.find(p=>p.id===id).name} · ${newValue ? '已展开' : '已归位'}`);
     $('scene-state').textContent = '局部拆解';
   }
@@ -106,7 +116,7 @@ for(const item of PACK_CONFIG){
   const metric=document.createElement('div'),text=document.createElement('strong');text.textContent=item.value;metric.append(text);$('hero-specs').append(metric);
 }
 updateDetail();
-setExplosion(state.explosion);
+setExplosion(state.explosion, true);
 
 function showTab(tab) {
   for (const name of ['components', 'specs']) {
@@ -130,22 +140,31 @@ $('close-guide').addEventListener('click', () => $('guide').close());
 $('start-explore').addEventListener('click', () => { $('guide').close(); viewport.focus({ preventScroll: true }); });
 $('guide').addEventListener('click', e => { if(e.target === $('guide')) { const r = $('guide').getBoundingClientRect(); if(e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) $('guide').close(); }});
 $('retry').addEventListener('click', () => location.reload());
-document.querySelector('.brand').addEventListener('click', e => { e.preventDefault(); setExplosion(.42); resetView(); selectPart('p1', false); });
+document.querySelector('.brand').addEventListener('click', e => { e.preventDefault(); showOverview(); selectPart('p1', false); });
 
-function setExplosion(value) {
+function setExplosion(value, overview = false) {
+  // From overview, the enclosure is already assembled. Closing the front must
+  // not send that enclosure through the global opening phase first.
+  state.keepShellClosed = value===0 && (state.overview || state.keepShellClosed) && (parts.find(p=>p.id==='enclosure')?.progress??0)<.001;
+  state.overview = overview;
   state.explosion = THREE.MathUtils.clamp(value, 0, 1);
   state.overrides.clear();
   const pct = Math.round(state.explosion * 100);
   $('explosion').value = String(pct);
-  $('explosion-output').textContent = pct===0?'已组装':pct===100?'已拆解':'展开中';
+  $('explosion-output').textContent = overview?'结构总览':pct===0?'已组装':pct===100?'已拆解':'展开中';
   $('explosion').style.background = `linear-gradient(to right,var(--accent) ${pct}%,#364e64 ${pct}%)`;
-  $('scene-state').textContent = pct === 0 ? '装配视图' : pct === 100 ? '完整拆解' : '拆解视图';
+  $('scene-state').textContent = overview?'结构总览':pct === 0 ? '装配视图' : pct === 100 ? '完整拆解' : '拆解视图';
+  $('overview').classList.toggle('active',overview);
+  $('overview').setAttribute('aria-pressed',String(overview));
   updateDetail();
 }
-$('explosion').addEventListener('input', e => setExplosion(Number(e.target.value) / 100));
-$('explode').addEventListener('click', () => { setExplosion(1); toast('完整拆解'); });
-$('assemble').addEventListener('click', () => { setExplosion(0); toast('部件归位 · 查看完整外观'); });
+$('explosion').addEventListener('input', e => {setExplosion(Number(e.target.value) / 100);frameAssembly();});
+$('explode').addEventListener('click', () => { setExplosion(1); frameAssembly();toast('完整拆解'); });
+$('assemble').addEventListener('click', () => { setExplosion(0); frameAssembly();toast('部件归位 · 查看完整外观'); });
+function showOverview() {setExplosion(.38,true);resetView();}
+$('overview').addEventListener('click',showOverview);
 function toggleLabels() {
+  renderDirty = true;
   state.labels = !state.labels;
   $('toggle-labels').classList.toggle('active', state.labels);
   $('toggle-labels').setAttribute('aria-pressed', String(state.labels));
@@ -177,15 +196,19 @@ $('zoom-in').addEventListener('click', () => zoom(.84));
 $('zoom-out').addEventListener('click', () => zoom(1.19));
 $('reset').addEventListener('click', () => { resetView(); toast('已恢复等轴视角'); });
 for(const button of document.querySelectorAll('[data-view]')) button.addEventListener('click', () => resetView(button.dataset.view));
-function viewPosition(view = 'iso') {
-  const aspect = viewport.clientWidth / Math.max(viewport.clientHeight, 1);
-  const scale = Math.max(1, 1.45 / aspect);
-  return (view === 'front' ? new THREE.Vector3(0, 1.1, 21) : new THREE.Vector3(10, 6.1, 19)).multiplyScalar(scale);
+function fitPose(direction) {
+  return assemblyFrame(root,parts,p=>motionTarget(p,state.explosion),camera,viewport,direction);
+}
+function frameAssembly() {
+  if(!camera||!controls)return;
+  const {position,target}=fitPose(camera.position.clone().sub(controls.target));
+  if(reducedMotion){camera.position.copy(position);controls.target.copy(target);controls.update();}
+  else resetTween={start:performance.now(),from:camera.position.clone(),to:position,fromTarget:controls.target.clone(),target};
 }
 function resetView(view = 'iso', instant = false) {
   if(!camera) return;
   stopAutoRotate();
-  const position = viewPosition(view), target = new THREE.Vector3(0, -.15, .4);
+  const {position,target} = fitPose(view==='front'?new THREE.Vector3(0,0,1):new THREE.Vector3(.70,.40,1));
   for(const button of document.querySelectorAll('[data-view]')) {
     const active = button.dataset.view === view;
     button.classList.toggle('active',active); button.setAttribute('aria-pressed',String(active));
@@ -198,7 +221,7 @@ viewport.addEventListener('keydown', e => {
   if(!state.ready) return;
   const key = e.key.toLowerCase();
   if (['arrowleft','arrowright','arrowup','arrowdown','+','=','-',' ','r','l'].includes(key)) e.preventDefault();
-  if(key === ' ') setExplosion(state.explosion > .5 ? 0 : 1);
+  if(key === ' ') {setExplosion(state.explosion > .5 ? 0 : 1);frameAssembly();}
   if(key === 'r') resetView();
   if(key === 'l') toggleLabels();
   if(key === '+' || key === '=') zoom(.9);
@@ -268,12 +291,12 @@ function initScene() {
   }
   // Sparse reference grid: every line is generated geometry, not an image.
   const grid = new THREE.GridHelper(26,26,0x3c536a,0x293c50);
-  grid.position.y = -4.88;
+  grid.position.y = -5.34;
   grid.material.transparent = true; grid.material.opacity = .12;
   scene.add(grid);
   const ring = new THREE.Mesh(new THREE.RingGeometry(4.3,4.315,128), new THREE.MeshBasicMaterial({ color:0x8db5dc,transparent:true,opacity:.10,side:THREE.DoubleSide }));
-  ring.rotation.x = -Math.PI/2;ring.position.y=-4.87;scene.add(ring);
-  applyStudio(scene,renderer,root,-4.88);
+  ring.rotation.x = -Math.PI/2;ring.position.y=-5.33;scene.add(ring);
+  applyStudio(scene,renderer,root,-5.34);
   controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true; controls.dampingFactor = .075;
   controls.minDistance = 7; controls.maxDistance = 80;
@@ -281,6 +304,7 @@ function initScene() {
   controls.autoRotateSpeed = .65;
   controls.screenSpacePanning = true;
   controls.addEventListener('start', () => { resetTween = null; });
+  controls.addEventListener('change', () => {renderDirty=true;});
   composer = new EffectComposer(renderer);
   composer.renderTarget1.samples = 4;
   composer.renderTarget2.samples = 4;
@@ -288,10 +312,11 @@ function initScene() {
   outline = new OutlinePass(new THREE.Vector2(1,1), scene, camera);
   outline.edgeStrength = 1.9; outline.edgeGlow = .32; outline.edgeThickness = 1.1;
   outline.visibleEdgeColor.set(0x58bdff); outline.hiddenEdgeColor.set(0x000000);
-  outline.pulsePeriod = reducedMotion ? 0 : 4;
+  outline.pulsePeriod = 0;
   composer.addPass(outline);composer.addPass(new OutputPass());
   updateOutline();
   function resize() {
+    renderDirty = true;
     const w = viewport.clientWidth, h = viewport.clientHeight;
     if(w===0 || h===0) return;
     camera.aspect = w/h;camera.updateProjectionMatrix();
@@ -322,9 +347,9 @@ function initScene() {
   // Small read-only snapshot for reproducible interaction checks.
   Object.defineProperty(window,'batteryExplorer',{value:Object.freeze({
     snapshot:({includePickPoints=false}={})=>({
-      ready:state.ready,selected:state.selected,explosion:state.explosion,displayedExplosion,
-      labels:state.labels,autoRotate:controls.autoRotate,
-      parts:parts.map(p=>({id:p.id,selectionId:p.selectionId,kind:p.kind,phase:p.phase,progress:p.progress,target:motionTarget(p),position:p.group.position.toArray(),base:p.base.toArray(),rotationY:p.group.rotation.y})),
+      ready:state.ready,renderedFrames,selected:state.selected,explosion:state.explosion,displayedExplosion,
+      labels:state.labels,autoRotate:controls.autoRotate,overview:state.overview,
+      parts:parts.map(p=>({id:p.id,selectionId:p.selectionId,kind:p.kind,phase:p.phase,progress:p.progress,target:motionTarget(p,displayedExplosion,true),position:p.group.position.toArray(),base:p.base.toArray(),rotationY:p.group.rotation.y})),
       camera:camera.position.toArray(),highlightedIds:[...new Set(outline.selectedObjects.map(o=>o.userData.partId))],
       cellGeometry:{levels:2,shape:'prismatic',count:parts.filter(p=>p.selectionId==='cells').reduce((sum,p)=>sum+p.group.children.filter(o=>/^upperCell\d|^lowerCell\d/.test(o.name)).length,0)},
       meshCounts:Object.fromEntries([...selectionMeshes].map(([id,meshes])=>[id,meshes.length])),
@@ -376,7 +401,7 @@ function bindPicking() {
 }
 
 const projected = new THREE.Vector3();
-const labelOffsets = {p1:[-190,-55],p2:[38,60],p3:[45,-10],p4:[20,-30],cabinet:[30,10],door:[-100,30],display:[-120,-35],pcb:[-150,-25],busbar:[-100,30],cells:[-145,20],contacts:[10,-20],wiring:[20,15]};
+const labelOffsets = {p1:[-65,-50],p2:[45,38],p3:[45,-10],p4:[38,-35],cabinet:[30,10],door:[-100,30],display:[-120,-35],pcb:[-150,-25],busbar:[-100,30],cells:[-145,20],contacts:[10,-20],wiring:[20,15]};
 function updateLabels() {
   if(!state.labels) return;
   const w=viewport.clientWidth,h=viewport.clientHeight;
@@ -392,6 +417,7 @@ function updateLabels() {
     const visible = projected.z > -1 && projected.z < 1 && (data.number || data.id===state.selected) && (displayedExplosion>.32 || data.id===state.selected);
     if(!visible) {label.style.display='none';leader.style.display='none';continue;}
     label.style.display='flex';
+    label.classList.toggle('compact',data.number && data.id!==state.selected);
     let [dx,dy]=labelOffsets[data.id];
     const lw=label.offsetWidth,lh=label.offsetHeight;
     let x=THREE.MathUtils.clamp((projected.x*.5+.5)*w+dx,10,w-lw-10);
@@ -426,8 +452,9 @@ function animate(time) {
   if(state.explosion<.38 && displayedExplosion<.38 && parts.some(p=>p.phase==='inside' && p.progress>.001)) displayedExplosion=.38;
   if(Math.abs(state.explosion-displayedExplosion)<.0001)displayedExplosion=state.explosion;
   for(const part of parts) {
-    const target=motionTarget(part);
-    part.progress = part.phase==='inside' ? part.progress+(target-part.progress)*ease : target;
+    const target=motionTarget(part,displayedExplosion,true);
+    if(part.progress!==target)renderDirty=true;
+    part.progress = part.progress+(target-part.progress)*ease;
     if(Math.abs(target-part.progress)<.0001) part.progress=target;
     part.group.position.copy(part.base).addScaledVector(part.offset,part.progress);
     part.group.rotation.y=(part.rotationY??0)*part.progress;
@@ -447,10 +474,11 @@ function animate(time) {
   }
   controls.update(dt);
   root.updateMatrixWorld(true);
-  // Labels need not run at display refresh; 30Hz keeps text steady and saves layout work.
-  if(Math.floor(time/33)!==Math.floor((time-dt*1000)/33)) updateLabels();
-  renderer.info.reset();
-  composer.render();
+  // Resting models keep their last frame. Orbit damping, part animation and
+  // resizing invalidate it; idle tabs do not continuously redraw WebGL passes.
+  if(renderDirty || controls.autoRotate || resetTween) {
+    updateLabels();renderer.info.reset();composer.render();renderedFrames++;renderDirty=false;
+  }
 }
 
 try { initScene(); } catch(error) { fail(error); }

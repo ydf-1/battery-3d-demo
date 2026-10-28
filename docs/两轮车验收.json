@@ -314,9 +314,9 @@
       },
       "canvas": {
         "x": 0,
-        "y": 246,
+        "y": 241,
         "width": 1066,
-        "height": 558
+        "height": 572
       },
       "stage": {
         "x": 0,
@@ -543,21 +543,21 @@
     "Disclaimer below canvas within stage: mobile": {
       "disclaimer": {
         "x": 0,
-        "y": 868,
+        "y": 728,
         "width": 390,
         "height": 21
       },
       "canvas": {
         "x": 0,
-        "y": 312,
+        "y": 264,
         "width": 390,
-        "height": 400
+        "height": 316
       },
       "stage": {
         "x": 0,
         "y": 66,
         "width": 390,
-        "height": 830
+        "height": 690
       }
     },
     "Zero HTTP HTTPS WebSocket requests during offline interactions": [],

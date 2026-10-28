@@ -23,6 +23,11 @@ try{
   assert.equal(await frame().locator('.reference-note').textContent(),'示意图，仅供参考');
   assert.equal(await frame().locator('.topbar').isVisible(),false);
   const expected=[65,10,null][i],s=await frame().evaluate(()=>window.batteryExplorer.snapshot());if(expected)assert.equal(s.cellGeometry.count,expected);
+  await frame().waitForFunction(()=>{const s=window.batteryExplorer.snapshot();return s.parts.every(p=>Math.abs(p.progress-p.target)<.0001)});
+  await page.waitForTimeout(800);
+  const framesBefore=await frame().evaluate(()=>window.batteryExplorer.snapshot().renderedFrames);
+  await page.waitForTimeout(500);
+  assert.equal(await frame().evaluate(()=>window.batteryExplorer.snapshot().renderedFrames),framesBefore,'静止模型不应持续重绘');
   await shot('成品-'+name);
   await page.locator('#gallery-help').click();assert(await frame().locator('#guide').isVisible());await frame().locator('#close-guide').click();
   await frame().locator('#explode').click();await shot('成品-'+name+'-完整拆解');
@@ -36,6 +41,13 @@ try{
   await shot('成品-手机-'+['两轮车','电动工具','储能柜'][i]);
  }
  checks.push('三套移动视口切换、父子页面无水平溢出');
+ await page.setViewportSize({width:1366,height:768});
+ for(const i of [0,1,2]){
+  await page.locator('[data-model="'+i+'"]').click();await ready();
+  const controls=await frame().locator('#explode').boundingBox();
+  assert(controls.y+controls.height<768,'笔记本视口主操作应在首屏');
+ }
+ checks.push('1366×768笔记本首屏主操作可见；三模型静止后停止WebGL重绘');
  await page.setViewportSize({width:1440,height:1000});await page.locator('[data-model="0"]').focus();await page.keyboard.press('ArrowRight');await ready();assert.equal(await page.locator('[data-model="1"]').getAttribute('aria-selected'),'true');checks.push('键盘切换');
  assert.deepEqual(errors,[]);assert.deepEqual(network,[]);checks.push('整合单文件零外部网络请求、无浏览器错误');
  await fs.writeFile(path.join(root,'docs/成品入口验收.json'),JSON.stringify({result:'passed',checks,errors,network},null,2));console.log(JSON.stringify({result:'passed',checks},null,2));

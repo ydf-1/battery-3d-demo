@@ -1,0 +1,15 @@
+{
+  "result": "passed",
+  "reducedMotion": false,
+  "checks": [
+    "总览转组装只关闭前面板，机柜外壳保持装配位置",
+    "local-open：内部开始运动前，外部壳件已移开",
+    "explode：内部开始运动前，外部壳件已移开",
+    "assemble：内部归位后外壳才归位",
+    "overview：内部归位后外壳才归位",
+    "正常动画结束后停止重绘，浏览器离线且无脚本错误"
+  ],
+  "sampledFrames": 369,
+  "errors": [],
+  "network": []
+}

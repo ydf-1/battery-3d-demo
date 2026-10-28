@@ -58,8 +58,8 @@ export function applySurfaceFinishes(root) {
       if (kind === 'plastic') {
         const dark = brightness < .035;
         material.metalness = 0;
-        material.roughness = dark ? .67 : .37;
-        material.envMapIntensity = dark ? .6 : .45;
+        material.roughness = dark ? .60 : .34;
+        material.envMapIntensity = dark ? .8 : .55;
         material.userData.surfaceFinish = dark ? 'matte-molded' : 'satin-molded';
         texture = maps?.molded; bumpScale = dark ? .0013 : .0007;
       } else if (kind === 'cells') {

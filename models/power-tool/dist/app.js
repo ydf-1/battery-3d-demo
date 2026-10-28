@@ -1,3 +1,4 @@
+import { assemblyFrame } from '../../../shared/framing.js';
 import { applyStudio } from '../../../shared/studio.js';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -14,6 +15,7 @@ const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const state = { selected: 'p1', explosion: 1, overrides: new Map(), labels: true, ready: false };
 let scene, camera, renderer, composer, outline, controls, root, assembly, parts = [], materials = new Map();
 const highlightMeshes=[],materialHighlights=new Map();
+let renderDirty = true, renderedFrames = 0;
 let toastTimer, resetTween = null, frame = 0, disposed = false, lastTime = 0;
 const viewport = $('viewport');
 const svg = id => `<svg aria-hidden="true"><use href="#i-${id}"/></svg>`;
@@ -54,6 +56,7 @@ function updateDetail() {
   for (const [id, label] of labels) label.classList.toggle('selected', id === data.id);
 }
 function updateOutline(){
+  renderDirty = true;
   if(!outline)return;
   const selected=PART_DATA.find(p=>p.id===state.selected);
   outline.selectedObjects=selected.kind==='plastic'?highlightMeshes.filter(m=>(m.userData.highlightIds||[m.userData.partId]).includes(state.selected)):[];
@@ -66,6 +69,7 @@ function selectPart(id, move = true) {
     const previous = state.overrides.get(id);
     const newValue = previous !== undefined ? (previous > .95 ? 0 : 1) : (wasSelected && partTarget(id) > .95 ? 0 : 1);
     state.overrides.set(id, newValue);
+    frameAssembly();
     toast(`${PART_DATA.find(p=>p.id===id).name} · ${newValue ? '已展开' : '已归位'}`);
     $('scene-state').textContent = '局部拆解';
   }
@@ -111,10 +115,11 @@ function setExplosion(value) {
   $('scene-state').textContent = pct === 0 ? '装配视图' : pct === 100 ? '完整拆解' : '拆解视图';
   updateDetail();
 }
-$('explosion').addEventListener('input', e => setExplosion(Number(e.target.value) / 100));
-$('explode').addEventListener('click', () => { setExplosion(1); toast('完整拆解'); });
-$('assemble').addEventListener('click', () => { setExplosion(0); toast('部件归位 · 查看完整外观'); });
+$('explosion').addEventListener('input', e => {setExplosion(Number(e.target.value) / 100);frameAssembly();});
+$('explode').addEventListener('click', () => { setExplosion(1); frameAssembly();toast('完整拆解'); });
+$('assemble').addEventListener('click', () => { setExplosion(0); frameAssembly();toast('部件归位 · 查看完整外观'); });
 function toggleLabels() {
+  renderDirty = true;
   state.labels = !state.labels;
   $('toggle-labels').classList.toggle('active', state.labels);
   $('toggle-labels').setAttribute('aria-pressed', String(state.labels));
@@ -146,15 +151,19 @@ $('zoom-in').addEventListener('click', () => zoom(.84));
 $('zoom-out').addEventListener('click', () => zoom(1.19));
 $('reset').addEventListener('click', () => { resetView(); toast('已恢复等轴视角'); });
 for(const button of document.querySelectorAll('[data-view]')) button.addEventListener('click', () => resetView(button.dataset.view));
-function viewPosition(view = 'iso') {
-  const aspect = viewport.clientWidth / Math.max(viewport.clientHeight, 1);
-  const scale = Math.max(1, .95 / aspect);
-  return (view === 'front' ? new THREE.Vector3(0, .55, 20.5) : new THREE.Vector3(7.8, 5.8, 17.5)).multiplyScalar(scale);
+function fitPose(direction) {
+  return assemblyFrame(root,parts,p=>partTarget(p.selectionId),camera,viewport,direction,p=>state.overrides.get(p.selectionId)===1?1:0);
+}
+function frameAssembly() {
+  if(!camera||!controls)return;
+  const {position,target}=fitPose(camera.position.clone().sub(controls.target));
+  if(reducedMotion){camera.position.copy(position);controls.target.copy(target);controls.update();}
+  else resetTween={start:performance.now(),from:camera.position.clone(),to:position,fromTarget:controls.target.clone(),target};
 }
 function resetView(view = 'iso', instant = false) {
   if(!camera) return;
   stopAutoRotate();
-  const position = viewPosition(view), target = new THREE.Vector3(0, 0, 0);
+  const {position,target}=fitPose(view==='front'?new THREE.Vector3(0,0,1):new THREE.Vector3(7.8, 5.8, 17.5));
   for(const button of document.querySelectorAll('[data-view]')) {
     const active = button.dataset.view === view;
     button.classList.toggle('active',active); button.setAttribute('aria-pressed',String(active));
@@ -167,7 +176,7 @@ viewport.addEventListener('keydown', e => {
   if(!state.ready) return;
   const key = e.key.toLowerCase();
   if (['arrowleft','arrowright','arrowup','arrowdown','+','=','-',' ','r','l'].includes(key)) e.preventDefault();
-  if(key === ' ') setExplosion(state.explosion > .5 ? 0 : 1);
+  if(key === ' ') {setExplosion(state.explosion > .5 ? 0 : 1);frameAssembly();}
   if(key === 'r') resetView();
   if(key === 'l') toggleLabels();
   if(key === '+' || key === '=') zoom(.9);
@@ -256,6 +265,7 @@ function initScene() {
   controls.autoRotateSpeed = .65;
   controls.screenSpacePanning = true;
   controls.addEventListener('start', () => { resetTween = null; });
+  controls.addEventListener('change', () => {renderDirty=true;});
   composer = new EffectComposer(renderer);
   composer.renderTarget1.samples = 4;
   composer.renderTarget2.samples = 4;
@@ -263,10 +273,11 @@ function initScene() {
   outline = new OutlinePass(new THREE.Vector2(1,1), scene, camera);
   outline.edgeStrength = 1.9; outline.edgeGlow = .32; outline.edgeThickness = 1.1;
   outline.visibleEdgeColor.set(0x58bdff); outline.hiddenEdgeColor.set(0x173b57);
-  outline.pulsePeriod = reducedMotion ? 0 : 4;
+  outline.pulsePeriod = 0;
   composer.addPass(outline);composer.addPass(new OutputPass());
   updateOutline();
   function resize() {
+    renderDirty = true;
     const w = viewport.clientWidth, h = viewport.clientHeight;
     if(w===0 || h===0) return;
     camera.aspect = w/h;camera.updateProjectionMatrix();
@@ -345,6 +356,7 @@ function updateLabels() {
     const visible = projected.z > -1 && projected.z < 1 && (data.number || data.id===state.selected) && ((part?.progress??state.explosion)>.08 || data.id===state.selected);
     if(!visible) {label.style.display='none';leader.style.display='none';continue;}
     label.style.display='flex';
+    label.classList.toggle('compact',data.number && data.id!==state.selected);
     let [dx,dy]=labelOffsets[data.id];
     const lw=label.offsetWidth,lh=label.offsetHeight;
     let x=THREE.MathUtils.clamp((projected.x*.5+.5)*w+dx,10,w-lw-10);
@@ -375,11 +387,13 @@ function animate(time) {
   const ease=reducedMotion?1:1-Math.exp(-dt*7);
   for(const part of parts) {
     const target=partTarget(part.selectionId);
+    if(part.progress!==target)renderDirty=true;
     part.progress += (target-part.progress)*ease;
     if(Math.abs(target-part.progress)<.0001) part.progress=target;
     part.group.position.copy(part.base).addScaledVector(part.offset,part.progress);
     if(part.isolationOffset) {
       const extra=state.overrides.get(part.selectionId)===1?1:0;
+      if(part.isolation!==extra)renderDirty=true;
       part.isolation+=(extra-part.isolation)*ease;
       if(Math.abs(extra-part.isolation)<.0001)part.isolation=extra;
       part.group.position.addScaledVector(part.isolationOffset,part.isolation);
@@ -407,10 +421,11 @@ function animate(time) {
   }
   controls.update(dt);
   root.updateMatrixWorld(true);
-  // Labels need not run at display refresh; 30Hz keeps text steady and saves layout work.
-  if(Math.floor(time/33)!==Math.floor((time-dt*1000)/33)) updateLabels();
-  renderer.info.reset();
-  composer.render();
+  // Resting models keep their last frame. Orbit damping, part animation and
+  // resizing invalidate it; idle tabs do not continuously redraw WebGL passes.
+  if(renderDirty || controls.autoRotate || resetTween) {
+    updateLabels();renderer.info.reset();composer.render();renderedFrames++;renderDirty=false;
+  }
 }
 
 function diagnosticSnapshot(){
@@ -425,7 +440,7 @@ function diagnosticSnapshot(){
     const p=new THREE.Box3().setFromObject(m).getCenter(new THREE.Vector3()).project(camera);
     return {name:m.name,x:rect.x+(p.x*.5+.5)*rect.width,y:rect.y+(-p.y*.5+.5)*rect.height};
   })]));
-  return {ready:state.ready,selected:state.selected,explosion:state.explosion,labels:state.labels,autoRotate:controls.autoRotate,
+  return {ready:state.ready,renderedFrames,selected:state.selected,explosion:state.explosion,labels:state.labels,autoRotate:controls.autoRotate,
     parts:parts.map(p=>({id:p.id,selectionId:p.selectionId,kind:p.kind,follow:p.follow,progress:p.progress,isolation:p.isolation,target:partTarget(p.selectionId),position:p.group.position.toArray(),base:p.base.toArray(),bounds:bounds(p.group)})),
     camera:camera.position.toArray(),highlightedIds:[...new Set(outline.selectedObjects.map(o=>o.userData.partId))],highlightedNames:outline.selectedObjects.map(o=>o.name),
     rails:(()=>{const a=[];root.traverse(m=>{if(m.isMesh&&m.name.startsWith('rail'))a.push({name:m.name,parent:m.parent.name,position:m.getWorldPosition(new THREE.Vector3()).toArray(),highlightIds:m.userData.highlightIds,highlighted:outline.selectedObjects.includes(m)});});return a;})(),

@@ -34,7 +34,7 @@
   <main class="workspace">
     <section class="stage" aria-label="储能柜交互模型">
       <div class="hero-copy"><div class="eyebrow"><span class="tiny-square"></span> 部件拆解 <span class="eyebrow-line"></span> 材料应用</div><h1>户用储能<span>电池柜</span></h1><p>点击塑料部件，查看对应材料推荐</p><p class="structure-summary">落地式机柜 <span>／</span> 双层方形电芯模组</p></div>
-      <div class="view-switch"><button class="view-button active" data-view="iso" aria-pressed="true">等轴视角</button><button class="view-button" data-view="front" aria-pressed="false">正视图</button></div>
+      <div class="view-switch"><button id="overview" class="view-button active" aria-pressed="true">结构总览</button><button class="view-button active" data-view="iso" aria-pressed="true">等轴视角</button><button class="view-button" data-view="front" aria-pressed="false">正视图</button></div>
       <div id="viewport" tabindex="0" role="region" aria-label="电池模型，拖动旋转，滚轮缩放；键盘方向键旋转，加减键缩放。"><div id="loading"><span class="loader-ring"></span><strong>正在构建电池结构</strong></div><div id="labels" aria-label="部件标注"></div><div class="canvas-error" id="canvas-error" hidden><strong>暂时无法显示模型</strong><p>请开启浏览器硬件加速。右侧仍可浏览部件信息。</p><button id="retry">重新加载</button></div></div>
       <div class="stage-tools"><button id="zoom-in" title="放大 (+)" aria-label="放大"><svg><use href="#i-plus"/></svg></button><button id="zoom-out" title="缩小 (-)" aria-label="缩小"><svg><use href="#i-minus"/></svg></button><span></span><button id="reset" title="重置视角 (R)" aria-label="重置视角"><svg><use href="#i-rotate"/></svg></button></div>
       <div class="canvas-caption"><span class="caption-dot"></span><span id="scene-state">拆解视图</span><span class="caption-divider">/</span><span id="selection-caption">显示面板支架、塑料边框</span></div>
@@ -49,7 +49,7 @@
     </aside>
   </main>
   <footer class="statusbar"><span><i></i><span id="render-status">正在初始化</span></span><span>拖动旋转 · 滚轮缩放 · 点击查看</span><span>离线交互演示</span></footer>
-  <dialog id="guide"><div class="dialog-top"><span class="eyebrow">操作指南</span><button id="close-guide" aria-label="关闭操作指南"><svg><use href="#i-close"/></svg></button></div><h2>从整体，到每个部件。</h2><div class="guide-grid"><div><h3>自由观察</h3><p>左键拖动旋转，滚轮缩放，右键拖动平移。触屏单指旋转，双指缩放或平移。</p></div><div><h3>逐层拆解</h3><p>拖动滑块，先移开门板、显示屏和外壳，再展开内部部件。点击「组装」恢复完整机柜；选择内部塑料件时会先打开外部壳件。</p></div><div><h3>部件联动</h3><p>点击①展开显示面板支架和边框；点击②展开两层电芯的绝缘定位件和汇流排护罩。③、④可分别拆出，再次点击同一编号归位。</p></div><div><h3>查看推荐</h3><p>点击①到④查看「邦泰推荐」。点击其他部件只显示名称。</p></div><div><h3>键盘操作</h3><p>聚焦模型后，方向键旋转，+ / − 缩放，空格拆解或组装，R 重置，L 切换标注。</p></div></div><button class="primary-button" id="start-explore">开始探索 <svg><use href="#i-arrow"/></svg></button></dialog>
+  <dialog id="guide"><div class="dialog-top"><span class="eyebrow">操作指南</span><button id="close-guide" aria-label="关闭操作指南"><svg><use href="#i-close"/></svg></button></div><h2>从整体，到每个部件。</h2><div class="guide-grid"><div><h3>自由观察</h3><p>左键拖动旋转，滚轮缩放，右键拖动平移。触屏单指旋转，双指缩放或平移。</p></div><div><h3>逐层拆解</h3><p>「结构总览」保留柜体、移开门板和显示屏，便于对照内部层次。拖动滑块，先移开外壳，再展开内部部件。点击「组装」恢复完整机柜；选择内部塑料件时会先打开外部壳件。</p></div><div><h3>部件联动</h3><p>点击①展开显示面板支架和边框；点击②展开两层电芯的绝缘定位件和汇流排护罩。③、④可分别拆出，再次点击同一编号归位。</p></div><div><h3>查看推荐</h3><p>点击①到④查看「邦泰推荐」。点击其他部件只显示名称。</p></div><div><h3>键盘操作</h3><p>聚焦模型后，方向键旋转，+ / − 缩放，空格拆解或组装，R 重置，L 切换标注。</p></div></div><button class="primary-button" id="start-explore">开始探索 <svg><use href="#i-arrow"/></svg></button></dialog>
   <div id="toast" role="status"></div>
   <script>/*__APP__*/</script>
 </body>

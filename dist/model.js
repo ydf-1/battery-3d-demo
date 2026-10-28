@@ -74,6 +74,7 @@ export function createBattery() {
     return p;
   }
   holder('upperHolder',.31,1.64);holder('lowerHolder',-.56,-.12);
+  parts.find(p=>p.id==='lowerHolder').isolationOffset=V([0,0,2]);
 
   const bracket=part('bmsBracket','p3','plastic',[0,.65,0],[.15,2.0,0],[2.06,.1,.79]);
   add(bracket,tube(4.29,1.75,.15,.10,.075),mat.blue);

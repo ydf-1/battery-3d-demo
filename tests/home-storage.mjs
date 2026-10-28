@@ -50,6 +50,11 @@ try {
   await settled();
   const initial = await snapshot();
   assert.equal(initial.cellGeometry.levels, 2);
+  assert.equal(initial.cellGeometry.count, 16);
+  assert.equal(initial.overview, true);
+  assert.equal(initial.parts.find(p=>p.id==='enclosure').progress,0);
+  assert(initial.parts.filter(p=>['door','display'].includes(p.id)).every(p=>p.progress===1));
+  checks.push('默认结构总览保留柜体，门板和显示屏移到左侧，16颗示意方形电芯完整');
   assert.equal(initial.cellGeometry.shape, 'prismatic');
   assert.equal(await page.locator('.plastic-row').count(), 4);
   assert.equal(await page.locator('.plain-row .part-number').count(), 0);

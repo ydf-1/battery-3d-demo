@@ -3,7 +3,14 @@ import path from 'node:path';
 import { build } from 'esbuild';
 import { assertOfflineHTML } from './offline-check.mjs';
 import { createGallery } from './gallery.mjs';
+import { execFileSync } from 'node:child_process';
 const site = import.meta.dirname;
+// Preserve the user's pre-existing legacy build. Release files and the combined
+// viewer are still rebuilt from current sources. A clean clone builds all files.
+let preserveLegacy = false;
+try {
+  preserveLegacy = !!execFileSync('git', ['-c', `safe.directory=${site.replaceAll('\\','/')}`, 'status', '--porcelain', '--', 'dist/index.html'], { cwd:site, encoding:'utf8' }).trim();
+} catch { /* Source archives without Git build normally. */ }
 const license = fs.readFileSync(path.join(site,'THREE-LICENSE.txt'),'utf8');
 const targets = [
   { name:'两轮车电池包', directory: 'dist', styles: ['dist/style.css'], outputs: ['dist/index.html','release/两轮车电池包-离线.html'] },
@@ -21,6 +28,9 @@ for (const target of targets) {
   assertOfflineHTML(html);
   viewers.push({name:target.name,html});
   for (const output of target.outputs) {
+    if (output === 'dist/index.html' && preserveLegacy) {
+      console.log('Preserved local dist/index.html; current viewer built in release/.'); continue;
+    }
     const filename = path.join(site,output);
     // Do not rewrite a pre-existing generated file when its bytes already match.
     if(fs.existsSync(filename) && fs.readFileSync(filename,'utf8') === html) {
