@@ -2,7 +2,7 @@
 
 ## 第一次在新Windows电脑上使用
 
-先安装 Git for Windows 和 Node.js 22或以上版本。使用有权访问此私有仓库的GitHub账号登录；克隆时如弹出登录窗口，按提示完成浏览器授权。
+先安装 Git for Windows 和 Node.js 22或以上版本。仓库已按用户要求公开，浏览和克隆无需登录；提交并推送修改仍需使用有写入权限的GitHub账号登录授权。
 
 在PowerShell里进入你想存放项目的目录，依次执行：
 
