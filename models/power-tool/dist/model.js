@@ -72,6 +72,49 @@ export function createBattery() {
     shape.holes.push(roundedRect(w - wall * 2, d - wall * 2, Math.max(.02, radius - wall), new THREE.Path()));
     return plate(shape, h);
   }
+  // Hollow injection-moulded cup, with changing section through its height.
+  // The edge rounds and the tapered faces belong to the shell itself.
+  function mouldedCup(levels, wall = .16) {
+    const outline = (w, d, radius) => {
+      const points = [];
+      for (let corner = 0; corner < 4; corner++) {
+        const sx = corner === 0 || corner === 3 ? 1 : -1;
+        const sz = corner < 2 ? 1 : -1;
+        for (let step = 0; step <= 6; step++) {
+          const a = corner * Math.PI / 2 + step * Math.PI / 12;
+          points.push([sx * (w / 2 - radius) + Math.cos(a) * radius,
+            sz * (d / 2 - radius) + Math.sin(a) * radius]);
+        }
+      }
+      return points;
+    };
+    const rings = levels.map(([y, w, d, r]) => ({ y, outer: outline(w, d, r), inner: outline(w - wall * 2, d - wall * 2, Math.max(.025, r - wall)) }));
+    const vertices = [], uv = [], faces = [];
+    const n = rings[0].outer.length;
+    for (const ring of rings) for (const edge of [ring.outer, ring.inner]) for (let i = 0; i < n; i++) {
+      vertices.push(edge[i][0], ring.y, edge[i][1]); uv.push(i / n, ring.y);
+    }
+    const quad = (a, b, c, d) => faces.push(a, c, b, a, d, c);
+    for (let level = 0; level < rings.length - 1; level++) for (let i = 0; i < n; i++) {
+      const next = (i + 1) % n, a = level * n * 2, b = (level + 1) * n * 2;
+      quad(a + i, a + next, b + next, b + i);
+      quad(a + n + next, a + n + i, b + n + i, b + n + next);
+    }
+    for (let i = 0; i < n; i++) {
+      const j = (i + 1) % n, last = (rings.length - 1) * n * 2;
+      quad(i, n + i, n + j, j);
+      quad(last + i, last + j, last + n + j, last + n + i);
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+    g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); g.setIndex(faces); g.computeVertexNormals();
+    return g;
+  }
+  function profilePrism(points, depth, bevel = .035) {
+    const shape = new THREE.Shape(); shape.moveTo(...points[0]); points.slice(1).forEach(p => shape.lineTo(...p)); shape.closePath();
+    const g = new THREE.ExtrudeGeometry(shape, { depth: depth - bevel * 2, bevelEnabled: true, bevelSegments: 3, steps: 1, bevelSize: bevel, bevelThickness: bevel, curveSegments: 4 });
+    g.translate(0, 0, -depth / 2 + bevel); return g;
+  }
   function instances(parent, geometry, m, positions, id, name, rotation = [0, 0, 0]) {
     const mesh = identify(new THREE.InstancedMesh(geometry, m, positions.length), id ?? parent.userData.partId, m.userData.kind, name);
     const dummy = new THREE.Object3D(); dummy.rotation.fromArray(rotation);
@@ -82,69 +125,113 @@ export function createBattery() {
   const width = 5.72, depth = 4.22;
   const bottom = part('bottomShell', 'p1', 'plastic', [0, 0, 0], [2.70, -.72, 1.87]);
   const b = bottom.group;
-  // A real open cup: the cells fit between these walls, above its floor.
-  box(b, width, .21, depth, mat.shell, 0, -1.30, 0, .19, 'p1', 'lowerFloor');
-  add(b, tube(width, depth, 1.45, .17, .25), mat.shell, [0, -.47, 0], 'p1', 'lowerCupWalls');
-  add(b, tube(width - .08, depth - .08, .065, .065, .21), mat.shell, [0, .275, 0], 'p1', 'lowerMatingLip');
-  for (const x of [-2.38, 2.38]) {
-    box(b, .48, .13, 3.5, mat.shell, x, -1.46, 0, .055);
-    for (let i = 0; i < 6; i++) box(b, .025, .035, .54, mat.shell, x, -1.54, -1.36 + i * .55, .004);
+  // A tapered, open lower cup with a broad protective heel and shallow seam.
+  box(b, 5.68, .18, 4.16, mat.shell, 0, -1.30, 0, .24, 'p1', 'lowerFloor');
+  add(b, mouldedCup([[-1.28, 5.68, 4.16, .30], [-1.09, 5.92, 4.40, .34], [-.86, 5.92, 4.40, .34], [-.72, 5.72, 4.22, .30], [.25, 5.72, 4.22, .30]], .17), mat.shell, [0, 0, 0], 'p1', 'lowerTaperedCup');
+  add(b, tube(5.77, 4.27, .105, .12, .30), mat.shell, [0, -.78, 0], 'p1', 'lowerBumperSeam');
+  add(b, tube(width - .08, depth - .08, .065, .065, .25), mat.shell, [0, .275, 0], 'p1', 'lowerMatingLip');
+  for (const x of [-2.35, 2.35]) for (const z of [-1.62, 1.62]) {
+    box(b, .70, .22, .76, mat.shell, x, -1.42, z, .09, 'p1', 'lowerFoot');
+    for (let i = 0; i < 4; i++) box(b, .54, .028, .05, mat.shell, x, -1.54, z - .21 + i * .14, .009, 'p1', 'lowerFootTread');
   }
-  for (const x of [-2.59, 2.59]) for (const z of [-1.81, 1.81]) {
-    cylinder(b, .14, 1.34, mat.shell, x, -.49, z, 'p1');
+  for (const x of [-2.56, 2.56]) for (const z of [-1.77, 1.77]) {
+    cylinder(b, .16, 1.34, mat.shell, x, -.49, z, 'p1');
+    box(b, .12, .78, .43, mat.shell, x, -.56, z - Math.sign(z) * .22, .015, 'p1', 'lowerBossWeb');
     cylinder(b, .073, .055, mat.copper, x, .2, z, 'fasteners');
     cylinder(b, .04, .06, mat.darkMetal, x, .205, z, 'fasteners');
   }
   for (const x of [-1.5, -.5, .5, 1.5]) box(b, .055, .10, 3.6, mat.shell, x, -1.145, 0, .01);
-  for (const sign of [-1, 1]) for (let i = 0; i < 6; i++) box(b, .025, .70, .09, mat.shell, sign * 2.865, -.53, -.95 + i * .38, .01);
+  for (const sign of [-1, 1]) for (let i = 0; i < 5; i++) {
+    const grip = box(b, .058, .70, .09, mat.shell, sign * 2.86, -.30, -.82 + i * .40, .018, 'p1', 'lowerSideGrip');
+    grip.rotation.x = -.17;
+  }
 
   const top = part('topShell', 'p1', 'plastic', [0, 0, 0], [2.65, 1.16, 1.67]);
   const t = top.group;
-  // The opening for the front latch is left empty; the button is independent.
-  for (const x of [-2.745, 2.745]) box(t, .23, 1.12, 3.92, mat.shell, x, .84, 0, .10, 'p1', 'upperSideWall');
-  box(t, 5.35, 1.12, .22, mat.shell, 0, .84, -1.995, .08);
-  for (const x of [-1.91, 1.91]) box(t, 1.72, 1.12, .23, mat.shell, x, .84, 1.995, .09);
-  box(t, 1.2, .17, .24, mat.shell, 0, .365, 2.0, .03);
-  const deck = roundedRect(width, depth, .26);
+  // Inward sloping shoulders are the characteristic silhouette of a rail pack.
+  // The front recess has a back wall: the button never exposes the cell cavity.
+  add(t, tube(5.72, 4.22, .33, .18, .30), mat.shell, [0, .465, 0], 'p1', 'upperContinuousMatingSkirt');
+  for (const sign of [-1, 1]) {
+    const section = [[sign * 2.86, .32], [sign * 2.86, .64], [sign * 2.62, 1.03], [sign * 2.38, 1.47], [sign * 2.21, 1.47], [sign * 2.58, .59], [sign * 2.58, .32]];
+    add(t, profilePrism(section, 3.61, .055), mat.shell, [0, 0, -.02], 'p1', 'slopedShoulder-' + sign);
+    box(t, .29, .34, 3.56, mat.shell, sign * 2.72, .45, -.02, .075, 'p1', 'upperSideSkirt');
+    // The rounded plan-view corners join both sloping faces without open slots.
+    for (const front of [-1, 1]) {
+      const quad = new THREE.BufferGeometry();
+      quad.setAttribute('position', new THREE.Float32BufferAttribute([
+        sign * 2.86, .62, front * 1.77, sign * 2.56, .62, front * 2.10,
+        sign * 2.12, 1.49, front * 1.74, sign * 2.38, 1.49, front * 1.48
+      ], 3));
+      quad.setIndex(sign * front > 0 ? [0, 2, 1, 0, 3, 2] : [0, 1, 2, 0, 2, 3]); quad.computeVertexNormals();
+      const corner = add(t, quad, mat.shell, [0, 0, 0], 'p1', 'slopedCorner-' + sign + '-' + front);
+      corner.material = mat.shell.clone(); corner.material.side = THREE.DoubleSide;
+    }
+  }
+  const rearProfile = [[-2.07, .32], [-2.07, .65], [-1.73, 1.47], [-1.53, 1.47], [-1.85, .57], [-1.85, .32]];
+  const rearShoulder = add(t, profilePrism(rearProfile, 5.03, .055), mat.shell, [0, 0, 0], 'p1', 'slopedRearShoulder');
+  rearShoulder.rotation.y = -Math.PI / 2;
+  // These two front cheeks leave a deliberately moulded pocket for the latch.
+  const frontSection = [[2.08, .32], [2.08, .66], [1.74, 1.47], [1.51, 1.47], [1.84, .60], [1.84, .32]];
+  for (const sign of [-1, 1]) {
+    const cheek = add(t, profilePrism(frontSection, 1.52, .07), mat.shell, [sign * 1.82, 0, 0], 'p1', 'slopedFrontCheek-' + sign);
+    cheek.rotation.y = -Math.PI / 2;
+    const pocketSide = box(t, .16, .91, .45, mat.shell, sign * .98, .90, 1.65, .04, 'p1', 'latchRecessSide');
+    pocketSide.rotation.x = -.37;
+  }
+  const latchBack = box(t, 1.88, .85, .14, mat.shell, 0, .92, 1.43, .055, 'p1', 'latchRecessBack');
+  latchBack.rotation.x = -.37;
+  box(t, 1.92, .16, .46, mat.shell, 0, .40, 1.88, .055, 'p1', 'latchRecessFloor');
+  const deck = roundedRect(4.78, 3.42, .20);
   // Local 2D z is inverted by plate(); center +.48 becomes world z -.48.
   deck.holes.push(roundedRect(2.42, 1.23, .07, new THREE.Path(), 0, .48));
   add(t, plate(deck, .18), mat.shell, [0, 1.49, 0], 'p1', 'upperDeckWithTerminalOpening');
-  for (const x of [-2.6, 2.6]) for (const z of [-1.81, 1.81]) screw(t, x, 1.59, z);
-  for (const x of [-2.59, 2.59]) box(t, .22, .15, 3.10, mat.shell, x, 1.61, 0, .045);
+  const terminalBridge = roundedRect(2.54, 1.28, .07);
+  for (const x of [-.96, -.48, 0, .48, .96]) terminalBridge.holes.push(roundedRect(.30, .77, .025, new THREE.Path(), x, .05));
+  add(t, plate(terminalBridge, .12), mat.shell, [0, 1.72, -.48], 'p1', 'integralTerminalSlotBridge');
+  for (const x of [-1.23, 1.23]) box(t, .12, .25, 1.25, mat.shell, x, 1.62, -.48, .02, 'p1', 'terminalSlotSide');
+  for (const x of [-2.18, 2.18]) for (const z of [-1.48, 1.48]) screw(t, x, 1.59, z);
+  for (const x of [-2.30, 2.30]) box(t, .12, .07, 2.57, mat.shell, x, 1.60, -.06, .026, 'p1', 'upperDeckEdge');
   // Rails are true children of the upper shell, never independently translated.
-  for (const [i, x] of [-1.75, 1.75].entries()) {
+  for (const [i, x] of [-1.69, 1.69].entries()) {
     const pieces = [
-      box(t, .49, .18, 3.48, mat.rail, x, 1.66, -.04, .035, 'p3', `rail-${i}-foot`),
-      box(t, .25, .42, 3.28, mat.rail, x, 1.92, -.09, .035, 'p3', `rail-${i}-web`),
-      box(t, .48, .12, 3.32, mat.rail, x, 2.115, -.09, .027, 'p3', `rail-${i}-flange`)
+      box(t, .52, .14, 3.24, mat.rail, x, 1.65, -.08, .035, 'p3', `rail-${i}-foot`),
+      box(t, .26, .36, 3.08, mat.rail, x, 1.87, -.15, .027, 'p3', `rail-${i}-web`),
+      box(t, .49, .105, 3.13, mat.rail, x, 2.035, -.15, .024, 'p3', `rail-${i}-flange`),
+      box(t, .10, .055, 2.82, mat.rail, x + (i ? -.15 : .15), 2.104, -.15, .015, 'p3', `rail-${i}-guideEdge`)
     ];
     for (const piece of pieces) piece.userData.highlightIds = ['p1', 'p3'];
     for (let j = 0; j < 3; j++) {
-      const stop = box(t, .48, .13, .15, mat.rail, x, 2.17, -1.4 + j * 1.35, .016, 'p3', `rail-${i}-stop-${j}`);
+      const stop = box(t, .49, .08, .13, mat.rail, x, 2.095, -1.48 + j * 1.34, .016, 'p3', `rail-${i}-stop-${j}`);
       stop.userData.highlightIds = ['p1', 'p3'];
     }
   }
   // Four LEDs and their recessed side bezel. No printed scale or text.
-  box(t, .045, .35, 1.48, mat.shell, 2.88, .94, -.35, .035, 'p1', 'indicatorBezel');
-  for (let i = 0; i < 4; i++) box(t, .053, .18, .18, mat.led, 2.912, .94, -.85 + i * .33, .017, 'leds', `indicator-${i}`);
-  box(t, .065, .34, .37, mat.shell, 2.90, .94, .90, .045, 'p1', 'indicatorButton');
+  const indicator = new THREE.Group(); indicator.position.set(2.75, .72, -.30); indicator.rotation.z = .49; t.add(indicator);
+  box(indicator, .055, .31, 1.48, mat.shell, 0, 0, 0, .035, 'p1', 'indicatorBezel');
+  for (let i = 0; i < 4; i++) {
+    box(indicator, .068, .22, .22, mat.shell, .032, 0, -.52 + i * .34, .015, 'p1', 'indicatorRim');
+    box(indicator, .072, .145, .145, mat.led, .045, 0, -.52 + i * .34, .013, 'leds', `indicator-${i}`);
+  }
+  box(indicator, .075, .30, .31, mat.shell, .02, 0, 1.02, .045, 'p1', 'indicatorButton');
 
-  const latch = part('latch', 'p3', 'plastic', [0, .98, 2.10], [0, .1, .18], 'topShell');
+  const latch = part('latch', 'p3', 'plastic', [0, .94, 1.71], [0, .1, .18], 'topShell');
   // Global separation retains the button on its shell. Selecting ③ is the
   // distinct action that pulls the button forward, including in the full view.
   latch.isolationOffset = V([0, .04, 1.05]);
-  box(latch.group, 1.65, .67, .28, mat.latch, 0, 0, 0, .085, 'p3', 'pressLatchButton');
+  latch.group.rotation.x = -.37;
+  box(latch.group, 1.53, .77, .25, mat.latch, 0, 0, 0, .095, 'p3', 'pressLatchButton');
   for (const y of [-.17, -.015, .14]) box(latch.group, 1.1, .045, .045, mat.latch, 0, y, .154, .015, 'p3', 'latchGripRib');
   box(latch.group, .85, .12, .56, mat.latch, 0, .26, -.30, .025, 'p3', 'latchHook');
-  const spring = part('spring', 'spring', 'metal', [.97, 1.01, 1.97], [0, 0, .15], 'topShell');
+  const spring = part('spring', 'spring', 'metal', [.86, .87, 1.67], [0, 0, .15], 'topShell');
   class Coil extends THREE.Curve {
     getPoint(t, target = new THREE.Vector3()) { return target.set(Math.cos(t * Math.PI * 12) * .09, Math.sin(t * Math.PI * 12) * .09, (t - .5) * .42); }
   }
   add(spring.group, new THREE.TubeGeometry(new Coil(), 120, .018, 8, false), mat.steel, [0, 0, 0], 'spring', 'latchCompressionSpring');
 
-  const terminal = part('terminalCover', 'p4', 'plastic', [0, 1.63, -.48], [1.05, .10, .49]);
+  const terminal = part('terminalCover', 'p4', 'plastic', [0, 1.50, -.48], [1.05, .10, .49]);
   terminal.isolationOffset = V([0, 0, .75]);
   const tc = terminal.group;
+  tc.scale.y = .68;
   box(tc, 2.25, .11, 1.05, mat.cover, 0, -.29, 0, .035, 'p4', 'terminalCoverFloor');
   box(tc, 2.25, .57, .12, mat.cover, 0, .0, -.48, .025, 'p4', 'terminalCoverBack');
   for (const x of [-1.07, 1.07]) box(tc, .11, .64, 1.05, mat.cover, x, -.02, 0, .025);
@@ -215,7 +302,8 @@ export function createBattery() {
     ringGeometry.translate(0, 0, -.065);
     for (const z of [-1.44, 1.44]) for (let col = 0; col < 5; col++) add(group, ringGeometry, mat.holder, [(col - 2) * .98, y, z], 'p2', `${id}-cellCollar`);
     for (const x of [-2.48, 2.48]) {
-      box(group, .14, .98, 3.11, mat.holder, x, y, 0, .035);
+      // Thin longitudinal rails leave the silver cans exposed from the side.
+      box(group, .14, .14, 3.11, mat.holder, x, y + (y > 0 ? .42 : -.42), 0, .025, 'p2', `${id}-sideRail`);
       for (const z of [-1.52, 1.52]) box(group, .20, .98, .22, mat.holder, x, y, z, .03);
     }
     const edgeY = y > 0 ? .99 : -.99;
@@ -264,5 +352,12 @@ export function createBattery() {
     mesh.material = clones.get(key);
   });
   applySurfaceFinishes(root);
+  // Dark mouldings need restrained room reflections; keep the material's own
+  // blue pigment instead of washing it to cyan under the common studio lights.
+  root.traverse(mesh => {
+    if (!mesh.isMesh || mesh.material.userData.kind !== 'plastic') return;
+    const m = mesh.material, dark = Math.max(m.color.r, m.color.g, m.color.b) < .035;
+    m.envMapIntensity = dark ? .22 : .25; m.roughness = dark ? .72 : .42;
+  });
   return { root, parts, assembly: { cellCount: 10, cellRows: 2, cellsPerRow: 5, cellDiameterMm: 18, cellLengthMm: 65, explodedLayerGap: gap } };
 }

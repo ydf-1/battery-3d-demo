@@ -279,27 +279,30 @@
   "networkRequests": [],
   "evidence": {
     "Ten selectable component identities are present": {
-      "p1": 46,
-      "p2": 12,
-      "p3": 9,
+      "p1": 53,
+      "p2": 26,
+      "p3": 8,
       "p4": 7,
-      "shell": 20,
-      "cells": 4,
-      "pcb": 106,
-      "busbar": 39,
-      "contacts": 10,
-      "fasteners": 52
+      "shell": 25,
+      "cells": 7,
+      "pcb": 95,
+      "busbar": 169,
+      "contacts": 11,
+      "fasteners": 61
     },
     "65 cells use proportional real 21 by 70 mm geometry": {
       "count": 65,
-      "radius": 0.147,
-      "height": 0.98,
+      "radius": 0.16,
+      "height": 1.0666666666666667,
       "partId": "cells",
       "kind": "cells",
       "cellCount": 65,
       "diameterMm": 21,
       "lengthMm": 70,
-      "mmPerSceneUnit": 71.42857142857143,
+      "mmPerSceneUnit": 65.625,
+      "axis": "z",
+      "rows": 13,
+      "columns": 5,
       "highlightable": false
     },
     "Only plastic surfaces initially highlighted": [
@@ -338,12 +341,12 @@
         "target": 1,
         "position": [
           0,
-          5.09,
+          4.8,
           0
         ],
         "base": [
           0,
-          1.14,
+          2.85,
           0
         ]
       },
@@ -355,12 +358,12 @@
         "target": 1,
         "position": [
           0,
-          -4.27,
+          -4.38,
           0.08
         ],
         "base": [
           0,
-          -1.12,
+          -2.83,
           0
         ]
       }
@@ -378,12 +381,12 @@
         "target": 1,
         "position": [
           0,
-          1.95,
+          2.475,
           0
         ],
         "base": [
           0,
-          0.31,
+          1.125,
           0
         ]
       },
@@ -395,12 +398,12 @@
         "target": 1,
         "position": [
           0,
-          -0.68,
+          -2.5,
           2
         ],
         "base": [
           0,
-          -0.56,
+          -1.1500000000000001,
           0
         ]
       }
@@ -417,13 +420,13 @@
         "progress": 1,
         "target": 1,
         "position": [
-          0.15,
-          2.65,
+          0.1,
+          3.27,
           0
         ],
         "base": [
           0,
-          0.65,
+          2.37,
           0
         ]
       },
@@ -435,12 +438,12 @@
         "target": 0,
         "position": [
           0,
-          0.77,
+          2.46,
           0
         ],
         "base": [
           0,
-          0.77,
+          2.46,
           0
         ]
       }
@@ -457,13 +460,13 @@
       "target": 1,
       "position": [
         0,
-        -0.75,
-        1.9100000000000001
+        -2.42,
+        1.75
       ],
       "base": [
         0,
-        -0.91,
-        0.99
+        -2.58,
+        0.83
       ]
     },
     "Contact click is name-only without highlight or movement": {

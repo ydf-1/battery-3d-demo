@@ -113,10 +113,17 @@ try{
  await page.locator('.brand').click();await settle();
  // Actual raycast click on visible mesh candidates, with DOM labels hidden.
  await explode();await page.locator('#toggle-labels').click();
- const points=(await snap()).pickPoints;
  for(const id of ['p3','p4','pcb']){
   let found=false;
-  for(const p of points[id]){await page.mouse.click(p.x,p.y);await settle();if((await snap()).selected===id){found=true;break;}}
+  // A selection reframes the assembly. Refresh projected mesh candidates after
+  // each click instead of reusing coordinates from the previous camera pose.
+  for(let attempt=0;attempt<12;attempt++){
+   const points=(await snap()).pickPoints[id]||[];
+   if(!points.length)break;
+   const p=points[attempt%points.length];
+   await page.mouse.click(p.x,p.y);await settle();
+   if((await snap()).selected===id){found=true;break;}
+  }
   check('Canvas picking identifies '+id,found);
  }
  await page.locator('.brand').click();await settle();if(!(await snap()).labels)await page.locator('#toggle-labels').click();
