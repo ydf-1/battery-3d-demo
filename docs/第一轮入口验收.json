@@ -1,0 +1,35 @@
+{
+  "windows": [
+    {
+      "width": 1366,
+      "height": 768,
+      "headerHeight": 52,
+      "iframeHeight": 716,
+      "sidebarWidth": 340,
+      "viewportWidth": 1026,
+      "scroll": false,
+      "modelScroll": false
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "headerHeight": 52,
+      "iframeHeight": 1028,
+      "sidebarWidth": 340,
+      "viewportWidth": 1580,
+      "scroll": false,
+      "modelScroll": false
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "model1": {
+    "headerHeight": 76,
+    "wheelStyle": false
+  },
+  "model2": {
+    "headerHeight": 76,
+    "wheelStyle": false
+  },
+  "passed": true
+}

@@ -1,6 +1,20 @@
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import { applySurfaceFinishes } from '../shared/materials.js';
+import { configureLayeredAssembly } from './assembly.js';
+
+// The palette is shared by material roles within this viewer only. The other
+// two products deliberately retain their existing appearance in this round.
+export const STUDIO_PALETTE = Object.freeze({
+  blackPlastic: { color: 0x1B1D20, metalness: 0, roughness: .55 },
+  bluePlastic: { color: 0x1E7BE0, metalness: 0, roughness: .35 },
+  aluminum: { color: 0xC9CED4, metalness: 1, roughness: .3 },
+  cells: { color: 0xB9BEC4, metalness: .9, roughness: .25 },
+  copper: { color: 0xC27A3E, metalness: 1, roughness: .3 },
+  pcb: { color: 0x0E5C3A, metalness: 0, roughness: .6 },
+  orangePlastic: { color: 0xF07A1A, metalness: 0, roughness: .35 },
+  whiteSheetMetal: { color: 0xEEF0F2, metalness: .12, roughness: .39 }
+});
 
 // Geometry only. No labels, logos, model names, decals or printed text.
 export function createBattery() {
@@ -11,6 +25,8 @@ export function createBattery() {
     aluminum:material('metal',0xbec3c9,.92,.34),edge:material('metal',0xd5d9de,.95,.24),nickel:material('metal',0xc4c8ce,.88,.28),copper:material('metal',0xc68c42,.82,.30),
     cell:material('cells',0xbac0c7,.78,.30),pcb:material('pcb',0x073e29,.1,.60),chip:material('pcb',0x131719,.12,.55),trace:material('metal',0x929c70,.64,.5),darkMetal:material('metal',0x41484f,.8,.5)
   };
+  const roles = { black: 'blackPlastic', blue: 'bluePlastic', blueDark: 'bluePlastic', aluminum: 'aluminum', edge: 'aluminum', nickel: 'aluminum', copper: 'copper', cell: 'cells', pcb: 'pcb', chip: 'blackPlastic', trace: 'copper', darkMetal: 'aluminum' };
+  for (const [key, role] of Object.entries(roles)) mat[key].userData.role = role;
   const V=a=>new THREE.Vector3(...a);
   function part(id,selectionId,kind,base,offset,anchor=[0,0,0],follow=null){
     const group=new THREE.Group();group.name=id;group.position.fromArray(base);group.userData.partId=selectionId;root.add(group);
@@ -112,7 +128,6 @@ export function createBattery() {
     return p;
   }
   holder('upperHolder',true);holder('lowerHolder',false);
-  parts.find(p=>p.id==='lowerHolder').isolationOffset=V([0,0,2]);
 
   const bracket=part('bmsBracket','p3','plastic',[0,2.37,0],[.1,.9,0],[1.06,.05,.62]);
   add(bracket,tube(2.38,1.32,.15,.095,.07),mat.blue);
@@ -161,10 +176,12 @@ export function createBattery() {
   const clones=new Map();
   root.traverse(o=>{if(!o.isMesh)return;const key=o.userData.partId+':'+o.material.uuid;if(!clones.has(key))clones.set(key,o.material.clone());o.material=clones.get(key);o.userData.highlightable=o.userData.kind==='plastic' && /^p[1-4]$/.test(o.userData.partId);});
   applySurfaceFinishes(root);
-  // Keep molded black truly matte under the shared studio's bright softboxes.
-  root.traverse(o=>{if(!o.isMesh||o.material.userData.kind!=='plastic')return;
-    const m=o.material,dark=Math.max(m.color.r,m.color.g,m.color.b)<.035;
-    m.envMapIntensity=dark?.22:.25;m.roughness=dark?.72:.42;
+  root.traverse(o=>{if(!o.isMesh)return;
+    const m=o.material, settings=STUDIO_PALETTE[m.userData.role];
+    if(settings) { m.color.setHex(settings.color); m.metalness=settings.metalness; m.roughness=settings.roughness; }
+    m.transparent=false; m.opacity=1; m.depthWrite=true; m.envMapIntensity=1;
+    m.userData.baseOpacity=1;
   });
-  return {root,parts};
+  const assembly=configureLayeredAssembly(root,parts);
+  return {root,parts,assembly};
 }

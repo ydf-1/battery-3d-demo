@@ -15,6 +15,7 @@ export function createGallery(viewers) {
 @media(max-width:680px){.collection-bar{height:115px;display:flex;flex-wrap:wrap;gap:10px;padding:13px 12px 10px}.identity{width:100%;justify-content:center;gap:8px}.identity strong{font-size:14px}.mark{width:23px;height:23px}nav{width:100%;padding:4px;gap:1px}button{flex:1;padding:9px 3px;font-size:11px;border-radius:5px}#viewer{height:calc(100dvh - 115px)}}
 @media(max-width:680px){#gallery-help{position:absolute;right:14px;top:9px;width:29px;height:29px;padding:5px}}
 @media(min-width:681px){.collection-bar{padding-right:76px}}
+body.wheeler .collection-bar{height:52px;background:#fff;color:#202936;border-color:#D8DEE6}body.wheeler #viewer{height:calc(100dvh - 52px);background:#E6E9EE}body.wheeler nav{background:#F3F6FA;border-color:#D8DEE6}body.wheeler nav button{color:#526171}body.wheeler nav button[aria-selected="true"]{background:#EAF3FE;color:#1E7BE0;border-color:#C5DAF3}body.wheeler .identity small,body.wheeler .collection-note{display:none}body.wheeler #gallery-help{top:10px;color:#697583;border-color:#D8DEE6}
 </style></head><body>
 <header class="collection-bar"><div class="identity"><svg class="mark" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" aria-hidden="true"><path d="m16 2 12 7v14l-12 7-12-7V9zM4 9l12 7 12-7M16 16v14M10 5.5l12 7v7"/></svg><div><strong>电池结构与材料</strong><small>交互展示 · 材料应用</small></div></div><nav role="tablist" aria-label="选择模型">${viewers.map((v,i)=>`<button role="tab" id="model-tab-${i}" data-model="${i}" aria-selected="${i===0}" aria-controls="viewer">${v.name}</button>`).join('')}</nav><span class="collection-note">离线展示</span></header>
 <button id="gallery-help" aria-label="操作指南" title="操作指南">?</button>
@@ -22,7 +23,7 @@ export function createGallery(viewers) {
 <script>
 const viewers=${data};
 const frame=document.getElementById('viewer');let selected=-1;
-function selectModel(index){if(index===selected)return;selected=index;document.body.classList.remove('ready');document.querySelectorAll('[data-model]').forEach((b,i)=>{b.setAttribute('aria-selected',String(i===index));b.tabIndex=i===index?0:-1});frame.title=viewers[index].name+'交互展示';frame.setAttribute('aria-labelledby','model-tab-'+index);frame.srcdoc=viewers[index].html;}
+function selectModel(index){if(index===selected)return;selected=index;document.body.classList.toggle('wheeler',index===0);document.body.classList.remove('ready');document.querySelectorAll('[data-model]').forEach((b,i)=>{b.setAttribute('aria-selected',String(i===index));b.tabIndex=i===index?0:-1});frame.title=viewers[index].name+'交互展示';frame.setAttribute('aria-labelledby','model-tab-'+index);frame.srcdoc=viewers[index].html;}
 frame.addEventListener('load',()=>document.body.classList.add('ready'));
 document.getElementById('gallery-help').addEventListener('click',()=>frame.contentDocument?.getElementById('help')?.click());
 document.querySelectorAll('[data-model]').forEach((button,i)=>{button.addEventListener('click',()=>selectModel(i));button.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const next=(i+(e.key==='ArrowRight'?1:-1)+viewers.length)%viewers.length;selectModel(next);document.querySelector('[data-model="'+next+'"]').focus();}})});

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; font-src 'none'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#10151d">
+  <meta name="theme-color" content="#E6E9EE">
   <meta name="description" content="两轮车电池包结构与塑料部件材料应用示意。">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230084e9' d='M4 5h16v16H4zM9 2h6v3H9z'/%3E%3C/svg%3E">
   <title>两轮车电池包 · 结构与材料应用</title>
@@ -28,28 +28,36 @@
 
   <header class="topbar">
     <a class="brand" href="#" aria-label="恢复初始展示"><span class="brand-symbol"><svg aria-hidden="true"><use href="#i-cube"/></svg></span><span>结构与材料应用</span></a>
-    <div class="breadcrumb"><span>交互展示</span><span class="crumb-divider">/</span>两轮车电池包</div>
     <div class="top-actions"><span class="live"><i></i> 离线演示</span><span class="top-divider"></span><button class="help-button" id="help" aria-label="操作指南"><svg aria-hidden="true"><use href="#i-help"/></svg><span>操作指南</span></button></div>
   </header>
   <main class="workspace">
     <section class="stage" aria-label="电池包交互模型">
-      <div class="hero-copy"><div class="eyebrow"><span class="tiny-square"></span> 部件拆解 <span class="eyebrow-line"></span> 材料应用</div><h1>两轮车<span>电池包</span></h1><p>点击塑料部件，查看对应材料推荐</p><div class="config-summary"><span class="config-caption">示意配置</span><div class="hero-specs" id="hero-specs"></div></div></div>
-      <div class="view-switch"><button class="view-button active" data-view="iso" aria-pressed="true">等轴视角</button><button class="view-button" data-view="front" aria-pressed="false">正视图</button></div>
       <div id="viewport" tabindex="0" role="region" aria-label="电池模型，拖动旋转，滚轮缩放；键盘方向键旋转，加减键缩放。"><div id="loading"><span class="loader-ring"></span><strong>正在构建电池结构</strong></div><div id="labels" aria-label="部件标注"></div><div class="canvas-error" id="canvas-error" hidden><strong>暂时无法显示模型</strong><p>请开启浏览器硬件加速。右侧仍可浏览部件信息。</p><button id="retry">重新加载</button></div></div>
-      <div class="stage-tools"><button id="zoom-in" title="放大 (+)" aria-label="放大"><svg><use href="#i-plus"/></svg></button><button id="zoom-out" title="缩小 (-)" aria-label="缩小"><svg><use href="#i-minus"/></svg></button><span></span><button id="reset" title="重置视角 (R)" aria-label="重置视角"><svg><use href="#i-rotate"/></svg></button></div>
-      <div class="canvas-caption"><span class="caption-dot"></span><span id="scene-state">拆解视图</span><span class="caption-divider">/</span><span id="selection-caption">上盖、底座、塑料外壳</span></div>
-      <div class="control-panel"><div class="control-main"><button id="explode" class="primary-button"><svg><use href="#i-expand"/></svg><span>完整拆解</span></button><button id="assemble" class="secondary-button"><svg><use href="#i-cube"/></svg><span>组装</span></button><div class="range-group"><div class="range-label"><label for="explosion">拆解程度</label><output id="explosion-output" for="explosion">展开中</output></div><input type="range" id="explosion" min="0" max="100" value="72" aria-label="拆解程度"></div><div class="control-toggles"><button id="auto-rotate" title="自动旋转" aria-label="自动旋转" aria-pressed="false"><svg><use href="#i-rotate"/></svg></button><button id="toggle-labels" title="部件标注 (L)" aria-label="部件标注" aria-pressed="true" class="active"><svg><use href="#i-label"/></svg></button></div></div><div class="control-hint"><span><svg><use href="#i-mouse"/></svg> 拖动旋转<span class="hint-sep">·</span>滚轮缩放<span class="hint-sep">·</span>再次点击塑料部件归位</span><span>自由探索 <svg><use href="#i-arrow"/></svg></span></div></div>
+      <div class="view-switch"><button class="view-button active" data-view="iso" aria-pressed="true">等轴视角</button><button class="view-button" data-view="front" aria-pressed="false">正视图</button></div>
+      <div class="stage-tools"><button id="zoom-in" title="放大 (+)" aria-label="放大"><svg><use href="#i-plus"/></svg></button><button id="zoom-out" title="缩小 (-)" aria-label="缩小"><svg><use href="#i-minus"/></svg></button></div>
+      <div class="canvas-caption" hidden><span id="scene-state">装配视图</span><span id="selection-caption">上盖、底座、塑料外壳</span></div>
+      <div class="control-panel" aria-label="模型控制"><div class="control-main">
+        <button id="explode" class="primary-button"><svg aria-hidden="true"><use href="#i-expand"/></svg><span>拆解</span></button>
+        <button id="assemble" class="secondary-button"><svg aria-hidden="true"><use href="#i-cube"/></svg><span>组装</span></button>
+        <div class="range-group"><label for="explosion" class="range-caption">拆解</label><input type="range" id="explosion" min="0" max="100" value="0" aria-label="拆解程度"><output id="explosion-output" for="explosion">0%</output></div>
+        <div class="control-toggles"><button id="auto-rotate" title="自动旋转" aria-label="自动旋转" aria-pressed="false"><svg aria-hidden="true"><use href="#i-rotate"/></svg><span>自动旋转</span></button><button id="reset" title="重置视角 (R)" aria-label="重置视角"><svg aria-hidden="true"><use href="#i-eye"/></svg><span>重置</span></button><button id="toggle-labels" title="部件标注" aria-label="部件标注" aria-pressed="true" class="active" hidden><svg aria-hidden="true"><use href="#i-label"/></svg></button></div>
+      </div></div>
       <p class="reference-note">示意图，仅供参考</p>
     </section>
     <aside class="sidebar" aria-label="部件信息">
-      <div class="sidebar-heading"><div><span class="eyebrow">部件与材料</span><h2>结构探索</h2></div><svg aria-hidden="true"><use href="#i-cube"/></svg></div>
+      <div class="hero-copy">
+        <div class="eyebrow">部件拆解 · 材料应用</div><button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换深色背景" aria-pressed="false">深色</button>
+        <h1>两轮车电池包</h1><p>点击①—④，查看材料推荐</p>
+        <div class="config-summary"><span class="config-caption">示意配置</span><div class="hero-specs" id="hero-specs"></div></div>
+      </div>
       <div class="tabs" role="tablist"><button id="tab-components" role="tab" aria-selected="true" aria-controls="components-panel" class="active">部件清单</button><button id="tab-specs" role="tab" aria-selected="false" aria-controls="specs-panel">示意配置</button></div>
-      <div id="components-panel" role="tabpanel" aria-labelledby="tab-components"><p class="list-hint">塑料部件</p><div id="part-list"></div><section id="part-detail" aria-live="polite"></section><div class="other-group"><h3>其他部件</h3><div id="other-parts"></div></div></div>
+      <div id="components-panel" role="tabpanel" aria-labelledby="tab-components"><p class="list-hint">部件清单 · 塑料部件</p><div id="part-list"></div><section id="part-detail" aria-live="polite"></section><div class="other-group"><h3>其他部件</h3><div id="other-parts"></div></div></div>
       <div id="specs-panel" role="tabpanel" aria-labelledby="tab-specs" hidden><div class="specs-intro"><h3>示意配置</h3></div><dl id="pack-specs" class="pack-specs"></dl></div>
+      <p class="sidebar-guide">拖动旋转 · 滚轮缩放 · 再次点击归位</p>
     </aside>
   </main>
-  <footer class="statusbar"><span><i></i><span id="render-status">正在初始化</span></span><span>拖动旋转 · 滚轮缩放 · 点击查看</span><span>离线交互演示</span></footer>
-  <dialog id="guide"><div class="dialog-top"><span class="eyebrow">操作指南</span><button id="close-guide" aria-label="关闭操作指南"><svg><use href="#i-close"/></svg></button></div><h2>从整体，到每个部件。</h2><div class="guide-grid"><div><h3>自由观察</h3><p>左键拖动旋转，滚轮缩放，右键拖动平移。触屏单指旋转，双指缩放或平移。</p></div><div><h3>逐层拆解</h3><p>拖动滑块调整整体拆解程度，或点击「完整拆解」与「组装」。</p></div><div><h3>部件联动</h3><p>点击①，上盖与底座一起拆出；点击②，上下支架一起拆出。再次点击同一编号即可归位。</p></div><div><h3>查看推荐</h3><p>点击①到④查看「邦泰推荐」。点击其他部件只显示名称。</p></div><div><h3>键盘操作</h3><p>聚焦模型后，方向键旋转，+ / − 缩放，空格拆解或组装，R 重置，L 切换标注。</p></div></div><button class="primary-button" id="start-explore">开始探索 <svg><use href="#i-arrow"/></svg></button></dialog>
+  <footer class="statusbar" hidden><span id="render-status">正在初始化</span></footer>
+  <dialog id="guide"><div class="dialog-top"><span class="eyebrow">操作指南</span><button id="close-guide" aria-label="关闭操作指南"><svg><use href="#i-close"/></svg></button></div><h2>从整体，到每个部件。</h2><div class="guide-grid"><div><h3>自由观察</h3><p>左键拖动旋转，滚轮缩放，右键拖动平移。触屏单指旋转，双指缩放或平移。</p></div><div><h3>逐层拆解</h3><p>拖动滑块调整整体拆解程度，或点击「完整拆解」与「组装」。</p></div><div><h3>部件联动</h3><p>点击①，上盖与底座一起拆出；点击②，上下支架一起拆出。再次点击同一编号，回到当前拆解位置。</p></div><div><h3>查看推荐</h3><p>点击①到④查看「邦泰推荐」。点击其他部件只显示名称。</p></div><div><h3>键盘操作</h3><p>聚焦模型后，方向键旋转，+ / − 缩放，空格拆解或组装，R 重置。</p></div></div><button class="primary-button" id="start-explore">开始探索 <svg><use href="#i-arrow"/></svg></button></dialog>
   <div id="toast" role="status"></div>
   <script>/*__APP__*/</script>
 </body>

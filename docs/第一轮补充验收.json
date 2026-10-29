@@ -1,0 +1,27 @@
+{
+  "sourceSHA256": {
+    "dist/app.js": "6357744fced40f0e51e60f93f752e37b1a3718afcca26449015b857bf0799a2b",
+    "dist/model.js": "5c12dd2324fddd0331e0b99d601838b5db2a8921b44d8a436a180117222eb042",
+    "dist/assembly.js": "87bd17dd0dc3655d0ce02e700e8794499f992e02cbb2800fe43d604a21aefce2",
+    "dist/round-one.css": "136b0a0bc215b9116709a318ca6d0a944fa580c06c818f46f27b5fea9abfa9d7",
+    "tests/round-one.mjs": "a62d297d8558cc729ad6e9b68eb1370e5ec25b4085f630048c8ebcc179e219bc"
+  },
+  "sameCameraDirection": {
+    "isoInput": [
+      8,
+      6.6,
+      14.6
+    ],
+    "normalized": [
+      0.44671132762332016,
+      0.3685368452892391,
+      0.8152481729125592
+    ],
+    "comparisons": 28,
+    "maxDifference": 2.3314683517128287e-15
+  },
+  "paletteNotApplied": {
+    "orangePlastic": "两轮车无橙色部件；只定义F07A1A，不修改其他模型",
+    "whiteSheetMetal": "两轮车无白色钣金；只定义EEF0F2，不修改其他模型"
+  }
+}

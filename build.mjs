@@ -21,7 +21,7 @@ const viewers=[];
 for (const target of targets) {
   const result = await build({entryPoints:[path.join(site,target.directory,'app.js')],bundle:true,write:false,format:'iife',target:'es2020',minify:true,legalComments:'inline'});
   const script = result.outputFiles[0].text.replace(/<\/script/gi,'<\\/script');
-  const css = [...target.styles,'shared/presentation.css'].map(file=>fs.readFileSync(path.join(site,file),'utf8')).join('\n');
+  const css = [...target.styles,'shared/presentation.css',...(target.directory==='dist'?['dist/round-one.css']:[])].map(file=>fs.readFileSync(path.join(site,file),'utf8')).join('\n');
   const template = fs.readFileSync(path.join(site,target.directory,'index.template.html'),'utf8');
   const content = template.replace('<head>',()=>`<head>\n<!-- Three.js license\n${license}\n-->`).replace('/*__STYLES__*/',()=>css).replace('/*__APP__*/',()=>script);
   const html = content.replaceAll('\r\n','\n');

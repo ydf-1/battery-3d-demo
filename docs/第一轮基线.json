@@ -1,0 +1,1813 @@
+{
+  "baselineCommit": "62d9058da535e601556791cec2b4ae58fb681498",
+  "tagObjects": {
+    "v1.1": "522e52dcaa82de87450cc6597df90466b2faceef",
+    "v1.2": "e6e0f2b35969c80b6f55266b5f641f77dab09492"
+  },
+  "protectedSHA256": {
+    "dist/data.js": "1a2f291d8550bf289eb09cf5d5f65314a7958c5f0036ef4308df0897cb4707b7",
+    "release/电动工具电池包-离线.html": "fbc0f4a728f70d1aadf7d4afe0f9e83a0476a85cc1c2198f370c1fadb39e7502",
+    "release/户用储能电池柜-离线.html": "b3f0653cab6063779afc8034fb868d7fc49d3e9009a5c357b31a7c48cb42ec07",
+    "models/home-storage/app.js": "497f7ef430052c5e7519c32b8894bd936144e665bddcfc8d9c01b3e2f9d3df9b",
+    "models/home-storage/data.js": "0f3a8944ef223038be700a1057f84188574b159779f95eb0495a9396b1c87849",
+    "models/home-storage/index.html": "b3f0653cab6063779afc8034fb868d7fc49d3e9009a5c357b31a7c48cb42ec07",
+    "models/home-storage/index.template.html": "b83ad7b359cacb0aa6469a6a62e7206f5fa4fbb0a371a604506ff10ad78fa548",
+    "models/home-storage/model.js": "e1f3f936adbc11af5ac55b05d01d4349e8801d505bc64ae7637e3cd8c9bacf62",
+    "models/home-storage/style.css": "2b41cd54696c3e66174976e81228a17bc6fc284a701bb5dce5c58b4a26aec58e",
+    "models/power-tool/README.md": "beb38cdf4f30ba33dc61ae23bace0dca43fb9390061e7c60f94211e9c1b376cc",
+    "models/power-tool/THREE-LICENSE.txt": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+    "models/power-tool/build.mjs": "56d23bcd333c2ddd116715585d4de89691373008f5154d4fe9bb32e9b0171c77",
+    "models/power-tool/dist/app.js": "eac2c3eddb50d74b9ddc8080d2bde4c0e112a7557369b2bdd7975af34ec00251",
+    "models/power-tool/dist/data.js": "ffcff3467d6a77d34607126f5fcc5f569698c516fbf19baabd791097a03ff20b",
+    "models/power-tool/dist/index.html": "fbc0f4a728f70d1aadf7d4afe0f9e83a0476a85cc1c2198f370c1fadb39e7502",
+    "models/power-tool/dist/index.template.html": "fae353a244e742b6bc4e99992b92dbc815901777f96a919be460ac97d5375054",
+    "models/power-tool/dist/model.js": "f4c55c7dbf28f086f4320df53f31acade820e0670743ff1dcbdb94468529e30c",
+    "models/power-tool/dist/style.css": "ef19a7d3425c5b2b22e2983ed59a916101cbbf18b08a1b620d516e7103b401d1",
+    "models/power-tool/offline-check.mjs": "fa581a6d1591abc43738f9336522e9a8fd2648e9eaa61d951e6c442c658f9b6e",
+    "models/power-tool/package.json": "7e744ee1378d23d25fb44867c1b2b1ce413d16f38c79a87be49c379ffc973939"
+  },
+  "twoWheelerBaselineSHA256": "dddda744f635e138b7040c0a417b05a1c46f8a6f4377908e91cc09a7122d9d4b",
+  "viewportSizes": [
+    [
+      1366,
+      768
+    ],
+    [
+      1920,
+      1080
+    ]
+  ],
+  "isoDirection": [
+    8,
+    6.6,
+    14.6
+  ],
+  "baselineSource": "release/两轮车电池包-离线.html",
+  "baselineCopyOutsideRepository": "../qa/round1-before.html",
+  "captures": [
+    {
+      "filename": "1366x768-改前-组装.png",
+      "width": 1366,
+      "height": 768,
+      "state": "组装",
+      "snapshot": {
+        "ready": true,
+        "renderedFrames": 158,
+        "selected": "p1",
+        "explosion": 0,
+        "labels": true,
+        "autoRotate": false,
+        "parts": [
+          {
+            "id": "shell",
+            "selectionId": "shell",
+            "kind": "metal",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "base": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "topCap",
+            "selectionId": "p1",
+            "kind": "plastic",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              2.85,
+              0
+            ],
+            "base": [
+              0,
+              2.85,
+              0
+            ]
+          },
+          {
+            "id": "base",
+            "selectionId": "p1",
+            "kind": "plastic",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              -2.83,
+              0
+            ],
+            "base": [
+              0,
+              -2.83,
+              0
+            ]
+          },
+          {
+            "id": "cells",
+            "selectionId": "cells",
+            "kind": "cells",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              -0.1,
+              0
+            ],
+            "base": [
+              0,
+              -0.1,
+              0
+            ]
+          },
+          {
+            "id": "upperHolder",
+            "selectionId": "p2",
+            "kind": "plastic",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              1.125,
+              0
+            ],
+            "base": [
+              0,
+              1.125,
+              0
+            ]
+          },
+          {
+            "id": "lowerHolder",
+            "selectionId": "p2",
+            "kind": "plastic",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              -1.1500000000000001,
+              0
+            ],
+            "base": [
+              0,
+              -1.1500000000000001,
+              0
+            ]
+          },
+          {
+            "id": "bmsBracket",
+            "selectionId": "p3",
+            "kind": "plastic",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              2.37,
+              0
+            ],
+            "base": [
+              0,
+              2.37,
+              0
+            ]
+          },
+          {
+            "id": "pcb",
+            "selectionId": "pcb",
+            "kind": "pcb",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              2.46,
+              0
+            ],
+            "base": [
+              0,
+              2.46,
+              0
+            ]
+          },
+          {
+            "id": "busbar",
+            "selectionId": "busbar",
+            "kind": "metal",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              -0.1,
+              0
+            ],
+            "base": [
+              0,
+              -0.1,
+              0
+            ]
+          },
+          {
+            "id": "socket",
+            "selectionId": "p4",
+            "kind": "plastic",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              -2.58,
+              0.83
+            ],
+            "base": [
+              0,
+              -2.58,
+              0.83
+            ]
+          }
+        ],
+        "camera": [
+          5.628689560425539,
+          4.958668887030694,
+          10.334858456121257
+        ],
+        "highlightedIds": [
+          "p1"
+        ],
+        "cellGeometry": {
+          "count": 65,
+          "radius": 0.16,
+          "height": 1.0666666666666667,
+          "partId": "cells",
+          "kind": "cells",
+          "cellCount": 65,
+          "diameterMm": 21,
+          "lengthMm": 70,
+          "mmPerSceneUnit": 65.625,
+          "axis": "z",
+          "rows": 13,
+          "columns": 5,
+          "highlightable": false
+        },
+        "meshCounts": {
+          "p1": 53,
+          "p2": 26,
+          "p3": 8,
+          "p4": 7,
+          "shell": 25,
+          "cells": 7,
+          "pcb": 95,
+          "busbar": 169,
+          "contacts": 11,
+          "fasteners": 61
+        },
+        "materials": [
+          {
+            "kind": "metal",
+            "color": "bec3c9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.92
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "plastic",
+            "color": "101214",
+            "emissive": "147bd4",
+            "intensity": 0.055,
+            "roughness": 0.72,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "metal",
+            "color": "c68c42",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.26,
+            "metalness": 0.88
+          },
+          {
+            "kind": "plastic",
+            "color": "0069bf",
+            "emissive": "147bd4",
+            "intensity": 0.055,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "c68c42",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.26,
+            "metalness": 0.88
+          },
+          {
+            "kind": "cells",
+            "color": "bac0c7",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.25,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "metal",
+            "color": "c4c8ce",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "plastic",
+            "color": "0084e9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "plastic",
+            "color": "0084e9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "pcb",
+            "color": "073e29",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.72,
+            "metalness": 0.06
+          },
+          {
+            "kind": "pcb",
+            "color": "131719",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.62,
+            "metalness": 0.06
+          },
+          {
+            "kind": "metal",
+            "color": "c4c8ce",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "929c70",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "plastic",
+            "color": "0069bf",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "metal",
+            "color": "c4c8ce",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "plastic",
+            "color": "0084e9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "plastic",
+            "color": "0069bf",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          }
+        ],
+        "drawCalls": 1863,
+        "triangles": 983440
+      },
+      "viewport": {
+        "x": 0,
+        "y": 219,
+        "width": 992,
+        "height": 372
+      },
+      "networkRequests": [],
+      "errors": []
+    },
+    {
+      "filename": "1366x768-改前-完整拆解.png",
+      "width": 1366,
+      "height": 768,
+      "state": "完整拆解",
+      "snapshot": {
+        "ready": true,
+        "renderedFrames": 289,
+        "selected": "p1",
+        "explosion": 1,
+        "labels": true,
+        "autoRotate": false,
+        "parts": [
+          {
+            "id": "shell",
+            "selectionId": "shell",
+            "kind": "metal",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              -3.2,
+              -0.08,
+              -0.65
+            ],
+            "base": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "topCap",
+            "selectionId": "p1",
+            "kind": "plastic",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0,
+              4.8,
+              0
+            ],
+            "base": [
+              0,
+              2.85,
+              0
+            ]
+          },
+          {
+            "id": "base",
+            "selectionId": "p1",
+            "kind": "plastic",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0,
+              -4.38,
+              0.08
+            ],
+            "base": [
+              0,
+              -2.83,
+              0
+            ]
+          },
+          {
+            "id": "cells",
+            "selectionId": "cells",
+            "kind": "cells",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0.45,
+              -0.1,
+              0.3
+            ],
+            "base": [
+              0,
+              -0.1,
+              0
+            ]
+          },
+          {
+            "id": "upperHolder",
+            "selectionId": "p2",
+            "kind": "plastic",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0,
+              2.475,
+              0
+            ],
+            "base": [
+              0,
+              1.125,
+              0
+            ]
+          },
+          {
+            "id": "lowerHolder",
+            "selectionId": "p2",
+            "kind": "plastic",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0,
+              -2.5,
+              0
+            ],
+            "base": [
+              0,
+              -1.1500000000000001,
+              0
+            ]
+          },
+          {
+            "id": "bmsBracket",
+            "selectionId": "p3",
+            "kind": "plastic",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0.1,
+              3.27,
+              0
+            ],
+            "base": [
+              0,
+              2.37,
+              0
+            ]
+          },
+          {
+            "id": "pcb",
+            "selectionId": "pcb",
+            "kind": "pcb",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0.1,
+              3.76,
+              0
+            ],
+            "base": [
+              0,
+              2.46,
+              0
+            ]
+          },
+          {
+            "id": "busbar",
+            "selectionId": "busbar",
+            "kind": "metal",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              2.8,
+              -0.1,
+              1.15
+            ],
+            "base": [
+              0,
+              -0.1,
+              0
+            ]
+          },
+          {
+            "id": "socket",
+            "selectionId": "p4",
+            "kind": "plastic",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0,
+              -3.9699999999999998,
+              1.83
+            ],
+            "base": [
+              0,
+              -2.58,
+              0.83
+            ]
+          }
+        ],
+        "camera": [
+          7.998607228986198,
+          7.426938463507183,
+          15.551295708206654
+        ],
+        "highlightedIds": [
+          "p1"
+        ],
+        "cellGeometry": {
+          "count": 65,
+          "radius": 0.16,
+          "height": 1.0666666666666667,
+          "partId": "cells",
+          "kind": "cells",
+          "cellCount": 65,
+          "diameterMm": 21,
+          "lengthMm": 70,
+          "mmPerSceneUnit": 65.625,
+          "axis": "z",
+          "rows": 13,
+          "columns": 5,
+          "highlightable": false
+        },
+        "meshCounts": {
+          "p1": 53,
+          "p2": 26,
+          "p3": 8,
+          "p4": 7,
+          "shell": 25,
+          "cells": 7,
+          "pcb": 95,
+          "busbar": 169,
+          "contacts": 11,
+          "fasteners": 61
+        },
+        "materials": [
+          {
+            "kind": "metal",
+            "color": "bec3c9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.92
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "plastic",
+            "color": "101214",
+            "emissive": "147bd4",
+            "intensity": 0.055,
+            "roughness": 0.72,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "metal",
+            "color": "c68c42",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.26,
+            "metalness": 0.88
+          },
+          {
+            "kind": "plastic",
+            "color": "0069bf",
+            "emissive": "147bd4",
+            "intensity": 0.055,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "c68c42",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.26,
+            "metalness": 0.88
+          },
+          {
+            "kind": "cells",
+            "color": "bac0c7",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.25,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "metal",
+            "color": "c4c8ce",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "plastic",
+            "color": "0084e9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "plastic",
+            "color": "0084e9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "pcb",
+            "color": "073e29",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.72,
+            "metalness": 0.06
+          },
+          {
+            "kind": "pcb",
+            "color": "131719",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.62,
+            "metalness": 0.06
+          },
+          {
+            "kind": "metal",
+            "color": "c4c8ce",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "929c70",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "plastic",
+            "color": "0069bf",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "metal",
+            "color": "c4c8ce",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "plastic",
+            "color": "0084e9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "plastic",
+            "color": "0069bf",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          }
+        ],
+        "drawCalls": 1863,
+        "triangles": 983440
+      },
+      "viewport": {
+        "x": 0,
+        "y": 219,
+        "width": 992,
+        "height": 372
+      },
+      "networkRequests": [],
+      "errors": []
+    },
+    {
+      "filename": "1920x1080-改前-组装.png",
+      "width": 1920,
+      "height": 1080,
+      "state": "组装",
+      "snapshot": {
+        "ready": true,
+        "renderedFrames": 152,
+        "selected": "p1",
+        "explosion": 0,
+        "labels": true,
+        "autoRotate": false,
+        "parts": [
+          {
+            "id": "shell",
+            "selectionId": "shell",
+            "kind": "metal",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "base": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "topCap",
+            "selectionId": "p1",
+            "kind": "plastic",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              2.85,
+              0
+            ],
+            "base": [
+              0,
+              2.85,
+              0
+            ]
+          },
+          {
+            "id": "base",
+            "selectionId": "p1",
+            "kind": "plastic",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              -2.83,
+              0
+            ],
+            "base": [
+              0,
+              -2.83,
+              0
+            ]
+          },
+          {
+            "id": "cells",
+            "selectionId": "cells",
+            "kind": "cells",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              -0.1,
+              0
+            ],
+            "base": [
+              0,
+              -0.1,
+              0
+            ]
+          },
+          {
+            "id": "upperHolder",
+            "selectionId": "p2",
+            "kind": "plastic",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              1.125,
+              0
+            ],
+            "base": [
+              0,
+              1.125,
+              0
+            ]
+          },
+          {
+            "id": "lowerHolder",
+            "selectionId": "p2",
+            "kind": "plastic",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              -1.1500000000000001,
+              0
+            ],
+            "base": [
+              0,
+              -1.1500000000000001,
+              0
+            ]
+          },
+          {
+            "id": "bmsBracket",
+            "selectionId": "p3",
+            "kind": "plastic",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              2.37,
+              0
+            ],
+            "base": [
+              0,
+              2.37,
+              0
+            ]
+          },
+          {
+            "id": "pcb",
+            "selectionId": "pcb",
+            "kind": "pcb",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              2.46,
+              0
+            ],
+            "base": [
+              0,
+              2.46,
+              0
+            ]
+          },
+          {
+            "id": "busbar",
+            "selectionId": "busbar",
+            "kind": "metal",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              -0.1,
+              0
+            ],
+            "base": [
+              0,
+              -0.1,
+              0
+            ]
+          },
+          {
+            "id": "socket",
+            "selectionId": "p4",
+            "kind": "plastic",
+            "progress": 0,
+            "target": 0,
+            "position": [
+              0,
+              -2.58,
+              0.83
+            ],
+            "base": [
+              0,
+              -2.58,
+              0.83
+            ]
+          }
+        ],
+        "camera": [
+          5.628689560425539,
+          4.958668887030694,
+          10.334858456121257
+        ],
+        "highlightedIds": [
+          "p1"
+        ],
+        "cellGeometry": {
+          "count": 65,
+          "radius": 0.16,
+          "height": 1.0666666666666667,
+          "partId": "cells",
+          "kind": "cells",
+          "cellCount": 65,
+          "diameterMm": 21,
+          "lengthMm": 70,
+          "mmPerSceneUnit": 65.625,
+          "axis": "z",
+          "rows": 13,
+          "columns": 5,
+          "highlightable": false
+        },
+        "meshCounts": {
+          "p1": 53,
+          "p2": 26,
+          "p3": 8,
+          "p4": 7,
+          "shell": 25,
+          "cells": 7,
+          "pcb": 95,
+          "busbar": 169,
+          "contacts": 11,
+          "fasteners": 61
+        },
+        "materials": [
+          {
+            "kind": "metal",
+            "color": "bec3c9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.92
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "plastic",
+            "color": "101214",
+            "emissive": "147bd4",
+            "intensity": 0.055,
+            "roughness": 0.72,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "metal",
+            "color": "c68c42",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.26,
+            "metalness": 0.88
+          },
+          {
+            "kind": "plastic",
+            "color": "0069bf",
+            "emissive": "147bd4",
+            "intensity": 0.055,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "c68c42",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.26,
+            "metalness": 0.88
+          },
+          {
+            "kind": "cells",
+            "color": "bac0c7",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.25,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "metal",
+            "color": "c4c8ce",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "plastic",
+            "color": "0084e9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "plastic",
+            "color": "0084e9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "pcb",
+            "color": "073e29",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.72,
+            "metalness": 0.06
+          },
+          {
+            "kind": "pcb",
+            "color": "131719",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.62,
+            "metalness": 0.06
+          },
+          {
+            "kind": "metal",
+            "color": "c4c8ce",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "929c70",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "plastic",
+            "color": "0069bf",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "metal",
+            "color": "c4c8ce",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "plastic",
+            "color": "0084e9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "plastic",
+            "color": "0069bf",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          }
+        ],
+        "drawCalls": 1863,
+        "triangles": 983440
+      },
+      "viewport": {
+        "x": 0,
+        "y": 241,
+        "width": 1520,
+        "height": 652
+      },
+      "networkRequests": [],
+      "errors": []
+    },
+    {
+      "filename": "1920x1080-改前-完整拆解.png",
+      "width": 1920,
+      "height": 1080,
+      "state": "完整拆解",
+      "snapshot": {
+        "ready": true,
+        "renderedFrames": 282,
+        "selected": "p1",
+        "explosion": 1,
+        "labels": true,
+        "autoRotate": false,
+        "parts": [
+          {
+            "id": "shell",
+            "selectionId": "shell",
+            "kind": "metal",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              -3.2,
+              -0.08,
+              -0.65
+            ],
+            "base": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "topCap",
+            "selectionId": "p1",
+            "kind": "plastic",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0,
+              4.8,
+              0
+            ],
+            "base": [
+              0,
+              2.85,
+              0
+            ]
+          },
+          {
+            "id": "base",
+            "selectionId": "p1",
+            "kind": "plastic",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0,
+              -4.38,
+              0.08
+            ],
+            "base": [
+              0,
+              -2.83,
+              0
+            ]
+          },
+          {
+            "id": "cells",
+            "selectionId": "cells",
+            "kind": "cells",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0.45,
+              -0.1,
+              0.3
+            ],
+            "base": [
+              0,
+              -0.1,
+              0
+            ]
+          },
+          {
+            "id": "upperHolder",
+            "selectionId": "p2",
+            "kind": "plastic",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0,
+              2.475,
+              0
+            ],
+            "base": [
+              0,
+              1.125,
+              0
+            ]
+          },
+          {
+            "id": "lowerHolder",
+            "selectionId": "p2",
+            "kind": "plastic",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0,
+              -2.5,
+              0
+            ],
+            "base": [
+              0,
+              -1.1500000000000001,
+              0
+            ]
+          },
+          {
+            "id": "bmsBracket",
+            "selectionId": "p3",
+            "kind": "plastic",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0.1,
+              3.27,
+              0
+            ],
+            "base": [
+              0,
+              2.37,
+              0
+            ]
+          },
+          {
+            "id": "pcb",
+            "selectionId": "pcb",
+            "kind": "pcb",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0.1,
+              3.76,
+              0
+            ],
+            "base": [
+              0,
+              2.46,
+              0
+            ]
+          },
+          {
+            "id": "busbar",
+            "selectionId": "busbar",
+            "kind": "metal",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              2.8,
+              -0.1,
+              1.15
+            ],
+            "base": [
+              0,
+              -0.1,
+              0
+            ]
+          },
+          {
+            "id": "socket",
+            "selectionId": "p4",
+            "kind": "plastic",
+            "progress": 1,
+            "target": 1,
+            "position": [
+              0,
+              -3.9699999999999998,
+              1.83
+            ],
+            "base": [
+              0,
+              -2.58,
+              0.83
+            ]
+          }
+        ],
+        "camera": [
+          7.998607228986198,
+          7.426938463507183,
+          15.551295708206654
+        ],
+        "highlightedIds": [
+          "p1"
+        ],
+        "cellGeometry": {
+          "count": 65,
+          "radius": 0.16,
+          "height": 1.0666666666666667,
+          "partId": "cells",
+          "kind": "cells",
+          "cellCount": 65,
+          "diameterMm": 21,
+          "lengthMm": 70,
+          "mmPerSceneUnit": 65.625,
+          "axis": "z",
+          "rows": 13,
+          "columns": 5,
+          "highlightable": false
+        },
+        "meshCounts": {
+          "p1": 53,
+          "p2": 26,
+          "p3": 8,
+          "p4": 7,
+          "shell": 25,
+          "cells": 7,
+          "pcb": 95,
+          "busbar": 169,
+          "contacts": 11,
+          "fasteners": 61
+        },
+        "materials": [
+          {
+            "kind": "metal",
+            "color": "bec3c9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.92
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "plastic",
+            "color": "101214",
+            "emissive": "147bd4",
+            "intensity": 0.055,
+            "roughness": 0.72,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "metal",
+            "color": "c68c42",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.26,
+            "metalness": 0.88
+          },
+          {
+            "kind": "plastic",
+            "color": "0069bf",
+            "emissive": "147bd4",
+            "intensity": 0.055,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "c68c42",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.26,
+            "metalness": 0.88
+          },
+          {
+            "kind": "cells",
+            "color": "bac0c7",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.25,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "metal",
+            "color": "c4c8ce",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "plastic",
+            "color": "0084e9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "plastic",
+            "color": "0084e9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "pcb",
+            "color": "073e29",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.72,
+            "metalness": 0.06
+          },
+          {
+            "kind": "pcb",
+            "color": "131719",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.62,
+            "metalness": 0.06
+          },
+          {
+            "kind": "metal",
+            "color": "c4c8ce",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "929c70",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          },
+          {
+            "kind": "plastic",
+            "color": "0069bf",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "metal",
+            "color": "c4c8ce",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.88
+          },
+          {
+            "kind": "metal",
+            "color": "41484f",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.5,
+            "metalness": 0.8
+          },
+          {
+            "kind": "plastic",
+            "color": "0084e9",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "plastic",
+            "color": "0069bf",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.42,
+            "metalness": 0
+          },
+          {
+            "kind": "metal",
+            "color": "d5d9de",
+            "emissive": "000000",
+            "intensity": 1,
+            "roughness": 0.28,
+            "metalness": 0.95
+          }
+        ],
+        "drawCalls": 1863,
+        "triangles": 983440
+      },
+      "viewport": {
+        "x": 0,
+        "y": 241,
+        "width": 1520,
+        "height": 652
+      },
+      "networkRequests": [],
+      "errors": []
+    }
+  ]
+}

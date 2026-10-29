@@ -1,0 +1,702 @@
+{
+  "checkedAt": "2026-10-29T22:15:37.843720+08:00",
+  "baselineCommit": "62d9058da535e601556791cec2b4ae58fb681498",
+  "independentTest": {
+    "result": "passed",
+    "passed": 120,
+    "failed": 0,
+    "reused": true,
+    "reason": "本次收尾没有修改模型、交互、CSS或独立验收脚本；复用交接所列最新120项实测记录。"
+  },
+  "galleryTest": {
+    "rerun": true,
+    "passed": true,
+    "windows": [
+      {
+        "width": 1366,
+        "height": 768,
+        "headerHeight": 52,
+        "iframeHeight": 716,
+        "sidebarWidth": 340,
+        "viewportWidth": 1026,
+        "scroll": false,
+        "modelScroll": false
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "headerHeight": 52,
+        "iframeHeight": 1028,
+        "sidebarWidth": 340,
+        "viewportWidth": 1580,
+        "scroll": false,
+        "modelScroll": false
+      }
+    ],
+    "externalRequests": 0,
+    "scriptErrors": 0
+  },
+  "build": {
+    "command": "npm run build",
+    "exitCode": 0,
+    "filesSHA256": {
+      "dist/index.html": "956957535d572b289bed1912dd41da7ef4af376aedbdff68994acebee6790316",
+      "release/两轮车电池包-离线.html": "956957535d572b289bed1912dd41da7ef4af376aedbdff68994acebee6790316",
+      "release/3D电池模型-成品.html": "cce22ed0af2abac45c4b5731c7520f6c3e91005eec1fae017c46f229deefbf3f"
+    },
+    "distEqualsRelease": true,
+    "otherTwoModelsLoggedUnchanged": true
+  },
+  "protectedFiles": [
+    {
+      "file": "dist/data.js",
+      "expected": "1a2f291d8550bf289eb09cf5d5f65314a7958c5f0036ef4308df0897cb4707b7",
+      "actual": "1a2f291d8550bf289eb09cf5d5f65314a7958c5f0036ef4308df0897cb4707b7",
+      "baselineCommitSHA256": "1a2f291d8550bf289eb09cf5d5f65314a7958c5f0036ef4308df0897cb4707b7",
+      "unchanged": true
+    },
+    {
+      "file": "release/电动工具电池包-离线.html",
+      "expected": "fbc0f4a728f70d1aadf7d4afe0f9e83a0476a85cc1c2198f370c1fadb39e7502",
+      "actual": "fbc0f4a728f70d1aadf7d4afe0f9e83a0476a85cc1c2198f370c1fadb39e7502",
+      "baselineCommitSHA256": "fbc0f4a728f70d1aadf7d4afe0f9e83a0476a85cc1c2198f370c1fadb39e7502",
+      "unchanged": true
+    },
+    {
+      "file": "release/户用储能电池柜-离线.html",
+      "expected": "b3f0653cab6063779afc8034fb868d7fc49d3e9009a5c357b31a7c48cb42ec07",
+      "actual": "b3f0653cab6063779afc8034fb868d7fc49d3e9009a5c357b31a7c48cb42ec07",
+      "baselineCommitSHA256": "b3f0653cab6063779afc8034fb868d7fc49d3e9009a5c357b31a7c48cb42ec07",
+      "unchanged": true
+    },
+    {
+      "file": "models/home-storage/app.js",
+      "expected": "497f7ef430052c5e7519c32b8894bd936144e665bddcfc8d9c01b3e2f9d3df9b",
+      "actual": "497f7ef430052c5e7519c32b8894bd936144e665bddcfc8d9c01b3e2f9d3df9b",
+      "baselineCommitSHA256": "497f7ef430052c5e7519c32b8894bd936144e665bddcfc8d9c01b3e2f9d3df9b",
+      "unchanged": true
+    },
+    {
+      "file": "models/home-storage/data.js",
+      "expected": "0f3a8944ef223038be700a1057f84188574b159779f95eb0495a9396b1c87849",
+      "actual": "0f3a8944ef223038be700a1057f84188574b159779f95eb0495a9396b1c87849",
+      "baselineCommitSHA256": "0f3a8944ef223038be700a1057f84188574b159779f95eb0495a9396b1c87849",
+      "unchanged": true
+    },
+    {
+      "file": "models/home-storage/index.html",
+      "expected": "b3f0653cab6063779afc8034fb868d7fc49d3e9009a5c357b31a7c48cb42ec07",
+      "actual": "b3f0653cab6063779afc8034fb868d7fc49d3e9009a5c357b31a7c48cb42ec07",
+      "baselineCommitSHA256": "b3f0653cab6063779afc8034fb868d7fc49d3e9009a5c357b31a7c48cb42ec07",
+      "unchanged": true
+    },
+    {
+      "file": "models/home-storage/index.template.html",
+      "expected": "b83ad7b359cacb0aa6469a6a62e7206f5fa4fbb0a371a604506ff10ad78fa548",
+      "actual": "b83ad7b359cacb0aa6469a6a62e7206f5fa4fbb0a371a604506ff10ad78fa548",
+      "baselineCommitSHA256": "b83ad7b359cacb0aa6469a6a62e7206f5fa4fbb0a371a604506ff10ad78fa548",
+      "unchanged": true
+    },
+    {
+      "file": "models/home-storage/model.js",
+      "expected": "e1f3f936adbc11af5ac55b05d01d4349e8801d505bc64ae7637e3cd8c9bacf62",
+      "actual": "e1f3f936adbc11af5ac55b05d01d4349e8801d505bc64ae7637e3cd8c9bacf62",
+      "baselineCommitSHA256": "e1f3f936adbc11af5ac55b05d01d4349e8801d505bc64ae7637e3cd8c9bacf62",
+      "unchanged": true
+    },
+    {
+      "file": "models/home-storage/style.css",
+      "expected": "2b41cd54696c3e66174976e81228a17bc6fc284a701bb5dce5c58b4a26aec58e",
+      "actual": "2b41cd54696c3e66174976e81228a17bc6fc284a701bb5dce5c58b4a26aec58e",
+      "baselineCommitSHA256": "2b41cd54696c3e66174976e81228a17bc6fc284a701bb5dce5c58b4a26aec58e",
+      "unchanged": true
+    },
+    {
+      "file": "models/power-tool/README.md",
+      "expected": "beb38cdf4f30ba33dc61ae23bace0dca43fb9390061e7c60f94211e9c1b376cc",
+      "actual": "beb38cdf4f30ba33dc61ae23bace0dca43fb9390061e7c60f94211e9c1b376cc",
+      "baselineCommitSHA256": "beb38cdf4f30ba33dc61ae23bace0dca43fb9390061e7c60f94211e9c1b376cc",
+      "unchanged": true
+    },
+    {
+      "file": "models/power-tool/THREE-LICENSE.txt",
+      "expected": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "actual": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "baselineCommitSHA256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "unchanged": true
+    },
+    {
+      "file": "models/power-tool/build.mjs",
+      "expected": "56d23bcd333c2ddd116715585d4de89691373008f5154d4fe9bb32e9b0171c77",
+      "actual": "56d23bcd333c2ddd116715585d4de89691373008f5154d4fe9bb32e9b0171c77",
+      "baselineCommitSHA256": "56d23bcd333c2ddd116715585d4de89691373008f5154d4fe9bb32e9b0171c77",
+      "unchanged": true
+    },
+    {
+      "file": "models/power-tool/dist/app.js",
+      "expected": "eac2c3eddb50d74b9ddc8080d2bde4c0e112a7557369b2bdd7975af34ec00251",
+      "actual": "eac2c3eddb50d74b9ddc8080d2bde4c0e112a7557369b2bdd7975af34ec00251",
+      "baselineCommitSHA256": "eac2c3eddb50d74b9ddc8080d2bde4c0e112a7557369b2bdd7975af34ec00251",
+      "unchanged": true
+    },
+    {
+      "file": "models/power-tool/dist/data.js",
+      "expected": "ffcff3467d6a77d34607126f5fcc5f569698c516fbf19baabd791097a03ff20b",
+      "actual": "ffcff3467d6a77d34607126f5fcc5f569698c516fbf19baabd791097a03ff20b",
+      "baselineCommitSHA256": "ffcff3467d6a77d34607126f5fcc5f569698c516fbf19baabd791097a03ff20b",
+      "unchanged": true
+    },
+    {
+      "file": "models/power-tool/dist/index.html",
+      "expected": "fbc0f4a728f70d1aadf7d4afe0f9e83a0476a85cc1c2198f370c1fadb39e7502",
+      "actual": "fbc0f4a728f70d1aadf7d4afe0f9e83a0476a85cc1c2198f370c1fadb39e7502",
+      "baselineCommitSHA256": "fbc0f4a728f70d1aadf7d4afe0f9e83a0476a85cc1c2198f370c1fadb39e7502",
+      "unchanged": true
+    },
+    {
+      "file": "models/power-tool/dist/index.template.html",
+      "expected": "fae353a244e742b6bc4e99992b92dbc815901777f96a919be460ac97d5375054",
+      "actual": "fae353a244e742b6bc4e99992b92dbc815901777f96a919be460ac97d5375054",
+      "baselineCommitSHA256": "fae353a244e742b6bc4e99992b92dbc815901777f96a919be460ac97d5375054",
+      "unchanged": true
+    },
+    {
+      "file": "models/power-tool/dist/model.js",
+      "expected": "f4c55c7dbf28f086f4320df53f31acade820e0670743ff1dcbdb94468529e30c",
+      "actual": "f4c55c7dbf28f086f4320df53f31acade820e0670743ff1dcbdb94468529e30c",
+      "baselineCommitSHA256": "f4c55c7dbf28f086f4320df53f31acade820e0670743ff1dcbdb94468529e30c",
+      "unchanged": true
+    },
+    {
+      "file": "models/power-tool/dist/style.css",
+      "expected": "ef19a7d3425c5b2b22e2983ed59a916101cbbf18b08a1b620d516e7103b401d1",
+      "actual": "ef19a7d3425c5b2b22e2983ed59a916101cbbf18b08a1b620d516e7103b401d1",
+      "baselineCommitSHA256": "ef19a7d3425c5b2b22e2983ed59a916101cbbf18b08a1b620d516e7103b401d1",
+      "unchanged": true
+    },
+    {
+      "file": "models/power-tool/offline-check.mjs",
+      "expected": "fa581a6d1591abc43738f9336522e9a8fd2648e9eaa61d951e6c442c658f9b6e",
+      "actual": "fa581a6d1591abc43738f9336522e9a8fd2648e9eaa61d951e6c442c658f9b6e",
+      "baselineCommitSHA256": "fa581a6d1591abc43738f9336522e9a8fd2648e9eaa61d951e6c442c658f9b6e",
+      "unchanged": true
+    },
+    {
+      "file": "models/power-tool/package.json",
+      "expected": "7e744ee1378d23d25fb44867c1b2b1ce413d16f38c79a87be49c379ffc973939",
+      "actual": "7e744ee1378d23d25fb44867c1b2b1ce413d16f38c79a87be49c379ffc973939",
+      "baselineCommitSHA256": "7e744ee1378d23d25fb44867c1b2b1ce413d16f38c79a87be49c379ffc973939",
+      "unchanged": true
+    }
+  ],
+  "sourceSHA256": [
+    {
+      "file": "dist/app.js",
+      "recorded": "6357744fced40f0e51e60f93f752e37b1a3718afcca26449015b857bf0799a2b",
+      "actual": "6357744fced40f0e51e60f93f752e37b1a3718afcca26449015b857bf0799a2b",
+      "matches": true
+    },
+    {
+      "file": "dist/model.js",
+      "recorded": "5c12dd2324fddd0331e0b99d601838b5db2a8921b44d8a436a180117222eb042",
+      "actual": "5c12dd2324fddd0331e0b99d601838b5db2a8921b44d8a436a180117222eb042",
+      "matches": true
+    },
+    {
+      "file": "dist/assembly.js",
+      "recorded": "87bd17dd0dc3655d0ce02e700e8794499f992e02cbb2800fe43d604a21aefce2",
+      "actual": "87bd17dd0dc3655d0ce02e700e8794499f992e02cbb2800fe43d604a21aefce2",
+      "matches": true
+    },
+    {
+      "file": "dist/round-one.css",
+      "recorded": "136b0a0bc215b9116709a318ca6d0a944fa580c06c818f46f27b5fea9abfa9d7",
+      "actual": "136b0a0bc215b9116709a318ca6d0a944fa580c06c818f46f27b5fea9abfa9d7",
+      "matches": true
+    },
+    {
+      "file": "tests/round-one.mjs",
+      "recorded": "a62d297d8558cc729ad6e9b68eb1370e5ec25b4085f630048c8ebcc179e219bc",
+      "actual": "a62d297d8558cc729ad6e9b68eb1370e5ec25b4085f630048c8ebcc179e219bc",
+      "matches": true
+    }
+  ],
+  "sharedFiles": [
+    {
+      "file": "shared/materials.js",
+      "baseline": "077fec925b7b5973c749d022ae9c473bbdbf5f20dbe0a497ce4cae40b7f3cec7",
+      "actual": "077fec925b7b5973c749d022ae9c473bbdbf5f20dbe0a497ce4cae40b7f3cec7",
+      "unchanged": true
+    },
+    {
+      "file": "shared/studio.js",
+      "baseline": "275188e6f7ca07cbf6903b3bc06813fad0d1b33c2d577587f9ac64cac58fd0f2",
+      "actual": "275188e6f7ca07cbf6903b3bc06813fad0d1b33c2d577587f9ac64cac58fd0f2",
+      "unchanged": true
+    },
+    {
+      "file": "shared/presentation.css",
+      "baseline": "348c71538866fb643da5064a152ca7dae104d530803e91cb061454d9c4b0a57e",
+      "actual": "348c71538866fb643da5064a152ca7dae104d530803e91cb061454d9c4b0a57e",
+      "unchanged": true
+    }
+  ],
+  "tags": {
+    "v1.1": {
+      "expected": "522e52dcaa82de87450cc6597df90466b2faceef",
+      "actual": "522e52dcaa82de87450cc6597df90466b2faceef",
+      "target": "36db03d0dc768a6b221031118a6fbe89cbc48e64"
+    },
+    "v1.2": {
+      "expected": "e6e0f2b35969c80b6f55266b5f641f77dab09492",
+      "actual": "e6e0f2b35969c80b6f55266b5f641f77dab09492",
+      "target": "4c042b904951bd65e4e1a6a3f0440b477909d18b"
+    }
+  },
+  "screenshotCount": {
+    "originalCaptures": 24,
+    "explicitNameCopies": 20,
+    "totalFiles": 44
+  },
+  "screenshotAliases": [
+    {
+      "original": "1366x768-组装.png",
+      "explicitName": "1366x768-改后-组装.png",
+      "sha256": "4869751a868b15b932279cd1864db6a57e50cd94f7af3c38f2eec824b9e8af6b",
+      "identical": true
+    },
+    {
+      "original": "1366x768-完整拆解.png",
+      "explicitName": "1366x768-改后-完整拆解.png",
+      "sha256": "f2c88024d66b753c76cc912b21b27264442a2c4baa176c3afac813dbeec4ed8e",
+      "identical": true
+    },
+    {
+      "original": "1366x768-拆解50%.png",
+      "explicitName": "1366x768-改后-拆解50%.png",
+      "sha256": "08fd76fb15796356d8c0435c240e5f3bab57c63c1ef957840f516a574680950b",
+      "identical": true
+    },
+    {
+      "original": "1366x768-选中①.png",
+      "explicitName": "1366x768-改后-100%拆解-选中①.png",
+      "sha256": "86867cacbcc39a24451f61885fc4148fd6b7ebe2d9b416de5d1afa88441e7237",
+      "identical": true
+    },
+    {
+      "original": "1366x768-选中②.png",
+      "explicitName": "1366x768-改后-100%拆解-选中②.png",
+      "sha256": "85cc95f5a4da48aa11b00f804a4080a92b6634300cb36ed7c53ae3217673492e",
+      "identical": true
+    },
+    {
+      "original": "1366x768-选中③.png",
+      "explicitName": "1366x768-改后-100%拆解-选中③.png",
+      "sha256": "a45fe93c8b207d3b5bd43af71a66a2b26d5a62b5b370b631f30f06ca35c77259",
+      "identical": true
+    },
+    {
+      "original": "1366x768-选中④.png",
+      "explicitName": "1366x768-改后-100%拆解-选中④.png",
+      "sha256": "811e650ef16d17170b63f12f421753c9a0a9d8666484589c96bba0b512bd8c74",
+      "identical": true
+    },
+    {
+      "original": "1366x768-0%拆解选中③.png",
+      "explicitName": "1366x768-改后-0%拆解-选中③.png",
+      "sha256": "cd04769a644d1a78082c1bd236f47f730c2159e083632b5b03070fbb6bc04661",
+      "identical": true
+    },
+    {
+      "original": "1366x768-深色切换.png",
+      "explicitName": "1366x768-改后-深色切换.png",
+      "sha256": "4d81633109075b7eb5a682ced894d88de19908e451005bc3c1f28fc384860bfa",
+      "identical": true
+    },
+    {
+      "original": "1366x768-三模型入口-两轮车.png",
+      "explicitName": "1366x768-改后-三模型入口-两轮车.png",
+      "sha256": "c3f63d3949370d585284fdd7b6c9584e0ff3133367805d008a9490f4d1f71bae",
+      "identical": true
+    },
+    {
+      "original": "1920x1080-组装.png",
+      "explicitName": "1920x1080-改后-组装.png",
+      "sha256": "25952298c2ab0ff0bde627f32d4bb38e3e3ad0eebadc991910eafe0b786d87ab",
+      "identical": true
+    },
+    {
+      "original": "1920x1080-完整拆解.png",
+      "explicitName": "1920x1080-改后-完整拆解.png",
+      "sha256": "808026c6e48c56452dce9f9028e7c6c43544d8444490aac2a6ae27743074be0a",
+      "identical": true
+    },
+    {
+      "original": "1920x1080-拆解50%.png",
+      "explicitName": "1920x1080-改后-拆解50%.png",
+      "sha256": "821d6118580ae5d74e3d8136a97cd0a8fbff83bedb822c0fc39a4e0113502b1d",
+      "identical": true
+    },
+    {
+      "original": "1920x1080-选中①.png",
+      "explicitName": "1920x1080-改后-100%拆解-选中①.png",
+      "sha256": "4dd26526d210056f1288382fb3d4caa9a2f97287e7514c085a04457faa12a6e3",
+      "identical": true
+    },
+    {
+      "original": "1920x1080-选中②.png",
+      "explicitName": "1920x1080-改后-100%拆解-选中②.png",
+      "sha256": "310890aa9e79cc0e54d56aaab0cdf6ad96454935dc3bbe5492dcf3ad22a18551",
+      "identical": true
+    },
+    {
+      "original": "1920x1080-选中③.png",
+      "explicitName": "1920x1080-改后-100%拆解-选中③.png",
+      "sha256": "f502f19f4915ae5e149d30367c9594d770d17350349bc0c78b025a08019f1128",
+      "identical": true
+    },
+    {
+      "original": "1920x1080-选中④.png",
+      "explicitName": "1920x1080-改后-100%拆解-选中④.png",
+      "sha256": "73c789f66b0ad325dc0e3ece8822e25608e9929e766a5d9f80f246d7c6c80fad",
+      "identical": true
+    },
+    {
+      "original": "1920x1080-0%拆解选中③.png",
+      "explicitName": "1920x1080-改后-0%拆解-选中③.png",
+      "sha256": "2bfe8a6a9b07943b183c171c50e0c72b6da3fa34e029f65fb3ed1c326b298e66",
+      "identical": true
+    },
+    {
+      "original": "1920x1080-深色切换.png",
+      "explicitName": "1920x1080-改后-深色切换.png",
+      "sha256": "0ab6d55f13139d67816724d2f55fb90ea5b806ef0e8b698df16dae5ee965bd7e",
+      "identical": true
+    },
+    {
+      "original": "1920x1080-三模型入口-两轮车.png",
+      "explicitName": "1920x1080-改后-三模型入口-两轮车.png",
+      "sha256": "06c9f0b92ad917343769e271a4a0a11f75333bddf718e90e294c61c2b1330420",
+      "identical": true
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "1366x768-0%拆解选中③.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 434648,
+      "sha256": "cd04769a644d1a78082c1bd236f47f730c2159e083632b5b03070fbb6bc04661"
+    },
+    {
+      "file": "1366x768-三模型入口-两轮车.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 356812,
+      "sha256": "c3f63d3949370d585284fdd7b6c9584e0ff3133367805d008a9490f4d1f71bae"
+    },
+    {
+      "file": "1366x768-完整拆解.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 386181,
+      "sha256": "f2c88024d66b753c76cc912b21b27264442a2c4baa176c3afac813dbeec4ed8e"
+    },
+    {
+      "file": "1366x768-拆解50%.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 396474,
+      "sha256": "08fd76fb15796356d8c0435c240e5f3bab57c63c1ef957840f516a574680950b"
+    },
+    {
+      "file": "1366x768-改前-完整拆解.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 459419,
+      "sha256": "19519c9954acfd6cc8f149a74b41a08690437455c6566c573f3d3adad56a07fd"
+    },
+    {
+      "file": "1366x768-改前-组装.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 412019,
+      "sha256": "0c3f0e931a0d1fc8b524235345152490b84e7d6569b906ec8e1563bb975ee5f9"
+    },
+    {
+      "file": "1366x768-改后-0%拆解-选中③.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 434648,
+      "sha256": "cd04769a644d1a78082c1bd236f47f730c2159e083632b5b03070fbb6bc04661"
+    },
+    {
+      "file": "1366x768-改后-100%拆解-选中①.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 369394,
+      "sha256": "86867cacbcc39a24451f61885fc4148fd6b7ebe2d9b416de5d1afa88441e7237"
+    },
+    {
+      "file": "1366x768-改后-100%拆解-选中②.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 446825,
+      "sha256": "85cc95f5a4da48aa11b00f804a4080a92b6634300cb36ed7c53ae3217673492e"
+    },
+    {
+      "file": "1366x768-改后-100%拆解-选中③.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 401411,
+      "sha256": "a45fe93c8b207d3b5bd43af71a66a2b26d5a62b5b370b631f30f06ca35c77259"
+    },
+    {
+      "file": "1366x768-改后-100%拆解-选中④.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 371886,
+      "sha256": "811e650ef16d17170b63f12f421753c9a0a9d8666484589c96bba0b512bd8c74"
+    },
+    {
+      "file": "1366x768-改后-三模型入口-两轮车.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 356812,
+      "sha256": "c3f63d3949370d585284fdd7b6c9584e0ff3133367805d008a9490f4d1f71bae"
+    },
+    {
+      "file": "1366x768-改后-完整拆解.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 386181,
+      "sha256": "f2c88024d66b753c76cc912b21b27264442a2c4baa176c3afac813dbeec4ed8e"
+    },
+    {
+      "file": "1366x768-改后-拆解50%.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 396474,
+      "sha256": "08fd76fb15796356d8c0435c240e5f3bab57c63c1ef957840f516a574680950b"
+    },
+    {
+      "file": "1366x768-改后-深色切换.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 342933,
+      "sha256": "4d81633109075b7eb5a682ced894d88de19908e451005bc3c1f28fc384860bfa"
+    },
+    {
+      "file": "1366x768-改后-组装.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 351850,
+      "sha256": "4869751a868b15b932279cd1864db6a57e50cd94f7af3c38f2eec824b9e8af6b"
+    },
+    {
+      "file": "1366x768-深色切换.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 342933,
+      "sha256": "4d81633109075b7eb5a682ced894d88de19908e451005bc3c1f28fc384860bfa"
+    },
+    {
+      "file": "1366x768-组装.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 351850,
+      "sha256": "4869751a868b15b932279cd1864db6a57e50cd94f7af3c38f2eec824b9e8af6b"
+    },
+    {
+      "file": "1366x768-选中①.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 369394,
+      "sha256": "86867cacbcc39a24451f61885fc4148fd6b7ebe2d9b416de5d1afa88441e7237"
+    },
+    {
+      "file": "1366x768-选中②.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 446825,
+      "sha256": "85cc95f5a4da48aa11b00f804a4080a92b6634300cb36ed7c53ae3217673492e"
+    },
+    {
+      "file": "1366x768-选中③.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 401411,
+      "sha256": "a45fe93c8b207d3b5bd43af71a66a2b26d5a62b5b370b631f30f06ca35c77259"
+    },
+    {
+      "file": "1366x768-选中④.png",
+      "width": 1366,
+      "height": 768,
+      "bytes": 371886,
+      "sha256": "811e650ef16d17170b63f12f421753c9a0a9d8666484589c96bba0b512bd8c74"
+    },
+    {
+      "file": "1920x1080-0%拆解选中③.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 800994,
+      "sha256": "2bfe8a6a9b07943b183c171c50e0c72b6da3fa34e029f65fb3ed1c326b298e66"
+    },
+    {
+      "file": "1920x1080-三模型入口-两轮车.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 656650,
+      "sha256": "06c9f0b92ad917343769e271a4a0a11f75333bddf718e90e294c61c2b1330420"
+    },
+    {
+      "file": "1920x1080-完整拆解.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 679600,
+      "sha256": "808026c6e48c56452dce9f9028e7c6c43544d8444490aac2a6ae27743074be0a"
+    },
+    {
+      "file": "1920x1080-拆解50%.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 705038,
+      "sha256": "821d6118580ae5d74e3d8136a97cd0a8fbff83bedb822c0fc39a4e0113502b1d"
+    },
+    {
+      "file": "1920x1080-改前-完整拆解.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 862660,
+      "sha256": "589a5049a74f1954125bb4c54bd8ffe701e7807e9c0145a65c79eaeeccb0d678"
+    },
+    {
+      "file": "1920x1080-改前-组装.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 736982,
+      "sha256": "15e27ea9648a88473c868058f78600ba8be0657a8d20c47465f8a1b777f8acd1"
+    },
+    {
+      "file": "1920x1080-改后-0%拆解-选中③.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 800994,
+      "sha256": "2bfe8a6a9b07943b183c171c50e0c72b6da3fa34e029f65fb3ed1c326b298e66"
+    },
+    {
+      "file": "1920x1080-改后-100%拆解-选中①.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 645756,
+      "sha256": "4dd26526d210056f1288382fb3d4caa9a2f97287e7514c085a04457faa12a6e3"
+    },
+    {
+      "file": "1920x1080-改后-100%拆解-选中②.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 803805,
+      "sha256": "310890aa9e79cc0e54d56aaab0cdf6ad96454935dc3bbe5492dcf3ad22a18551"
+    },
+    {
+      "file": "1920x1080-改后-100%拆解-选中③.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 701993,
+      "sha256": "f502f19f4915ae5e149d30367c9594d770d17350349bc0c78b025a08019f1128"
+    },
+    {
+      "file": "1920x1080-改后-100%拆解-选中④.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 659919,
+      "sha256": "73c789f66b0ad325dc0e3ece8822e25608e9929e766a5d9f80f246d7c6c80fad"
+    },
+    {
+      "file": "1920x1080-改后-三模型入口-两轮车.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 656650,
+      "sha256": "06c9f0b92ad917343769e271a4a0a11f75333bddf718e90e294c61c2b1330420"
+    },
+    {
+      "file": "1920x1080-改后-完整拆解.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 679600,
+      "sha256": "808026c6e48c56452dce9f9028e7c6c43544d8444490aac2a6ae27743074be0a"
+    },
+    {
+      "file": "1920x1080-改后-拆解50%.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 705038,
+      "sha256": "821d6118580ae5d74e3d8136a97cd0a8fbff83bedb822c0fc39a4e0113502b1d"
+    },
+    {
+      "file": "1920x1080-改后-深色切换.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 637396,
+      "sha256": "0ab6d55f13139d67816724d2f55fb90ea5b806ef0e8b698df16dae5ee965bd7e"
+    },
+    {
+      "file": "1920x1080-改后-组装.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 651318,
+      "sha256": "25952298c2ab0ff0bde627f32d4bb38e3e3ad0eebadc991910eafe0b786d87ab"
+    },
+    {
+      "file": "1920x1080-深色切换.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 637396,
+      "sha256": "0ab6d55f13139d67816724d2f55fb90ea5b806ef0e8b698df16dae5ee965bd7e"
+    },
+    {
+      "file": "1920x1080-组装.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 651318,
+      "sha256": "25952298c2ab0ff0bde627f32d4bb38e3e3ad0eebadc991910eafe0b786d87ab"
+    },
+    {
+      "file": "1920x1080-选中①.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 645756,
+      "sha256": "4dd26526d210056f1288382fb3d4caa9a2f97287e7514c085a04457faa12a6e3"
+    },
+    {
+      "file": "1920x1080-选中②.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 803805,
+      "sha256": "310890aa9e79cc0e54d56aaab0cdf6ad96454935dc3bbe5492dcf3ad22a18551"
+    },
+    {
+      "file": "1920x1080-选中③.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 701993,
+      "sha256": "f502f19f4915ae5e149d30367c9594d770d17350349bc0c78b025a08019f1128"
+    },
+    {
+      "file": "1920x1080-选中④.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 659919,
+      "sha256": "73c789f66b0ad325dc0e3ece8822e25608e9929e766a5d9f80f246d7c6c80fad"
+    }
+  ],
+  "diffCheck": {
+    "command": "git diff --check",
+    "exitCode": 0
+  },
+  "limits": [
+    "橙色与白色钣金实际应用没做：两轮车没有对应部件；仅定义色板。",
+    "另一台实体电脑与真实手机实测没做：当前验收为Windows Chrome无头WebGL窗口模拟。",
+    "第三方主观视觉验收没做：没有第三方验收结果。"
+  ]
+}
